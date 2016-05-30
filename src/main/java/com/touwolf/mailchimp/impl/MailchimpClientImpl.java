@@ -1,14 +1,14 @@
 package com.touwolf.mailchimp.impl;
 
 import com.touwolf.mailchimp.MailchimpClient;
-import com.touwolf.mailchimp.MailchimpException;
-import com.touwolf.mailchimp.model.MailchimpResponse;
-import com.touwolf.mailchimp.model.apiroot.ApiRootResponse;
-import org.apache.commons.lang.StringUtils;
+import com.touwolf.mailchimp.model.apiroot.ApiRoot;
+import org.bridje.ioc.Ioc;
 
 public class MailchimpClientImpl implements MailchimpClient
 {
     private MailchimpBuilder builder;
+
+    private ApiRoot apiRoot;
 
     public MailchimpClientImpl(String username, String apiKey)
     {
@@ -16,36 +16,18 @@ public class MailchimpClientImpl implements MailchimpClient
     }
 
     @Override
-    public ApiRootResponse getApiRoot()
+    public ApiRoot apiRoot()
     {
-        return getApiRoot("", "");
+        return getApiRoot().builder(builder);
     }
 
-    @Override
-    public ApiRootResponse getApiRoot(String fields, String excludeFields)
+    private ApiRoot getApiRoot()
     {
-        try
+        if(null == apiRoot)
         {
-            String queryString = "";
-            if(StringUtils.isNotBlank(fields))
-            {
-                queryString += "?fields=" + fields;
-            }
-
-            if(StringUtils.isNotBlank(excludeFields))
-            {
-                queryString += StringUtils.isBlank(queryString) ?
-                        "?exclude_fields=" + excludeFields : "&exclude_fields=" + excludeFields;
-            }
-
-            MailchimpResponse<ApiRootResponse> response = builder.get(queryString, ApiRootResponse.class);
-            return null == response ? null : response.getData();
-        }
-        catch (MailchimpException ex)
-        {
-
+            apiRoot = Ioc.context().find(ApiRoot.class);
         }
 
-        return null;
+        return apiRoot;
     }
 }

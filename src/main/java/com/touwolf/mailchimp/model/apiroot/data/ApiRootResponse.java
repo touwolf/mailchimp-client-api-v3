@@ -1,4 +1,4 @@
-package com.touwolf.mailchimp.model.apiroot;
+package com.touwolf.mailchimp.model.apiroot.data;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -36,6 +36,11 @@ public class ApiRootResponse
     @SerializedName("_links")
     private ApiRootLink[] links;
 
+    /**
+     * The MailChimp account id
+     *
+     * @return
+     */
     public String getAccountId() {
         return accountId;
     }
@@ -44,6 +49,11 @@ public class ApiRootResponse
         this.accountId = accountId;
     }
 
+    /**
+     * The login name for the MailChimp account.
+     *
+     * @return
+     */
     public String getAccountName() {
         return accountName;
     }
@@ -52,6 +62,11 @@ public class ApiRootResponse
         this.accountName = accountName;
     }
 
+    /**
+     * The account email address.
+     *
+     * @return
+     */
     public String getEmail() {
         return email;
     }
@@ -60,6 +75,11 @@ public class ApiRootResponse
         this.email = email;
     }
 
+    /**
+     * The username tied to the account
+     *
+     * @return
+     */
     public String getUsername() {
         return username;
     }
@@ -68,6 +88,11 @@ public class ApiRootResponse
         this.username = username;
     }
 
+    /**
+     * The user role for the account.
+     *
+     * @return
+     */
     public String getRole() {
         return role;
     }
@@ -76,6 +101,11 @@ public class ApiRootResponse
         this.role = role;
     }
 
+    /**
+     * Information about the account contact.
+     *
+     * @return
+     */
     public ApiRootContact getContact() {
         return contact;
     }
@@ -84,6 +114,11 @@ public class ApiRootResponse
         this.contact = contact;
     }
 
+    /**
+     * Whether the account includes MailChimp Pro.
+     *
+     * @return
+     */
     public Boolean getProEnabled() {
         return proEnabled;
     }
@@ -92,6 +127,11 @@ public class ApiRootResponse
         this.proEnabled = proEnabled;
     }
 
+    /**
+     * The date and time of the last login for this account.
+     *
+     * @return
+     */
     public String getLastLogin() {
         return lastLogin;
     }
@@ -100,6 +140,11 @@ public class ApiRootResponse
         this.lastLogin = lastLogin;
     }
 
+    /**
+     * The total number of subscribers across all lists in the account.
+     *
+     * @return
+     */
     public Integer getTotalSubscribers() {
         return totalSubscribers;
     }
@@ -108,6 +153,11 @@ public class ApiRootResponse
         this.totalSubscribers = totalSubscribers;
     }
 
+    /**
+     * The average campaign statistics for all campaigns in the account’s specified industry.
+     *
+     * @return
+     */
     public ApiRootIndustryStats getIndustryStats() {
         return industryStats;
     }
@@ -116,6 +166,11 @@ public class ApiRootResponse
         this.industryStats = industryStats;
     }
 
+    /**
+     * A list of link types and descriptions for the API schema documents.
+     *
+     * @return
+     */
     public ApiRootLink[] getLinks() {
         return links;
     }

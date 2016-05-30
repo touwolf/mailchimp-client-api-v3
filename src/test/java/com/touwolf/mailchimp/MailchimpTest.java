@@ -1,12 +1,13 @@
 
 package com.touwolf.mailchimp;
 import com.touwolf.mailchimp.impl.MailchimpClientImpl;
-import com.touwolf.mailchimp.model.apiroot.ApiRootResponse;
+import com.touwolf.mailchimp.model.MailchimpResponse;
+import com.touwolf.mailchimp.model.apiroot.data.ApiRootResponse;
 import org.junit.*;
 
 public class MailchimpTest
 {
-    // To execute this test correctly, please fill real username and password values
+    // To execute this test correctly, please fill real username and apikey
     private static final String USERNAME = "";
 
     private static final String API_KEY = "";
@@ -42,7 +43,7 @@ public class MailchimpTest
         try
         {
             MailchimpClient client = new MailchimpClientImpl(USERNAME, API_KEY);
-            ApiRootResponse apiRoot = client.getApiRoot();
+            MailchimpResponse<ApiRootResponse> apiRoot = client.apiRoot().getApiRoot();
             Assert.assertNotNull(apiRoot);
         }
         catch (Exception ex)

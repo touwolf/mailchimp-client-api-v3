@@ -1,4 +1,4 @@
-package com.touwolf.mailchimp.model.apiroot;
+package com.touwolf.mailchimp.model.apiroot.data;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -13,6 +13,11 @@ public class ApiRootIndustryStats
     @SerializedName("click_rate")
     private Double clickRate;
 
+    /**
+     * The average unique open rate for all campaigns in the account’s specified industry.
+     *
+     * @return
+     */
     public Double getOpenRate() {
         return openRate;
     }
@@ -21,6 +26,11 @@ public class ApiRootIndustryStats
         this.openRate = openRate;
     }
 
+    /**
+     * The average bounce rate for all campaigns in the account’s specified industry.
+     *
+     * @return
+     */
     public Double getBounceRate() {
         return bounceRate;
     }
@@ -29,6 +39,11 @@ public class ApiRootIndustryStats
         this.bounceRate = bounceRate;
     }
 
+    /**
+     * The average unique click rate for all campaigns in the account’s specified industry.
+     *
+     * @return
+     */
     public Double getClickRate() {
         return clickRate;
     }

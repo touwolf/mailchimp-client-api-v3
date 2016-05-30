@@ -1,4 +1,4 @@
-package com.touwolf.mailchimp.model.apiroot;
+package com.touwolf.mailchimp.model.apiroot.data;
 
 public class ApiRootContact
 {
@@ -16,6 +16,11 @@ public class ApiRootContact
 
     private String country;
 
+    /**
+     * The company name for the account.
+     *
+     * @return
+     */
     public String getCompany() {
         return company;
     }
@@ -24,6 +29,11 @@ public class ApiRootContact
         this.company = company;
     }
 
+    /**
+     * The street address for the account contact.
+     *
+     * @return
+     */
     public String getAddr1() {
         return addr1;
     }
@@ -32,6 +42,11 @@ public class ApiRootContact
         this.addr1 = addr1;
     }
 
+    /**
+     * The street address for the account contact.
+     *
+     * @return
+     */
     public String getAddr2() {
         return addr2;
     }
@@ -40,6 +55,11 @@ public class ApiRootContact
         this.addr2 = addr2;
     }
 
+    /**
+     * The city for the account contact.
+     *
+     * @return
+     */
     public String getCity() {
         return city;
     }
@@ -48,6 +68,11 @@ public class ApiRootContact
         this.city = city;
     }
 
+    /**
+     * The state for the account contact.
+     *
+     * @return
+     */
     public String getState() {
         return state;
     }
@@ -56,6 +81,11 @@ public class ApiRootContact
         this.state = state;
     }
 
+    /**
+     * The zip code for the account contact.
+     *
+     * @return
+     */
     public String getZip() {
         return zip;
     }
@@ -64,6 +94,11 @@ public class ApiRootContact
         this.zip = zip;
     }
 
+    /**
+     * The country for the account contact.
+     *
+     * @return
+     */
     public String getCountry() {
         return country;
     }

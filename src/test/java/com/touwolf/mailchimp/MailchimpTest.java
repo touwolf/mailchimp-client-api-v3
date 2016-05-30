@@ -7,9 +7,9 @@ import org.junit.*;
 public class MailchimpTest
 {
     // To execute this test correctly, please fill real username and password values
-    private static final String USERNAME = "cuballama";
+    private static final String USERNAME = "";
 
-    private static final String API_KEY = "1a090a6ecb9e437156e468eae9c7b8e0-us9";
+    private static final String API_KEY = "";
 
     public MailchimpTest()
     {

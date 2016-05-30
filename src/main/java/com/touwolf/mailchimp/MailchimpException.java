@@ -8,7 +8,7 @@ public class MailchimpException extends Exception
 {
     private int code;
 
-    private Object error;
+    private MailchimpErrors error;
 
     public Integer getCode()
     {
@@ -25,7 +25,7 @@ public class MailchimpException extends Exception
         return error;
     }
 
-    public void setError(Object error)
+    public void setError(MailchimpErrors error)
     {
         this.error = error;
     }
@@ -35,20 +35,20 @@ public class MailchimpException extends Exception
         super(message);
     }
 
-    public MailchimpException(String message, Object error)
+    public MailchimpException(String message, MailchimpErrors error)
     {
         super(message);
         this.error = error;
     }
 
-    public MailchimpException(Object error, int code)
+    public MailchimpException(MailchimpErrors error, int code)
     {
         super("");
         this.error = error;
         this.code = code;
     }
 
-    public MailchimpException(String message, Object error, int code)
+    public MailchimpException(String message, MailchimpErrors error, int code)
     {
         super(message);
         this.error = error;
@@ -58,14 +58,8 @@ public class MailchimpException extends Exception
     public MailchimpException(String message, int code)
     {
         super(message);
-        this.error = message;
-        this.code = code;
-    }
-
-    public MailchimpException(String field, String message, int code)
-    {
-        super(message);
-        this.error = new MailchimpErrors(field, message);
+        this.error = new MailchimpErrors();
+        this.error.setDetail(message);
         this.code = code;
     }
 

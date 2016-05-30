@@ -1,36 +1,54 @@
 package com.touwolf.mailchimp.model;
 
-import java.util.LinkedList;
-import java.util.List;
-
 public class MailchimpErrors
 {
-    List<MailchimpErrorField> errors;
+    private String type;
 
-    public MailchimpErrors(){}
+    private String title;
 
-    public MailchimpErrors(String message)
-    {
-        getErrors().add(new MailchimpErrorField(null, message));
+    private Integer status;
+
+    private String detail;
+
+    private String instance;
+
+    public String getType() {
+        return type;
     }
 
-    public MailchimpErrors(String field, String message)
-    {
-        getErrors().add(new MailchimpErrorField(field, message));
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public List<MailchimpErrorField> getErrors()
-    {
-        if(null == errors)
-        {
-            errors = new LinkedList<>();
-        }
-
-        return errors;
+    public String getTitle() {
+        return title;
     }
 
-    public void setErrors(List<MailchimpErrorField> errors)
-    {
-        this.errors = errors;
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail;
+    }
+
+    public String getInstance() {
+        return instance;
+    }
+
+    public void setInstance(String instance) {
+        this.instance = instance;
     }
 }

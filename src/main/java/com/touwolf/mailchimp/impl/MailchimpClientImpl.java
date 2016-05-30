@@ -1,6 +1,8 @@
 package com.touwolf.mailchimp.impl;
 
-public class MailchimpClientImpl
+import com.touwolf.mailchimp.MailchimpClient;
+
+public class MailchimpClientImpl implements MailchimpClient
 {
     private String apiKey;
 

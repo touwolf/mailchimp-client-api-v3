@@ -1,6 +1,7 @@
 
 package com.touwolf.mailchimp;
 import com.touwolf.mailchimp.impl.MailchimpClientImpl;
+import com.touwolf.mailchimp.model.apiroot.ApiRootResponse;
 import org.junit.*;
 
 public class MailchimpTest
@@ -41,7 +42,7 @@ public class MailchimpTest
         try
         {
             MailchimpClient client = new MailchimpClientImpl(USERNAME, API_KEY);
-            String apiRoot = client.getApiRoot();
+            ApiRootResponse apiRoot = client.getApiRoot();
             Assert.assertNotNull(apiRoot);
         }
         catch (Exception ex)

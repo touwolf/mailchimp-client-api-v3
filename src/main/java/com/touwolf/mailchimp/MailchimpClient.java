@@ -1,6 +1,8 @@
 package com.touwolf.mailchimp;
 
 import com.touwolf.mailchimp.model.apiroot.ApiRoot;
+import com.touwolf.mailchimp.model.camapign.Campaign;
+import com.touwolf.mailchimp.model.camapign.CampaignFolder;
 
 public interface MailchimpClient
 {
@@ -11,4 +13,18 @@ public interface MailchimpClient
      * @return
      */
     ApiRoot apiRoot();
+
+    /**
+     * Organize your campaigns using folders.
+     *
+     * @return
+     */
+    CampaignFolder campaignFolder();
+
+    /**
+     * Campaigns are how you send emails to your MailChimp list. Use the Campaigns API calls to manage campaigns in your MailChimp account.
+     *
+     * @return
+     */
+    Campaign campaign();
 }

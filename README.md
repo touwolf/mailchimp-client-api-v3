@@ -1,2 +1,2 @@
-# mailchimp-client-api-v3
-mailchimp client api v3 wrapper
+# mailchimp client api v3
+mailchimp client api v3 wrapper for **Java**

@@ -41,6 +41,12 @@ public class CampaignSettings
     @SerializedName("fb_comments")
     private Boolean fbComments;
 
+    private Boolean timewarp;
+
+    private Integer templateId;
+
+    private Boolean dragAndDrop;
+
     /**
      * The subject line for the campaign.
      *
@@ -208,5 +214,44 @@ public class CampaignSettings
 
     public void setFbComments(Boolean fbComments) {
         this.fbComments = fbComments;
+    }
+
+    /**
+     * Send this campaign using Timewarp.
+     *
+     * @return
+     */
+    public Boolean getTimewarp() {
+        return timewarp;
+    }
+
+    public void setTimewarp(Boolean timewarp) {
+        this.timewarp = timewarp;
+    }
+
+    /**
+     * The id for the template used in this campaign.
+     *
+     * @return
+     */
+    public Integer getTemplateId() {
+        return templateId;
+    }
+
+    public void setTemplateId(Integer templateId) {
+        this.templateId = templateId;
+    }
+
+    /**
+     * Whether the campaign uses the drag-and-drop editor.
+     *
+     * @return
+     */
+    public Boolean getDragAndDrop() {
+        return dragAndDrop;
+    }
+
+    public void setDragAndDrop(Boolean dragAndDrop) {
+        this.dragAndDrop = dragAndDrop;
     }
 }

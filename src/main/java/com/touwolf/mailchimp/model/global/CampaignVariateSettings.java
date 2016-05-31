@@ -4,6 +4,12 @@ import com.google.gson.annotations.SerializedName;
 
 public class CampaignVariateSettings
 {
+    @SerializedName("winning_combination_id")
+    private String winningCombinationId;
+
+    @SerializedName("winning_campaign_id")
+    private String winningCampaignId;
+
     @SerializedName("winner_criteria")
     private String winnerCriteria;
 
@@ -24,6 +30,36 @@ public class CampaignVariateSettings
 
     @SerializedName("reply_to_addresses")
     private String replyToAddresses;
+
+    private String contents;
+
+    private CampaignCombinatios combinatios;
+
+    /**
+     * ID for the winning combination.
+     *
+     * @return
+     */
+    public String getWinningCombinationId() {
+        return winningCombinationId;
+    }
+
+    public void setWinningCombinationId(String winningCombinationId) {
+        this.winningCombinationId = winningCombinationId;
+    }
+
+    /**
+     * ID of the campaign that was sent to the remaining recipients based on the winning combination.
+     *
+     * @return
+     */
+    public String getWinningCampaignId() {
+        return winningCampaignId;
+    }
+
+    public void setWinningCampaignId(String winningCampaignId) {
+        this.winningCampaignId = winningCampaignId;
+    }
 
     /**
      * The combination that performs the best. This may be determined automatically by click rate, open rate, or total revenue—or
@@ -120,5 +156,32 @@ public class CampaignVariateSettings
 
     public void setReplyToAddresses(String replyToAddresses) {
         this.replyToAddresses = replyToAddresses;
+    }
+
+    /**
+     * Descriptions of possible email contents. To set campaign contents, make a PUT request to
+     * /campaigns/{campaign_id}/content with the field ‘variate_contents’.
+     *
+     * @return
+     */
+    public String getContents() {
+        return contents;
+    }
+
+    public void setContents(String contents) {
+        this.contents = contents;
+    }
+
+    /**
+     * Combinations of possible variables used to build emails.
+     *
+     * @return
+     */
+    public CampaignCombinatios getCombinatios() {
+        return combinatios;
+    }
+
+    public void setCombinatios(CampaignCombinatios combinatios) {
+        this.combinatios = combinatios;
     }
 }

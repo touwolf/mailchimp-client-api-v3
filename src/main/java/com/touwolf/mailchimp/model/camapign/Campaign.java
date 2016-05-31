@@ -1,5 +1,7 @@
 package com.touwolf.mailchimp.model.camapign;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.touwolf.mailchimp.MailchimpException;
 import com.touwolf.mailchimp.impl.MailchimpBuilder;
 import com.touwolf.mailchimp.model.MailchimpResponse;
@@ -15,6 +17,8 @@ import java.util.List;
 @Component
 public class Campaign
 {
+    private final Gson GSON = new GsonBuilder().setPrettyPrinting().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
+
     private MailchimpBuilder builder;
 
     public Campaign builder(MailchimpBuilder builder)
@@ -25,7 +29,8 @@ public class Campaign
 
     public MailchimpResponse<CampaignCreateResponse> create(CampaignCreateRequest request) throws MailchimpException
     {
-        return builder.post("/campaigns", "", CampaignCreateResponse.class);
+        String payload = GSON.toJson(request);
+        return builder.post("/campaigns", payload, CampaignCreateResponse.class);
     }
 
     public MailchimpResponse<CampaignReadResponse> read(CampaignReadRequest request) throws MailchimpException

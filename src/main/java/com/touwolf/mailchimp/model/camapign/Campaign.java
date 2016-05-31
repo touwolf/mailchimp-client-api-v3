@@ -8,6 +8,10 @@ import org.bridje.ioc.Component;
 
 import java.util.List;
 
+/**
+ * Campaigns are how you send emails to your MailChimp list. Use the Campaigns API calls to manage campaigns in your MailChimp account.
+ *
+ */
 @Component
 public class Campaign
 {

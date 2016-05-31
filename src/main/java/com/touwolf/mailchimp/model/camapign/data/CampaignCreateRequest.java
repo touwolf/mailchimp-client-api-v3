@@ -26,7 +26,7 @@ public class CampaignCreateRequest
     private CampaignReportSummary reportSummary;
 
     @SerializedName("delivery_status")
-    private String deliveryStatus;
+    private CampaignDeliveryStatus deliveryStatus;
 
     /**
      * There are four types of campaigns you can create in MailChimp. A/B Split campaigns have been deprecated and variate campaigns should be used instead.
@@ -144,11 +144,11 @@ public class CampaignCreateRequest
      *
      * @return
      */
-    public String getDeliveryStatus() {
+    public CampaignDeliveryStatus getDeliveryStatus() {
         return deliveryStatus;
     }
 
-    public void setDeliveryStatus(String deliveryStatus) {
+    public void setDeliveryStatus(CampaignDeliveryStatus deliveryStatus) {
         this.deliveryStatus = deliveryStatus;
     }
 }

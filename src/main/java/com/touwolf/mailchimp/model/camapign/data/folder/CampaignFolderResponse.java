@@ -1,7 +1,7 @@
 package com.touwolf.mailchimp.model.camapign.data.folder;
 
 import com.google.gson.annotations.SerializedName;
-import com.touwolf.mailchimp.model.global.Links;
+import com.touwolf.mailchimp.model.global.CampaignLinks;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ public class CampaignFolderResponse
     private Integer count;
 
     @SerializedName("_links")
-    private List<Links> links;
+    private List<CampaignLinks> links;
 
     /**
      * The name of the folder.
@@ -60,11 +60,11 @@ public class CampaignFolderResponse
      *
      * @return
      */
-    public List<Links> getLinks() {
+    public List<CampaignLinks> getLinks() {
         return links;
     }
 
-    public void setLinks(List<Links> links) {
+    public void setLinks(List<CampaignLinks> links) {
         this.links = links;
     }
 }

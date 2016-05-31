@@ -3,7 +3,7 @@ package com.touwolf.mailchimp.model.camapign;
 import com.touwolf.mailchimp.MailchimpException;
 import com.touwolf.mailchimp.impl.MailchimpBuilder;
 import com.touwolf.mailchimp.model.MailchimpResponse;
-import com.touwolf.mailchimp.model.camapign.data.*;
+import com.touwolf.mailchimp.model.camapign.data.folder.*;
 import org.bridje.ioc.Component;
 
 @Component
@@ -21,7 +21,7 @@ public class CampaignFolder
     {
         try
         {
-            return builder.post("/campaigns", "", CampaignFolderCreateResponse.class);
+            return builder.post("/campaign-folders", "", CampaignFolderCreateResponse.class);
         }
         catch (MailchimpException ex)
         {
@@ -30,7 +30,6 @@ public class CampaignFolder
 
         return null;
     }
-
 
     public MailchimpResponse<CampaignFolderReadResponse> read(CampaignFolderReadRequest request)
     {

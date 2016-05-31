@@ -1,5 +1,5 @@
 package com.touwolf.mailchimp.model.camapign.data;
 
-public class CampaignFolderReadResponse
+public class CampaignReadResponse
 {
 }

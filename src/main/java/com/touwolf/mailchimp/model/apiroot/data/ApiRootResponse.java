@@ -1,6 +1,7 @@
 package com.touwolf.mailchimp.model.apiroot.data;
 
 import com.google.gson.annotations.SerializedName;
+import com.touwolf.mailchimp.model.global.Links;
 
 public class ApiRootResponse
 {
@@ -34,7 +35,7 @@ public class ApiRootResponse
     private ApiRootIndustryStats industryStats;
 
     @SerializedName("_links")
-    private ApiRootLink[] links;
+    private Links[] links;
 
     /**
      * The MailChimp account id
@@ -171,11 +172,11 @@ public class ApiRootResponse
      *
      * @return
      */
-    public ApiRootLink[] getLinks() {
+    public Links[] getLinks() {
         return links;
     }
 
-    public void setLinks(ApiRootLink[] links) {
+    public void setLinks(Links[] links) {
         this.links = links;
     }
 }

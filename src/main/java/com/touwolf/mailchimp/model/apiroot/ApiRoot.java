@@ -23,7 +23,7 @@ public class ApiRoot
      *
      * @return
      */
-    public MailchimpResponse<ApiRootResponse> getApiRoot()
+    public MailchimpResponse<ApiRootResponse> getApiRoot() throws MailchimpException
     {
         return getApiRoot("", "");
     }
@@ -35,29 +35,20 @@ public class ApiRoot
      * @param excludeFields A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.
      * @return
      */
-    public MailchimpResponse<ApiRootResponse> getApiRoot(String fields, String excludeFields)
+    public MailchimpResponse<ApiRootResponse> getApiRoot(String fields, String excludeFields) throws MailchimpException
     {
-        try
+        String queryString = "";
+        if(StringUtils.isNotBlank(fields))
         {
-            String queryString = "";
-            if(StringUtils.isNotBlank(fields))
-            {
-                queryString += "?fields=" + fields;
-            }
-
-            if(StringUtils.isNotBlank(excludeFields))
-            {
-                queryString += StringUtils.isBlank(queryString) ?
-                        "?exclude_fields=" + excludeFields : "&exclude_fields=" + excludeFields;
-            }
-
-            return builder.get(queryString, ApiRootResponse.class);
-        }
-        catch (MailchimpException ex)
-        {
-
+            queryString += "?fields=" + fields;
         }
 
-        return null;
+        if(StringUtils.isNotBlank(excludeFields))
+        {
+            queryString += StringUtils.isBlank(queryString) ?
+                    "?exclude_fields=" + excludeFields : "&exclude_fields=" + excludeFields;
+        }
+
+        return builder.get(queryString, ApiRootResponse.class);
     }
 }

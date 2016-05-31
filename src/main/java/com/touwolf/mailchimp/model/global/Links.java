@@ -1,6 +1,6 @@
-package com.touwolf.mailchimp.model.apiroot.data;
+package com.touwolf.mailchimp.model.global;
 
-public class ApiRootLink
+public class Links
 {
     private String rel;
 

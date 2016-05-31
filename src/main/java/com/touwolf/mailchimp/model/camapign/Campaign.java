@@ -19,176 +19,68 @@ public class Campaign
         return this;
     }
 
-    public MailchimpResponse<CampaignCreateResponse> create(CampaignCreateRequest request)
+    public MailchimpResponse<CampaignCreateResponse> create(CampaignCreateRequest request) throws MailchimpException
     {
-        try
-        {
-            return builder.post("/campaigns", "", CampaignCreateResponse.class);
-        }
-        catch (MailchimpException ex)
-        {
-
-        }
-
-        return null;
+        return builder.post("/campaigns", "", CampaignCreateResponse.class);
     }
 
-    public MailchimpResponse<CampaignReadResponse> read(CampaignReadRequest request)
+    public MailchimpResponse<CampaignReadResponse> read(CampaignReadRequest request) throws MailchimpException
     {
         return read(null, request);
     }
 
-    public MailchimpResponse<CampaignReadResponse> read(String campaignId, CampaignReadRequest request)
+    public MailchimpResponse<CampaignReadResponse> read(String campaignId, CampaignReadRequest request) throws MailchimpException
     {
-        try
-        {
-            return builder.get("/campaigns", CampaignReadResponse.class);
-        }
-        catch (MailchimpException ex)
-        {
-
-        }
-
-        return null;
+        return builder.get("/campaigns", CampaignReadResponse.class);
     }
 
-    public MailchimpResponse<CampaignEditResponse> edit(String campaignId, CampaignEditRequest request)
+    public MailchimpResponse<CampaignEditResponse> edit(String campaignId, CampaignEditRequest request) throws MailchimpException
     {
-        try
-        {
-            return builder.patch("/campaigns", "", CampaignEditResponse.class);
-        }
-        catch (MailchimpException ex)
-        {
-
-        }
-
-        return null;
+        return builder.patch("/campaigns", "", CampaignEditResponse.class);
     }
 
-    public MailchimpResponse<Void> delete(String campaignId)
+    public MailchimpResponse<Void> delete(String campaignId) throws MailchimpException
     {
-        try
-        {
-            return builder.delete("/campaigns", Void.class);
-        }
-        catch (MailchimpException ex)
-        {
-
-        }
-
-        return null;
+        return builder.delete("/campaigns", Void.class);
     }
 
-    public MailchimpResponse<Void> cancelSend(String campaignId)
+    public MailchimpResponse<Void> cancelSend(String campaignId) throws MailchimpException
     {
-        try
-        {
-            return builder.post("/campaigns", Void.class);
-        }
-        catch (MailchimpException ex)
-        {
-
-        }
-
-        return null;
+        return builder.post("/campaigns", Void.class);
     }
 
-    public MailchimpResponse<Void> pause(String campaignId)
+    public MailchimpResponse<Void> pause(String campaignId) throws MailchimpException
     {
-        try
-        {
-            return builder.post("/campaigns", Void.class);
-        }
-        catch (MailchimpException ex)
-        {
-
-        }
-
-        return null;
+        return builder.post("/campaigns", Void.class);
     }
 
-    public MailchimpResponse<CampaignCreateResponse> replicate(String campaignId)
+    public MailchimpResponse<CampaignCreateResponse> replicate(String campaignId) throws MailchimpException
     {
-        try
-        {
-            return builder.post("/campaigns", CampaignCreateResponse.class);
-        }
-        catch (MailchimpException ex)
-        {
-
-        }
-
-        return null;
+        return builder.post("/campaigns", CampaignCreateResponse.class);
     }
 
-    public MailchimpResponse<Void> resume(String campaignId)
+    public MailchimpResponse<Void> resume(String campaignId) throws MailchimpException
     {
-        try
-        {
-            return builder.post("/campaigns", Void.class);
-        }
-        catch (MailchimpException ex)
-        {
-
-        }
-
-        return null;
+        return builder.post("/campaigns", Void.class);
     }
 
-    public MailchimpResponse<Void> schedule(String campaignId, CampaignScheduleRequest request)
+    public MailchimpResponse<Void> schedule(String campaignId, CampaignScheduleRequest request) throws MailchimpException
     {
-        try
-        {
-            return builder.post("/campaigns", Void.class);
-        }
-        catch (MailchimpException ex)
-        {
-
-        }
-
-        return null;
+        return builder.post("/campaigns", Void.class);
     }
 
-    public MailchimpResponse<Void> send(String campaignId)
+    public MailchimpResponse<Void> send(String campaignId) throws MailchimpException
     {
-        try
-        {
-            return builder.post("/campaigns", Void.class);
-        }
-        catch (MailchimpException ex)
-        {
-
-        }
-
-        return null;
+        return builder.post("/campaigns", Void.class);
     }
 
-    public MailchimpResponse<Void> test(String campaignId, List<String> testEmails, String sendType)
+    public MailchimpResponse<Void> test(String campaignId, List<String> testEmails, String sendType) throws MailchimpException
     {
-        try
-        {
-            return builder.post("/campaigns", Void.class);
-        }
-        catch (MailchimpException ex)
-        {
-
-        }
-
-        return null;
+        return builder.post("/campaigns", Void.class);
     }
 
-    public MailchimpResponse<Void> unschedule(String campaignId)
+    public MailchimpResponse<Void> unschedule(String campaignId) throws MailchimpException
     {
-        try
-        {
-            return builder.post("/campaigns", Void.class);
-        }
-        catch (MailchimpException ex)
-        {
-
-        }
-
-        return null;
+        return builder.post("/campaigns", Void.class);
     }
 }

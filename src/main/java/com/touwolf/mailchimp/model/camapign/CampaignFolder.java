@@ -39,6 +39,13 @@ public class CampaignFolder
         return builder.post("/campaign-folders", payload, CampaignFolderResponse.class);
     }
 
+    /**
+     * Get all campaign folders
+     *
+     * @param request Request body parameters
+     * @return
+     * @throws MailchimpException
+     */
     public MailchimpResponse<CampaignFolderReadResponse> read(CampaignFolderReadRequest request) throws MailchimpException
     {
         String url = "/campaign-folders";
@@ -50,6 +57,14 @@ public class CampaignFolder
         return builder.get(url, CampaignFolderReadResponse.class);
     }
 
+    /**
+     * Get a specific campaign folder
+     *
+     * @param folderId The unique id for the campaign folder.
+     * @param request Request body parameters
+     * @return
+     * @throws MailchimpException
+     */
     public MailchimpResponse<CampaignFolderResponse> read(String folderId, CampaignFolderReadRequest request) throws MailchimpException
     {
         if(StringUtils.isBlank(folderId))
@@ -64,6 +79,14 @@ public class CampaignFolder
         return builder.get(url, CampaignFolderResponse.class);
     }
 
+    /**
+     * Update a campaign folder
+     *
+     * @param folderId 	The unique id for the campaign folder.
+     * @param name Name to associate with the folder.
+     * @return
+     * @throws MailchimpException
+     */
     public MailchimpResponse<CampaignFolderResponse> edit(String folderId, String name) throws MailchimpException
     {
         if(StringUtils.isBlank(folderId))
@@ -80,6 +103,13 @@ public class CampaignFolder
         return builder.patch("/campaign-folders/" + folderId, payload, CampaignFolderResponse.class);
     }
 
+    /**
+     * Delete a campaign folder
+     *
+     * @param folderId 	The unique id for the campaign folder.
+     * @return
+     * @throws MailchimpException
+     */
     public MailchimpResponse<Void> delete(String folderId) throws MailchimpException
     {
         if(StringUtils.isBlank(folderId))

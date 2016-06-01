@@ -1,4 +1,4 @@
-package com.touwolf.mailchimp.model.global;
+package com.touwolf.mailchimp.model.camapign.data;
 
 import com.google.gson.annotations.SerializedName;
 

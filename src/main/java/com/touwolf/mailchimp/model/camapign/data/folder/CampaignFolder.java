@@ -1,7 +1,7 @@
 package com.touwolf.mailchimp.model.camapign.data.folder;
 
 import com.google.gson.annotations.SerializedName;
-import com.touwolf.mailchimp.model.global.CampaignLinks;
+import com.touwolf.mailchimp.model.camapign.data.CampaignLinks;
 
 import java.util.List;
 

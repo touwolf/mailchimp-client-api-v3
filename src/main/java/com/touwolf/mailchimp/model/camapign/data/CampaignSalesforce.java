@@ -1,13 +1,13 @@
-package com.touwolf.mailchimp.model.global;
+package com.touwolf.mailchimp.model.camapign.data;
 
-public class CampaignHighrise
+public class CampaignSalesforce
 {
     private Boolean campaign;
 
     private Boolean notes;
 
     /**
-     * Create a campaign in a connected Highrise account.
+     * Create a campaign in a connected Salesforce account.
      *
      * @return
      */

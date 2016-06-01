@@ -1,9 +1,8 @@
 package com.touwolf.mailchimp.model.camapign.data;
 
 import com.google.gson.annotations.SerializedName;
-import com.touwolf.mailchimp.model.global.*;
 
-public class CampaignCreateRequest
+public class CampaignRequest
 {
     private String type;
 

@@ -1,4 +1,4 @@
-package com.touwolf.mailchimp.model.global;
+package com.touwolf.mailchimp.model.camapign.data;
 
 public class CampaignDailySend
 {

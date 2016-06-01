@@ -2,7 +2,7 @@ package com.touwolf.mailchimp.model.campaign.data;
 
 import com.google.gson.annotations.SerializedName;
 
-public class CampaignRssOpts
+class CampaignRssOpts
 {
     private String feedUrl;
 
@@ -19,7 +19,6 @@ public class CampaignRssOpts
     /**
      * The URL for the RSS feed.
      *
-     * @return
      */
     public String getFeedUrl() {
         return feedUrl;
@@ -37,7 +36,6 @@ public class CampaignRssOpts
      * weekly
      * monthly
      *
-     * @return
      */
     public String getFrequency() {
         return frequency;
@@ -50,7 +48,6 @@ public class CampaignRssOpts
     /**
      * The schedule for sending the RSS Campaign.
      *
-     * @return
      */
     public CampaignSchedule getSchedule() {
         return schedule;
@@ -63,7 +60,6 @@ public class CampaignRssOpts
     /**
      * The date the campaign was last sent.
      *
-     * @return
      */
     public String getLastSent() {
         return lastSent;
@@ -76,7 +72,6 @@ public class CampaignRssOpts
     /**
      * Whether to add CSS to images in the RSS feed to constrain their width in campaigns.
      *
-     * @return
      */
     public Boolean getConstrainRssImg() {
         return constrainRssImg;

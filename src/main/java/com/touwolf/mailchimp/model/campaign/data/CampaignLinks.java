@@ -15,7 +15,6 @@ public class CampaignLinks
     /**
      * As with an HTML ‘rel’ attribute, this describes the type of link.
      *
-     * @return
      */
     public String getRel() {
         return rel;
@@ -28,7 +27,6 @@ public class CampaignLinks
     /**
      * This property contains a fully-qualified URL that can be called to retrieve the linked resource or perform the linked action.
      *
-     * @return
      */
     public String getHref() {
         return href;
@@ -51,7 +49,6 @@ public class CampaignLinks
      * OPTIONS
      * HEAD
      *
-     * @return
      */
     public String getMethod() {
         return method;
@@ -64,7 +61,6 @@ public class CampaignLinks
     /**
      * For GETs, this is a URL representing the schema that the response should conform to.
      *
-     * @return
      */
     public String getTargetSchema() {
         return targetSchema;
@@ -77,7 +73,6 @@ public class CampaignLinks
     /**
      * For HTTP methods that can receive bodies (POST and PUT), this is a URL representing the schema that the body should conform to.
      *
-     * @return
      */
     public String getSchema() {
         return schema;

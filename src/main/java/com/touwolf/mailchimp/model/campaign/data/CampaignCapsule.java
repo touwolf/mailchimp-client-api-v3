@@ -1,13 +1,12 @@
 package com.touwolf.mailchimp.model.campaign.data;
 
-public class CampaignCapsule
+class CampaignCapsule
 {
     private Boolean notes;
 
     /**
      * Update contact notes for a campaign based on subscriber email addresses. 
      *
-     * @return
      */
     public Boolean getNotes() {
         return notes;

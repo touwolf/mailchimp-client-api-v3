@@ -13,7 +13,6 @@ public class CampaignFolderReadRequest
     /**
      * A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.
      *
-     * @return
      */
     public String getFields() {
         return fields;
@@ -26,7 +25,6 @@ public class CampaignFolderReadRequest
     /**
      * A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.
      *
-     * @return
      */
     public String getExcludeFields() {
         return excludeFields;
@@ -39,7 +37,6 @@ public class CampaignFolderReadRequest
     /**
      * The number of records to return.
      *
-     * @return
      */
     public Integer getCount() {
         return count;
@@ -52,7 +49,6 @@ public class CampaignFolderReadRequest
     /**
      * The number of records from a collection to skip. Iterating over large collections with this parameter can be slow.
      *
-     * @return
      */
     public Integer getOffset() {
         return offset;

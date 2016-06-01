@@ -1,6 +1,6 @@
 package com.touwolf.mailchimp.model.campaign.data;
 
-public class CampaignSalesforce
+class CampaignSalesforce
 {
     private Boolean campaign;
 
@@ -9,7 +9,6 @@ public class CampaignSalesforce
     /**
      * Create a campaign in a connected Salesforce account.
      *
-     * @return
      */
     public Boolean getCampaign() {
         return campaign;
@@ -22,7 +21,6 @@ public class CampaignSalesforce
     /**
      * Update contact notes for a campaign based on subscriber email addresses.
      *
-     * @return
      */
     public Boolean getNotes() {
         return notes;

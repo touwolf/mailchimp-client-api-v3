@@ -2,7 +2,7 @@ package com.touwolf.mailchimp.model.campaign.data;
 
 import com.google.gson.annotations.SerializedName;
 
-public class CampaignAbSplitOpts
+class CampaignAbSplitOpts
 {
     @SerializedName("split_test")
     private String splitTest;
@@ -54,7 +54,6 @@ public class CampaignAbSplitOpts
      * from_name
      * schedule
      *
-     * @return
      */
     public String getSplitTest() {
         return splitTest;
@@ -71,7 +70,6 @@ public class CampaignAbSplitOpts
      * clicks
      * manual
      *
-     * @return
      */
     public String getPickWinner() {
         return pickWinner;
@@ -87,7 +85,6 @@ public class CampaignAbSplitOpts
      * hours
      * days
      *
-     * @return
      */
     public String getWaitUnits() {
         return waitUnits;
@@ -100,7 +97,6 @@ public class CampaignAbSplitOpts
     /**
      * The amount of time to wait before picking a winner. This cannot be changed after a campaign is sent.
      *
-     * @return
      */
     public Integer getWaitTime() {
         return waitTime;
@@ -114,7 +110,6 @@ public class CampaignAbSplitOpts
      * The size of the split groups. Campaigns split based on ‘schedule’ are forced to have a 50⁄50 split.
      * Valid split integers are between 1-50.
      *
-     * @return
      */
     public Integer getSplitSize() {
         return splitSize;
@@ -127,7 +122,6 @@ public class CampaignAbSplitOpts
     /**
      * For campaigns split on ‘From Name’, the name for Group A.
      *
-     * @return
      */
     public String getFromNameA() {
         return fromNameA;
@@ -140,7 +134,6 @@ public class CampaignAbSplitOpts
     /**
      * For campaigns split on ‘From Name’, the name for Group B.
      *
-     * @return
      */
     public String getFromNameB() {
         return fromNameB;
@@ -153,7 +146,6 @@ public class CampaignAbSplitOpts
     /**
      * For campaigns split on ‘From Name’, the reply-to address for Group A.
      *
-     * @return
      */
     public String getReplyEmailA() {
         return replyEmailA;
@@ -166,9 +158,7 @@ public class CampaignAbSplitOpts
     /**
      * For campaigns split on ‘From Name’, the reply-to address for Group B.
      *
-     * @return
      */
-
     public String getReplyEmailB() {
         return replyEmailB;
     }
@@ -180,7 +170,6 @@ public class CampaignAbSplitOpts
     /**
      * For campaigns split on ‘Subject Line’, the subject line for Group A.
      *
-     * @return
      */
     public String getSubjectA() {
         return subjectA;
@@ -192,8 +181,7 @@ public class CampaignAbSplitOpts
 
     /**
      * For campaigns split on ‘Subject Line’, the subject line for Group B.
-     *
-     * @return
+     *return
      */
     public String getSubjectB() {
         return subjectB;
@@ -206,7 +194,6 @@ public class CampaignAbSplitOpts
     /**
      * The send time for Group A.
      *
-     * @return
      */
     public String getSendTimeA() {
         return sendTimeA;
@@ -219,7 +206,6 @@ public class CampaignAbSplitOpts
     /**
      * The send time for Group B.
      *
-     * @return
      */
     public String getSendTimeB() {
         return sendTimeB;
@@ -232,7 +218,6 @@ public class CampaignAbSplitOpts
     /**
      * The send time for the winning version.
      *
-     * @return
      */
     public String getSendTimeWinner() {
         return sendTimeWinner;

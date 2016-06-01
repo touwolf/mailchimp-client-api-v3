@@ -2,7 +2,7 @@ package com.touwolf.mailchimp.model.campaign.data;
 
 import com.google.gson.annotations.SerializedName;
 
-public class CampaignSchedule
+class CampaignSchedule
 {
     private Integer hour;
 
@@ -19,7 +19,6 @@ public class CampaignSchedule
      * The hour to send the campaign in local time. Acceptable hours are 0-23. For example, ‘4’
      * would be 4am in your account’s default time zone.
      *
-     * @return
      */
     public Integer getHour() {
         return hour;
@@ -32,7 +31,6 @@ public class CampaignSchedule
     /**
      * The days of the week to send a daily RSS Campaign.
      *
-     * @return
      */
     public CampaignDailySend getDailySend() {
         return dailySend;
@@ -54,7 +52,6 @@ public class CampaignSchedule
      * friday
      * saturday
      *
-     * @return
      */
     public String getWeeklySendDay() {
         return weeklySendDay;
@@ -69,7 +66,6 @@ public class CampaignSchedule
      * Months with fewer than the selected number of days will not have an RSS campaign sent out that day.
      * For example, RSS Campaigns set to send on the 30th will not go out in February.
      *
-     * @return
      */
     public Integer getMonthlySendDate() {
         return monthlySendDate;

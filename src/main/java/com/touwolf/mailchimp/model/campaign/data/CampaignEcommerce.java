@@ -2,10 +2,7 @@ package com.touwolf.mailchimp.model.campaign.data;
 
 import com.google.gson.annotations.SerializedName;
 
-/**
- * Created by gorums on 31/05/16.
- */
-public class CampaignEcommerce
+class CampaignEcommerce
 {
     @SerializedName("total_orders")
     private Integer totalOrders;
@@ -19,7 +16,6 @@ public class CampaignEcommerce
     /**
      * The total orders for a campaign.
      *
-     * @return
      */
     public Integer getTotalOrders() {
         return totalOrders;
@@ -32,7 +28,6 @@ public class CampaignEcommerce
     /**
      * The total spent for a campaign. Calculated as the sum of all order totals with no deductions.
      *
-     * @return
      */
     public Integer getTotalSpent() {
         return totalSpent;
@@ -45,7 +40,6 @@ public class CampaignEcommerce
     /**
      * The total revenue for a campaign. Calculated as the sum of all order totals minus shipping and tax totals.
      *
-     * @return
      */
     public Integer getTotalRevenue() {
         return totalRevenue;

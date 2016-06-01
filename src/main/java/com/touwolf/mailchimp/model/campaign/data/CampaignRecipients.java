@@ -2,7 +2,7 @@ package com.touwolf.mailchimp.model.campaign.data;
 
 import com.google.gson.annotations.SerializedName;
 
-public class CampaignRecipients
+class CampaignRecipients
 {
     @SerializedName("list_id")
     private String listId;
@@ -19,7 +19,6 @@ public class CampaignRecipients
     /**
      * The unique list id.
      *
-     * @return
      */
     public String getListId() {
         return listId;
@@ -32,7 +31,6 @@ public class CampaignRecipients
     /**
      * An object representing all segmentation options.
      *
-     * @return
      */
     public CampaignSegmentOpts getSegmentOpts() {
         return segmentOpts;
@@ -45,7 +43,6 @@ public class CampaignRecipients
     /**
      * The name of the list.
      *
-     * @return
      */
     public String getListName() {
         return listName;
@@ -58,7 +55,6 @@ public class CampaignRecipients
     /**
      * A description of the segment used for the campaign. Formatted as a string marked up with HTML.
      *
-     * @return
      */
     public String getSegmentText() {
         return segmentText;

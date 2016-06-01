@@ -2,7 +2,7 @@ package com.touwolf.mailchimp.model.campaign.data;
 
 import com.google.gson.annotations.SerializedName;
 
-public class CampaignCombinatios
+class CampaignCombinatios
 {
     private String id;
 
@@ -26,7 +26,6 @@ public class CampaignCombinatios
     /**
      * Unique ID for the combination.
      *
-     * @return
      */
     public String getId() {
         return id;
@@ -39,7 +38,6 @@ public class CampaignCombinatios
     /**
      * The index of variate_settings.subject_lines used.
      *
-     * @return
      */
     public Integer getSubjectLine() {
         return subjectLine;
@@ -52,7 +50,6 @@ public class CampaignCombinatios
     /**
      * The index of variate_settings.send_times used.
      *
-     * @return
      */
     public Integer getSendTime() {
         return sendTime;
@@ -65,7 +62,6 @@ public class CampaignCombinatios
     /**
      * The index of variate_settings.from_names used.
      *
-     * @return
      */
     public Integer getFromName() {
         return fromName;
@@ -78,7 +74,6 @@ public class CampaignCombinatios
     /**
      * The index of variate_settings.reply_to_addresses used.
      *
-     * @return
      */
     public Integer getReplyTo() {
         return replyTo;
@@ -90,7 +85,7 @@ public class CampaignCombinatios
 
     /**
      * The index of variate_settings.contents used.
-     * @return
+     *
      */
     public Integer getContentDescription() {
         return contentDescription;
@@ -103,7 +98,6 @@ public class CampaignCombinatios
     /**
      * The number of recipients for this combination.
      *
-     * @return
      */
     public Integer getRecipients() {
         return recipients;

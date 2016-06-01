@@ -2,7 +2,7 @@ package com.touwolf.mailchimp.model.campaign.data;
 
 import com.google.gson.annotations.SerializedName;
 
-public class CampaignSettings
+class CampaignSettings
 {
     @SerializedName("subject_line")
     private String subjectLine;
@@ -50,7 +50,6 @@ public class CampaignSettings
     /**
      * The subject line for the campaign.
      *
-     * @return
      */
     public String getSubjectLine() {
         return subjectLine;
@@ -63,7 +62,6 @@ public class CampaignSettings
     /**
      * The title of the campaign.
      *
-     * @return
      */
     public String getTitle() {
         return title;
@@ -76,7 +74,6 @@ public class CampaignSettings
     /**
      * The ‘from’ name on the campaign (not an email address).
      *
-     * @return
      */
     public String getFromName() {
         return fromName;
@@ -89,7 +86,6 @@ public class CampaignSettings
     /**
      * The reply-to email address for the campaign.
      *
-     * @return
      */
     public String getReplyTo() {
         return replyTo;
@@ -102,7 +98,6 @@ public class CampaignSettings
     /**
      * Use MailChimp Conversation feature to manage out-of-office replies.
      *
-     * @return
      */
     public Boolean getUseConversation() {
         return useConversation;
@@ -115,7 +110,6 @@ public class CampaignSettings
     /**
      * The campaign’s custom ‘To’ name. Typically the first name merge field.
      *
-     * @return
      */
     public String getToName() {
         return toName;
@@ -128,7 +122,6 @@ public class CampaignSettings
     /**
      * If the campaign is listed in a folder, the id for that folder.
      *
-     * @return
      */
     public String getFolderId() {
         return folderId;
@@ -141,7 +134,6 @@ public class CampaignSettings
     /**
      * Whether MailChimp authenticated the campaign. Defaults to true.
      *
-     * @return
      */
     public Boolean getAuthenticate() {
         return authenticate;
@@ -154,7 +146,6 @@ public class CampaignSettings
     /**
      * Automatically append MailChimp’s default footer to the campaign.
      *
-     * @return
      */
     public Boolean getAutoFooter() {
         return autoFooter;
@@ -167,7 +158,6 @@ public class CampaignSettings
     /**
      * Automatically inline the CSS included with the campaign content.
      *
-     * @return
      */
     public Boolean getInlineCss() {
         return inlineCss;
@@ -180,7 +170,6 @@ public class CampaignSettings
     /**
      * Automatically tweet a link to the campaign archive page when the campaign is sent.
      *
-     * @return
      */
     public Boolean getAutoTweet() {
         return autoTweet;
@@ -193,7 +182,6 @@ public class CampaignSettings
     /**
      * An array of Facebook page ids to auto-post to.
      *
-     * @return
      */
     public String getAutoFbPost() {
         return autoFbPost;
@@ -206,7 +194,6 @@ public class CampaignSettings
     /**
      * Allows Facebook comments on the campaign (also force-enables the Campaign Archive toolbar). Defaults to true.
      *
-     * @return
      */
     public Boolean getFbComments() {
         return fbComments;
@@ -219,7 +206,6 @@ public class CampaignSettings
     /**
      * Send this campaign using Timewarp.
      *
-     * @return
      */
     public Boolean getTimewarp() {
         return timewarp;
@@ -232,7 +218,6 @@ public class CampaignSettings
     /**
      * The id for the template used in this campaign.
      *
-     * @return
      */
     public Integer getTemplateId() {
         return templateId;
@@ -245,7 +230,6 @@ public class CampaignSettings
     /**
      * Whether the campaign uses the drag-and-drop editor.
      *
-     * @return
      */
     public Boolean getDragAndDrop() {
         return dragAndDrop;

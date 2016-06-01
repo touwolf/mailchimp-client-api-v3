@@ -5,7 +5,7 @@ import com.touwolf.mailchimp.model.campaign.data.CampaignLinks;
 
 import java.util.List;
 
-public class CampaignFolder
+class CampaignFolder
 {
     private String name;
 
@@ -19,7 +19,6 @@ public class CampaignFolder
     /**
      * The name of the folder.
      *
-     * @return
      */
     public String getName() {
         return name;
@@ -32,7 +31,6 @@ public class CampaignFolder
     /**
      * A string that uniquely identifies this campaign folder.
      *
-     * @return
      */
     public String getId() {
         return id;
@@ -45,7 +43,6 @@ public class CampaignFolder
     /**
      * The number of campaigns in the folder.
      *
-     * @return
      */
     public Integer getCount() {
         return count;
@@ -58,7 +55,6 @@ public class CampaignFolder
     /**
      * A list of link types and descriptions for the API schema documents.
      *
-     * @return
      */
     public List<CampaignLinks> getLinks() {
         return links;

@@ -1,6 +1,6 @@
 package com.touwolf.mailchimp.model.campaign.data;
 
-public class CampaignDailySend
+class CampaignDailySend
 {
     private Boolean sunday;
 
@@ -19,7 +19,6 @@ public class CampaignDailySend
     /**
      * Sends the daily RSS Campaign on Sundays.
      *
-     * @return
      */
     public Boolean getSunday() {
         return sunday;
@@ -32,7 +31,6 @@ public class CampaignDailySend
     /**
      * Sends the daily RSS Campaign on Mondays.
      *
-     * @return
      */
     public Boolean getMonday() {
         return monday;
@@ -45,7 +43,6 @@ public class CampaignDailySend
     /**
      * Sends the daily RSS Campaign on Tuesdays.
      *
-     * @return
      */
     public Boolean getTuesday() {
         return tuesday;
@@ -58,7 +55,6 @@ public class CampaignDailySend
     /**
      * Sends the daily RSS Campaign on Wednesdays.
      *
-     * @return
      */
     public Boolean getWednesday() {
         return wednesday;
@@ -71,7 +67,6 @@ public class CampaignDailySend
     /**
      * Sends the daily RSS Campaign on Thursdays.
      *
-     * @return
      */
     public Boolean getThursday() {
         return thursday;
@@ -84,7 +79,6 @@ public class CampaignDailySend
     /**
      * Sends the daily RSS Campaign on Fridays.
      *
-     * @return
      */
     public Boolean getFriday() {
         return friday;
@@ -97,7 +91,6 @@ public class CampaignDailySend
     /**
      * Sends the daily RSS Campaign on Saturdays.
      *
-     * @return
      */
     public Boolean getSaturday() {
         return saturday;

@@ -2,7 +2,7 @@ package com.touwolf.mailchimp.model.campaign.data;
 
 import com.google.gson.annotations.SerializedName;
 
-public class CampaignDeliveryStatus
+class CampaignDeliveryStatus
 {
     private Boolean enabled;
 
@@ -20,7 +20,6 @@ public class CampaignDeliveryStatus
     /**
      * Whether Campaign Delivery Status is enabled for this account and campaign.
      *
-     * @return
      */
     public Boolean getEnabled() {
         return enabled;
@@ -33,7 +32,6 @@ public class CampaignDeliveryStatus
     /**
      * Whether a campaign send can be canceled.
      *
-     * @return
      */
     public Boolean getCanCancel() {
         return canCancel;
@@ -46,7 +44,6 @@ public class CampaignDeliveryStatus
     /**
      * The current state of a campaign delivery.
      *
-     * @return
      */
     public String getStatus() {
         return status;
@@ -59,7 +56,6 @@ public class CampaignDeliveryStatus
     /**
      * The total number of emails confirmed sent for this campaign so far.
      *
-     * @return
      */
     public Integer getEmailsSent() {
         return emailsSent;
@@ -72,7 +68,6 @@ public class CampaignDeliveryStatus
     /**
      * The total number of emails canceled for this campaign.
      *
-     * @return
      */
     public Integer getEmailsCanceled() {
         return emailsCanceled;

@@ -2,7 +2,7 @@ package com.touwolf.mailchimp.model.campaign.data;
 
 import com.google.gson.annotations.SerializedName;
 
-public class CampaignVariateSettings
+class CampaignVariateSettings
 {
     @SerializedName("winning_combination_id")
     private String winningCombinationId;
@@ -38,7 +38,6 @@ public class CampaignVariateSettings
     /**
      * ID for the winning combination.
      *
-     * @return
      */
     public String getWinningCombinationId() {
         return winningCombinationId;
@@ -51,7 +50,6 @@ public class CampaignVariateSettings
     /**
      * ID of the campaign that was sent to the remaining recipients based on the winning combination.
      *
-     * @return
      */
     public String getWinningCampaignId() {
         return winningCampaignId;
@@ -67,7 +65,6 @@ public class CampaignVariateSettings
      * winner_critera is ignored. For Multivariate Campaigns with ‘manual’ as the winner_citeria, the winner must be chosen in
      * the MailChimp web application.
      *
-     * @return
      */
     public String getWinnerCriteria() {
         return winnerCriteria;
@@ -80,7 +77,6 @@ public class CampaignVariateSettings
     /**
      *  The number of minutes to wait before choosing the winning campaign. The value of wait_time must be greater than 0 and in whole hours, specified in minutes.
      *
-     * @return
      */
     public Integer getWaitTime() {
         return waitTime;
@@ -93,7 +89,6 @@ public class CampaignVariateSettings
     /**
      * The percentage of recipients to send the test combinations to, must be a value between 10 and 100.
      *
-     * @return
      */
     public Integer getTestSize() {
         return testSize;
@@ -106,7 +101,6 @@ public class CampaignVariateSettings
     /**
      * The possible subject lines to test. If no subject lines are provided, settings.subject_line will be used.
      *
-     * @return
      */
     public String getSubjectLines() {
         return subjectLines;
@@ -120,7 +114,6 @@ public class CampaignVariateSettings
      * The possible send times to test. The times provided should be in the format YYYY-MM-DD HH:MM:SS.
      * If send_times are provided to test, the test_size will be set to 100% and winner_criteria will be ignored.
      *
-     * @return
      */
     public String getSendTime() {
         return sendTime;
@@ -134,7 +127,6 @@ public class CampaignVariateSettings
      * The possible from names. The number of from_names provided must match the number of reply_to_addresses.
      * If no from_names are provided, settings.from_name will be used.
      *
-     * @return
      */
     public String getFrom_names() {
         return from_names;
@@ -148,7 +140,6 @@ public class CampaignVariateSettings
      * The possible reply-to addresses. The number of reply_to_addresses provided must match the number of from_names.
      * If no reply_to_addresses are provided, settings.reply_to will be used.
      *
-     * @return
      */
     public String getReplyToAddresses() {
         return replyToAddresses;
@@ -162,7 +153,6 @@ public class CampaignVariateSettings
      * Descriptions of possible email contents. To set campaign contents, make a PUT request to
      * /campaigns/{campaign_id}/content with the field ‘variate_contents’.
      *
-     * @return
      */
     public String getContents() {
         return contents;
@@ -175,7 +165,6 @@ public class CampaignVariateSettings
     /**
      * Combinations of possible variables used to build emails.
      *
-     * @return
      */
     public CampaignCombinatios getCombinatios() {
         return combinatios;

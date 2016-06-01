@@ -2,9 +2,8 @@ package com.touwolf.mailchimp.model.campaign.data;
 
 import com.google.gson.annotations.SerializedName;
 
-public class CampaignTracking
+class CampaignTracking
 {
-
     private Boolean opens;
 
     @SerializedName("html_clicks")
@@ -32,7 +31,6 @@ public class CampaignTracking
     /**
      * Whether to track opens. Defaults to true. Cannot be set to false for variate campaigns.
      *
-     * @return
      */
     public Boolean getOpens() {
         return opens;
@@ -45,7 +43,6 @@ public class CampaignTracking
     /**
      * Whether to track clicks in the HTML version of the campaign. Defaults to true. Cannot be set to false for variate campaigns.
      *
-     * @return
      */
     public Boolean getHtmlClicks() {
         return htmlClicks;
@@ -58,7 +55,6 @@ public class CampaignTracking
     /**
      * Whether to track clicks in the plain-text version of the campaign. Defaults to true. Cannot be set to false for variate campaigns.
      *
-     * @return
      */
     public Boolean getTextClicks() {
         return textClicks;
@@ -71,7 +67,6 @@ public class CampaignTracking
     /**
      * Whether to enable Goal tracking.
      *
-     * @return
      */
     public Boolean getGoalTracking() {
         return goalTracking;
@@ -84,7 +79,6 @@ public class CampaignTracking
     /**
      * Whether to enable eCommerce360 tracking.
      *
-     * @return
      */
     public Boolean getEcomm360() {
         return ecomm360;
@@ -97,7 +91,6 @@ public class CampaignTracking
     /**
      * The custom slug for Google Analytics tracking (max of 50 bytes).
      *
-     * @return
      */
     public String getGoogleAnalytics() {
         return googleAnalytics;
@@ -110,7 +103,6 @@ public class CampaignTracking
     /**
      * The custom slug for ClickTale tracking (max of 50 bytes).
      *
-     * @return
      */
     public String getClicktale() {
         return clicktale;
@@ -123,7 +115,6 @@ public class CampaignTracking
     /**
      * Salesforce tracking options for a campaign. Must be using MailChimp’s built-in Salesforce integration.
      *
-     * @return
      */
     public CampaignSalesforce getSalesforce() {
         return salesforce;
@@ -136,7 +127,6 @@ public class CampaignTracking
     /**
      * Highrise tracking options for a campaign. Must be using MailChimp’s built-in Highrise integration.
      *
-     * @return
      */
     public CampaignHighrise getHighrise() {
         return highrise;
@@ -150,7 +140,6 @@ public class CampaignTracking
     /**
      * Capsule tracking options for a campaign. Must be using MailChimp’s built-in Capsule integration.
      *
-     * @return
      */
     public CampaignCapsule getCapsule() {
         return capsule;

@@ -1,6 +1,6 @@
 package com.touwolf.mailchimp.model.campaign.data;
 
-public class CampaignHighrise
+class CampaignHighrise
 {
     private Boolean campaign;
 
@@ -9,7 +9,6 @@ public class CampaignHighrise
     /**
      * Create a campaign in a connected Highrise account.
      *
-     * @return
      */
     public Boolean getCampaign() {
         return campaign;
@@ -22,7 +21,6 @@ public class CampaignHighrise
     /**
      * Update contact notes for a campaign based on subscriber email addresses.
      *
-     * @return
      */
     public Boolean getNotes() {
         return notes;

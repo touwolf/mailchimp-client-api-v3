@@ -2,7 +2,7 @@ package com.touwolf.mailchimp.model.campaign.data;
 
 import com.google.gson.annotations.SerializedName;
 
-public class CampaignReportSummary
+class CampaignReportSummary
 {
     private Integer opens;
 
@@ -26,7 +26,6 @@ public class CampaignReportSummary
     /**
      * The total number of opens for a campaign.
      *
-     * @return
      */
     public Integer getOpens() {
         return opens;
@@ -39,7 +38,6 @@ public class CampaignReportSummary
     /**
      * The number of unique opens.
      *
-     * @return
      */
     public Integer getUniqueOpens() {
         return uniqueOpens;
@@ -52,7 +50,6 @@ public class CampaignReportSummary
     /**
      * The number of unique opens divided by the total number of successful deliveries.
      *
-     * @return
      */
     public Integer getOpenRate() {
         return openRate;
@@ -65,7 +62,6 @@ public class CampaignReportSummary
     /**
      * The total number of clicks for an campaign.
      *
-     * @return
      */
     public Integer getClicks() {
         return clicks;
@@ -78,7 +74,6 @@ public class CampaignReportSummary
     /**
      * The number of unique clicks.
      *
-     * @return
      */
     public Integer getSubscriberClicks() {
         return subscriberClicks;
@@ -91,7 +86,6 @@ public class CampaignReportSummary
     /**
      * The number of unique clicks divided by the total number of successful deliveries.
      *
-     * @return
      */
     public Integer getClickRate() {
         return clickRate;
@@ -104,7 +98,6 @@ public class CampaignReportSummary
     /**
      * E-Commerce stats for a campaign.
      *
-     * @return
      */
     public CampaignEcommerce getEcommerce() {
         return ecommerce;

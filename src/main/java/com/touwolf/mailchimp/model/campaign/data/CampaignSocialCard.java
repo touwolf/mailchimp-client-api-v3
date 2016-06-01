@@ -2,7 +2,7 @@ package com.touwolf.mailchimp.model.campaign.data;
 
 import com.google.gson.annotations.SerializedName;
 
-public class CampaignSocialCard
+class CampaignSocialCard
 {
     @SerializedName("image_url")
     private String imageUrl;
@@ -16,7 +16,6 @@ public class CampaignSocialCard
     /**
      * The url for the header image for the card.
      *
-     * @return
      */
     public String getImageUrl() {
         return imageUrl;
@@ -29,7 +28,6 @@ public class CampaignSocialCard
     /**
      * A short summary of the campaign to display.
      *
-     * @return
      */
     public String getDescription() {
         return description;
@@ -42,7 +40,6 @@ public class CampaignSocialCard
     /**
      * The title for the card. Typically the subject line of the campaign.
      *
-     * @return
      */
     public String getTitle() {
         return title;

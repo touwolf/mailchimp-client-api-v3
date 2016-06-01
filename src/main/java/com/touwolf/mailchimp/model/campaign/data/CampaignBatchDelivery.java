@@ -2,7 +2,7 @@ package com.touwolf.mailchimp.model.campaign.data;
 
 import com.google.gson.annotations.SerializedName;
 
-public class CampaignBatchDelivery
+class CampaignBatchDelivery
 {
     @SerializedName("batch_delay")
     private Integer batchDelay;
@@ -13,7 +13,6 @@ public class CampaignBatchDelivery
     /**
      * The delay, in minutes, between batches.
      *
-     * @return
      */
     public Integer getBatchDelay() {
         return batchDelay;
@@ -26,7 +25,6 @@ public class CampaignBatchDelivery
     /**
      * The number of batches for the campaign send.
      *
-     * @return
      */
     public Integer getBatchCount() {
         return batchCount;

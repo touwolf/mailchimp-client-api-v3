@@ -1,9 +1,7 @@
 package com.touwolf.mailchimp;
 
 import com.touwolf.mailchimp.model.apiroot.ApiRoot;
-import com.touwolf.mailchimp.model.campaign.Campaign;
-import com.touwolf.mailchimp.model.campaign.CampaignContent;
-import com.touwolf.mailchimp.model.campaign.CampaignFolder;
+import com.touwolf.mailchimp.model.campaign.*;
 
 public interface MailchimpClient
 {
@@ -32,4 +30,16 @@ public interface MailchimpClient
      *
      */
     CampaignContent campaignContent();
+
+    /**
+     * Post comments, reply to team feedback, and send test emails while you’re working together on a MailChimp campaign.
+     *
+     */
+    CampaignFeedback campaignFeedback();
+
+    /**
+     * Review the send checklist for your campaign, and resolve any issues before sending.
+     *
+     */
+    CampaignSendChecklist campaignSendChecklist();
 }

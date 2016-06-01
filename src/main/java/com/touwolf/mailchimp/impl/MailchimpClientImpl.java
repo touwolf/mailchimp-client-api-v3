@@ -2,9 +2,7 @@ package com.touwolf.mailchimp.impl;
 
 import com.touwolf.mailchimp.MailchimpClient;
 import com.touwolf.mailchimp.model.apiroot.ApiRoot;
-import com.touwolf.mailchimp.model.campaign.Campaign;
-import com.touwolf.mailchimp.model.campaign.CampaignContent;
-import com.touwolf.mailchimp.model.campaign.CampaignFolder;
+import com.touwolf.mailchimp.model.campaign.*;
 import org.bridje.ioc.Ioc;
 
 public class MailchimpClientImpl implements MailchimpClient
@@ -18,6 +16,10 @@ public class MailchimpClientImpl implements MailchimpClient
     private Campaign campaign;
 
     private CampaignContent campaignContent;
+
+    private CampaignFeedback campaignFeedback;
+
+    private CampaignSendChecklist campaignSendChecklist;
 
     public MailchimpClientImpl(String username, String apiKey)
     {
@@ -47,6 +49,17 @@ public class MailchimpClientImpl implements MailchimpClient
         return getCampaignContent().builder(builder);
     }
 
+    @Override
+    public CampaignFeedback campaignFeedback()
+    {
+        return getCampaignFeedback().builder(builder);
+    }
+
+    @Override
+    public CampaignSendChecklist campaignSendChecklist()
+    {
+        return getCampaignSendChecklist().builder(builder);
+    }
 
     private ApiRoot getApiRoot()
     {
@@ -86,5 +99,25 @@ public class MailchimpClientImpl implements MailchimpClient
         }
 
         return campaignContent;
+    }
+
+    private CampaignFeedback getCampaignFeedback()
+    {
+        if(null == campaignFeedback)
+        {
+            campaignFeedback = Ioc.context().find(CampaignFeedback.class);
+        }
+
+        return campaignFeedback;
+    }
+
+    private CampaignSendChecklist getCampaignSendChecklist()
+    {
+        if(null == campaignSendChecklist)
+        {
+            campaignSendChecklist = Ioc.context().find(CampaignSendChecklist.class);
+        }
+
+        return campaignSendChecklist;
     }
 }

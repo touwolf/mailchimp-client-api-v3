@@ -3,6 +3,7 @@ package com.touwolf.mailchimp.impl;
 import com.touwolf.mailchimp.MailchimpClient;
 import com.touwolf.mailchimp.model.apiroot.ApiRoot;
 import com.touwolf.mailchimp.model.campaign.Campaign;
+import com.touwolf.mailchimp.model.campaign.CampaignContent;
 import com.touwolf.mailchimp.model.campaign.CampaignFolder;
 import org.bridje.ioc.Ioc;
 
@@ -15,6 +16,8 @@ public class MailchimpClientImpl implements MailchimpClient
     private CampaignFolder campaignFolder;
 
     private Campaign campaign;
+
+    private CampaignContent campaignContent;
 
     public MailchimpClientImpl(String username, String apiKey)
     {
@@ -38,6 +41,12 @@ public class MailchimpClientImpl implements MailchimpClient
     {
         return getCampaign().builder(builder);
     }
+
+    @Override
+    public CampaignContent campaignContent() {
+        return getCampaignContent().builder(builder);
+    }
+
 
     private ApiRoot getApiRoot()
     {
@@ -67,5 +76,15 @@ public class MailchimpClientImpl implements MailchimpClient
         }
 
         return campaign;
+    }
+
+    private CampaignContent getCampaignContent()
+    {
+        if(null == campaignContent)
+        {
+            campaignContent = Ioc.context().find(CampaignContent.class);
+        }
+
+        return campaignContent;
     }
 }

@@ -50,6 +50,13 @@ public class CampaignContent
         return builder.get(url, CampaignContentResponse.class);
     }
 
+    /**
+     * Set campaign content
+     * @param campaignId The unique id for the campaign.
+     * @param request Request body parameters
+     *
+     * @throws MailchimpException
+     */
     public MailchimpResponse<CampaignContentResponse> edit(String campaignId, CampaignContentRequest request) throws MailchimpException
     {
         if(StringUtils.isBlank(campaignId))

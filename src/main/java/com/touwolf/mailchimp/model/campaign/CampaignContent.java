@@ -6,6 +6,7 @@ import com.touwolf.mailchimp.MailchimpException;
 import com.touwolf.mailchimp.impl.MailchimpBuilder;
 import com.touwolf.mailchimp.impl.MailchimpUtils;
 import com.touwolf.mailchimp.model.MailchimpResponse;
+import com.touwolf.mailchimp.model.campaign.data.content.CampaignContentRequest;
 import com.touwolf.mailchimp.model.campaign.data.content.CampaignContentResponse;
 import org.apache.commons.lang.StringUtils;
 import org.bridje.ioc.Component;
@@ -47,5 +48,17 @@ public class CampaignContent
         url = MailchimpUtils.formatQueryString(url, "exclude_fields", excludeFields);
 
         return builder.get(url, CampaignContentResponse.class);
+    }
+
+    public MailchimpResponse<CampaignContentResponse> edit(String campaignId, CampaignContentRequest request) throws MailchimpException
+    {
+        if(StringUtils.isBlank(campaignId))
+        {
+            throw new MailchimpException("The field campaign_id is required");
+        }
+
+        String url = "/campaigns/" + campaignId + "/content";
+        String payload = GSON.toJson(request);
+        return builder.put(url, payload, CampaignContentResponse.class);
     }
 }

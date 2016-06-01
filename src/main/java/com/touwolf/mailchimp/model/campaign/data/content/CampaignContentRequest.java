@@ -2,11 +2,10 @@ package com.touwolf.mailchimp.model.campaign.data.content;
 
 import com.google.gson.annotations.SerializedName;
 
-class CampaignContentVarianteContents
-{
-    @SerializedName("content_label")
-    private String contentLabel;
+import java.util.List;
 
+public class CampaignContentRequest
+{
     @SerializedName("plain_text")
     private String plainText;
 
@@ -18,17 +17,8 @@ class CampaignContentVarianteContents
 
     private CampaignContentArchive archive;
 
-    /**
-     * Label used to identify the content option.
-     *
-     */
-    public String getContentLabel() {
-        return contentLabel;
-    }
-
-    public void setContentLabel(String contentLabel) {
-        this.contentLabel = contentLabel;
-    }
+    @SerializedName("variate_contents")
+    private List<CampaignContentVarianteContents> variateContents;
 
     /**
      * The plain-text portion of the campaign. If left unspecified, we’ll generate this automatically.
@@ -55,7 +45,7 @@ class CampaignContentVarianteContents
     }
 
     /**
-     * When importing a campaign, the URL for the HTML.
+     * When importing a campaign, the URL where the HTML lives.
      *
      */
     public String getUrl() {
@@ -67,7 +57,7 @@ class CampaignContentVarianteContents
     }
 
     /**
-     * Use this template to generate the HTML content for the campaign.
+     * Use this template to generate the HTML content of the campaign
      *
      */
     public CampaignContentTemplate getTemplate() {
@@ -88,5 +78,18 @@ class CampaignContentVarianteContents
 
     public void setArchive(CampaignContentArchive archive) {
         this.archive = archive;
+    }
+
+    /**
+     * Content options for Multivariate Campaigns. Each content option must provide HTML content and may optionally provide plain text.
+     * For campaigns not testing content, only one object should be provided.
+     *
+     */
+    public List<CampaignContentVarianteContents> getVariateContents() {
+        return variateContents;
+    }
+
+    public void setVariateContents(List<CampaignContentVarianteContents> variateContents) {
+        this.variateContents = variateContents;
     }
 }

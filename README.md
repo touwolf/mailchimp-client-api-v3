@@ -1,6 +1,6 @@
-# Mailchimp Client API v3
+# Mailchimp Client API V3
 
-Mailchimp Client API v3 wrapper for **Java**
+Mailchimp Client API V3 wrapper for **Java**
 
 
 Dependencies
@@ -11,7 +11,7 @@ Bridje Core IoC library https://github.com/bridje/bridje-framework/wiki/Bridje-I
         <dependency>
             <groupId>org.bridje</groupId>
             <artifactId>bridje-ioc</artifactId>
-            <version>0.1.2</version>
+            <version>0.1.5-1</version>
         </dependency>
         
 

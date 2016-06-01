@@ -2,6 +2,7 @@ package com.touwolf.mailchimp.model.apiroot;
 
 import com.touwolf.mailchimp.MailchimpException;
 import com.touwolf.mailchimp.impl.MailchimpBuilder;
+import com.touwolf.mailchimp.impl.MailchimpUtils;
 import com.touwolf.mailchimp.model.MailchimpResponse;
 import com.touwolf.mailchimp.model.apiroot.data.ApiRootResponse;
 import org.apache.commons.lang.StringUtils;
@@ -37,18 +38,10 @@ public class ApiRoot
      */
     public MailchimpResponse<ApiRootResponse> getApiRoot(String fields, String excludeFields) throws MailchimpException
     {
-        String queryString = "";
-        if(StringUtils.isNotBlank(fields))
-        {
-            queryString += "?fields=" + fields;
-        }
+        String url = "";
+        url = MailchimpUtils.formatQueryString(url, "fields", fields);
+        url = MailchimpUtils.formatQueryString(url, "exclude_fields", excludeFields);
 
-        if(StringUtils.isNotBlank(excludeFields))
-        {
-            queryString += StringUtils.isBlank(queryString) ?
-                    "?exclude_fields=" + excludeFields : "&exclude_fields=" + excludeFields;
-        }
-
-        return builder.get(queryString, ApiRootResponse.class);
+        return builder.get(url, ApiRootResponse.class);
     }
 }

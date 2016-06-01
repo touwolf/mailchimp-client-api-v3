@@ -2,6 +2,7 @@ package com.touwolf.mailchimp.model.camapign;
 
 import com.touwolf.mailchimp.MailchimpException;
 import com.touwolf.mailchimp.impl.MailchimpBuilder;
+import com.touwolf.mailchimp.impl.MailchimpUtils;
 import com.touwolf.mailchimp.model.MailchimpResponse;
 import com.touwolf.mailchimp.model.camapign.data.folder.*;
 import org.apache.commons.lang.StringUtils;
@@ -41,29 +42,10 @@ public class CampaignFolder
     public MailchimpResponse<CampaignFolderReadResponse> read(CampaignFolderReadRequest request) throws MailchimpException
     {
         String url = "/campaign-folders";
-
-        if(StringUtils.isNotBlank(request.getFields()))
-        {
-            url += "?" + request.getFields();
-        }
-
-        if(StringUtils.isNotBlank(request.getExcludeFields()))
-        {
-            url += url.contains("?") ? "&exclude_fields=" + request.getExcludeFields() :
-                    "?exclude_fields=" + request.getExcludeFields() ;
-        }
-
-        if(null != request.getCount())
-        {
-            url += url.contains("?") ? "&count=" + request.getCount() :
-                    "?count=" + request.getCount() ;
-        }
-
-        if(null != request.getOffset())
-        {
-            url += url.contains("?") ? "&offset=" + request.getOffset() :
-                    "?offset=" + request.getOffset() ;
-        }
+        url = MailchimpUtils.formatQueryString(url, "fields", request.getFields());
+        url = MailchimpUtils.formatQueryString(url, "exclude_fields", request.getExcludeFields());
+        url = MailchimpUtils.formatQueryString(url, "count", request.getCount());
+        url = MailchimpUtils.formatQueryString(url, "offset", request.getOffset());
 
         return builder.get(url, CampaignFolderReadResponse.class);
     }
@@ -76,17 +58,8 @@ public class CampaignFolder
         }
 
         String url = "/campaign-folders/" + folderId;
-
-        if(StringUtils.isNotBlank(request.getFields()))
-        {
-            url += "?" + request.getFields();
-        }
-
-        if(StringUtils.isNotBlank(request.getExcludeFields()))
-        {
-            url += url.contains("?") ? "&exclude_fields=" + request.getExcludeFields() :
-                    "?exclude_fields=" + request.getExcludeFields() ;
-        }
+        url = MailchimpUtils.formatQueryString(url, "fields", request.getFields());
+        url = MailchimpUtils.formatQueryString(url, "exclude_fields", request.getExcludeFields());
 
         return builder.get(url, CampaignFolderResponse.class);
     }

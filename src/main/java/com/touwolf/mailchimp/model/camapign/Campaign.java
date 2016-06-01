@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.touwolf.mailchimp.MailchimpException;
 import com.touwolf.mailchimp.impl.MailchimpBuilder;
+import com.touwolf.mailchimp.impl.MailchimpUtils;
 import com.touwolf.mailchimp.model.MailchimpResponse;
 import com.touwolf.mailchimp.model.camapign.data.*;
 import org.bridje.ioc.Component;
@@ -27,15 +28,28 @@ public class Campaign
         return this;
     }
 
-    public MailchimpResponse<CampaignCreateResponse> create(CampaignCreateRequest request) throws MailchimpException
+    public MailchimpResponse<CampaignResponse> create(CampaignCreateRequest request) throws MailchimpException
     {
         String payload = GSON.toJson(request);
-        return builder.post("/campaigns", payload, CampaignCreateResponse.class);
+        return builder.post("/campaigns", payload, CampaignResponse.class);
     }
 
     public MailchimpResponse<CampaignReadResponse> read(CampaignReadRequest request) throws MailchimpException
     {
-        return read(null, request);
+        String url = "/campaigns";
+        url = MailchimpUtils.formatQueryString(url, "fields", request.getFields());
+        url = MailchimpUtils.formatQueryString(url, "exclude_fields", request.getExcludeFields());
+        url = MailchimpUtils.formatQueryString(url, "count", request.getCount());
+        url = MailchimpUtils.formatQueryString(url, "offset", request.getOffset());
+        url = MailchimpUtils.formatQueryString(url, "type", request.getType());
+        url = MailchimpUtils.formatQueryString(url, "status", request.getStatus());
+        url = MailchimpUtils.formatQueryString(url, "before_send_time", request.getBeforeSendTime());
+        url = MailchimpUtils.formatQueryString(url, "since_send_time", request.getSinceSendTime());
+        url = MailchimpUtils.formatQueryString(url, "before_create_time", request.getBeforeCreateTime());
+        url = MailchimpUtils.formatQueryString(url, "since_create_time", request.getSinceCreateTime());
+        url = MailchimpUtils.formatQueryString(url, "list_id", request.getListId());
+
+        return builder.get(url, CampaignReadResponse.class);
     }
 
     public MailchimpResponse<CampaignReadResponse> read(String campaignId, CampaignReadRequest request) throws MailchimpException
@@ -63,9 +77,9 @@ public class Campaign
         return builder.post("/campaigns", Void.class);
     }
 
-    public MailchimpResponse<CampaignCreateResponse> replicate(String campaignId) throws MailchimpException
+    public MailchimpResponse<CampaignResponse> replicate(String campaignId) throws MailchimpException
     {
-        return builder.post("/campaigns", CampaignCreateResponse.class);
+        return builder.post("/campaigns", CampaignResponse.class);
     }
 
     public MailchimpResponse<Void> resume(String campaignId) throws MailchimpException

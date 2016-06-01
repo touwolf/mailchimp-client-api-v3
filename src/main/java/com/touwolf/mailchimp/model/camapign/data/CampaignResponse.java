@@ -5,7 +5,7 @@ import com.touwolf.mailchimp.model.global.*;
 
 import java.util.List;
 
-public class CampaignCreateResponse
+public class CampaignResponse
 {
     private String id;
 

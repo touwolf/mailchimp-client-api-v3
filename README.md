@@ -11,7 +11,7 @@ Bridje Core IoC library https://github.com/bridje/bridje-framework/wiki/Bridje-I
         <dependency>
             <groupId>org.bridje</groupId>
             <artifactId>bridje-ioc</artifactId>
-            <version>0.1.5-1</version>
+            <version>0.2.2</version>
         </dependency>
         
 

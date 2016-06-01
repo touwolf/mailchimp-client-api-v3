@@ -1,8 +1,8 @@
 package com.touwolf.mailchimp;
 
 import com.touwolf.mailchimp.model.apiroot.ApiRoot;
-import com.touwolf.mailchimp.model.camapign.Campaign;
-import com.touwolf.mailchimp.model.camapign.CampaignFolder;
+import com.touwolf.mailchimp.model.campaign.Campaign;
+import com.touwolf.mailchimp.model.campaign.CampaignFolder;
 
 public interface MailchimpClient
 {

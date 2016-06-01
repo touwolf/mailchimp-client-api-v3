@@ -6,8 +6,11 @@ import com.touwolf.mailchimp.MailchimpException;
 import com.touwolf.mailchimp.impl.MailchimpBuilder;
 import com.touwolf.mailchimp.impl.MailchimpUtils;
 import com.touwolf.mailchimp.model.MailchimpResponse;
+import com.touwolf.mailchimp.model.campaign.data.CampaignReadRequest;
+import com.touwolf.mailchimp.model.campaign.data.CampaignReadResponse;
 import com.touwolf.mailchimp.model.campaign.data.CampaignRequest;
 import com.touwolf.mailchimp.model.campaign.data.CampaignResponse;
+import com.touwolf.mailchimp.model.campaign.data.feedback.CampaignFeedbackReadResponse;
 import com.touwolf.mailchimp.model.campaign.data.feedback.CampaignFeedbackRequest;
 import com.touwolf.mailchimp.model.campaign.data.feedback.CampaignFeedbackResponse;
 import org.apache.commons.lang.StringUtils;
@@ -54,4 +57,105 @@ public class CampaignFeedback
         return builder.post(url, payload, CampaignFeedbackResponse.class);
     }
 
+    /**
+     * Get team feedback while you’re working together on a MailChimp campaign.
+     *
+     * @param campaignId The unique id for the campaign.
+     * @param fields A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.
+     * @param excludeFields A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.
+     *
+     * @throws MailchimpException
+     */
+    public MailchimpResponse<CampaignFeedbackReadResponse> read(String campaignId, String fields, String excludeFields) throws MailchimpException
+    {
+        if(StringUtils.isBlank(campaignId))
+        {
+            throw new MailchimpException("The field campaign_id is required");
+        }
+
+        String url = "/campaigns/" + campaignId + "/feedback";
+        url = MailchimpUtils.formatQueryString(url, "fields", fields);
+        url = MailchimpUtils.formatQueryString(url, "exclude_fields", excludeFields);
+
+        return builder.get(url, CampaignFeedbackReadResponse.class);
+    }
+
+    /**
+     * Get a specific feedback message from a campaign.
+     *
+     * @param campaignId The unique id for the campaign.
+     * @param feedbackId The unique id for the feedback message.
+     * @param fields A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.
+     * @param excludeFields A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.
+     *
+     * @throws MailchimpException
+     */
+    public MailchimpResponse<CampaignFeedbackResponse> read(String campaignId, String feedbackId, String fields, String excludeFields) throws MailchimpException
+    {
+        if(StringUtils.isBlank(campaignId))
+        {
+            throw new MailchimpException("The field campaign_id is required");
+        }
+
+        if(StringUtils.isBlank(feedbackId))
+        {
+            throw new MailchimpException("The field feedback_id is required");
+        }
+
+        String url = "/campaigns/" + campaignId + "/feedback/" + feedbackId;
+        url = MailchimpUtils.formatQueryString(url, "fields", fields);
+        url = MailchimpUtils.formatQueryString(url, "exclude_fields", excludeFields);
+
+        return builder.get(url, CampaignFeedbackResponse.class);
+    }
+
+    /**
+     * Update a specific feedback message for a campaign.
+     *
+     * @param campaignId The unique id for the campaign.
+     * @param feedbackId The unique id for the feedback message.
+     * @param request Request body parameters
+     *
+     * @throws MailchimpException
+     */
+    public MailchimpResponse<CampaignResponse> edit(String campaignId, String feedbackId, CampaignFeedbackRequest request) throws MailchimpException
+    {
+        if(StringUtils.isBlank(campaignId))
+        {
+            throw new MailchimpException("The field campaign_id is required");
+        }
+
+        if(StringUtils.isBlank(feedbackId))
+        {
+            throw new MailchimpException("The field feedback_id is required");
+        }
+
+        String url = "/campaigns/" + campaignId + "/feedback/" + feedbackId;
+        String payload = GSON.toJson(request);
+        return builder.patch(url, payload, CampaignResponse.class);
+    }
+
+    /**
+     * Delete a campaign feedback message
+     *
+     * @param campaignId The unique id for the campaign.
+     * @param feedbackId The unique id for the feedback message.
+     *
+     * @throws MailchimpException
+     */
+    public MailchimpResponse<Void> delete(String campaignId, String feedbackId) throws MailchimpException
+    {
+        if(StringUtils.isBlank(campaignId))
+        {
+            throw new MailchimpException("The field campaign_id is required");
+        }
+
+        if(StringUtils.isBlank(feedbackId))
+        {
+            throw new MailchimpException("The field feedback_id is required");
+        }
+
+        String url = "/campaigns/" + campaignId + "/feedback/" + feedbackId;
+        return builder.delete(url, Void.class);
+    }
 }

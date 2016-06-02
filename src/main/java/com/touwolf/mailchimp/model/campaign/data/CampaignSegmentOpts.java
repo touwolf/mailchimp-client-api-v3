@@ -6,12 +6,12 @@ import java.util.List;
 
 class CampaignSegmentOpts
 {
-    @SerializedName("seved_segment+_id")
+    @SerializedName("saved_segment_id")
     private Integer savedSegmentId;
 
     private String match;
 
-    private List<CampaignConditions> conditions;
+    private CampaignConditions[] conditions;
 
     /**
      * The id for an existing saved segment.
@@ -37,11 +37,11 @@ class CampaignSegmentOpts
         this.match = match;
     }
 
-    public List<CampaignConditions> getConditions() {
+    public CampaignConditions[] getConditions() {
         return conditions;
     }
 
-    public void setConditions(List<CampaignConditions> conditions) {
+    public void setConditions(CampaignConditions[] conditions) {
         this.conditions = conditions;
     }
 }

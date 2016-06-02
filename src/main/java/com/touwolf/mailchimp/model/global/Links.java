@@ -1,6 +1,6 @@
-package com.touwolf.mailchimp.model.campaign.data;
+package com.touwolf.mailchimp.model.global;
 
-public class CampaignLinks
+public class Links
 {
     private String rel;
 

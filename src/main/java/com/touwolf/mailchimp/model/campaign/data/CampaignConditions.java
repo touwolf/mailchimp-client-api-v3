@@ -2,7 +2,7 @@ package com.touwolf.mailchimp.model.campaign.data;
 
 import com.google.gson.annotations.SerializedName;
 
-class CampaignConditions
+class CampaignConditions<T>
 {
     @SerializedName("condition_type")
     private String conditionType;

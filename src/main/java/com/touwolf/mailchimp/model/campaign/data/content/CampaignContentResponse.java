@@ -1,8 +1,7 @@
 package com.touwolf.mailchimp.model.campaign.data.content;
 
 import com.google.gson.annotations.SerializedName;
-import com.touwolf.mailchimp.model.campaign.Campaign;
-import com.touwolf.mailchimp.model.campaign.data.CampaignLinks;
+import com.touwolf.mailchimp.model.global.Links;
 
 import java.util.List;
 
@@ -17,7 +16,7 @@ public class CampaignContentResponse
     private String html;
 
     @SerializedName("_links")
-    private List<CampaignLinks> links;
+    private List<Links> links;
 
     /**
      * Content options for multivariate campaigns.
@@ -59,11 +58,11 @@ public class CampaignContentResponse
      * A list of link types and descriptions for the API schema documents.
      *
      */
-    public List<CampaignLinks> getLinks() {
+    public List<Links> getLinks() {
         return links;
     }
 
-    public void setLinks(List<CampaignLinks> links) {
+    public void setLinks(List<Links> links) {
         this.links = links;
     }
 }

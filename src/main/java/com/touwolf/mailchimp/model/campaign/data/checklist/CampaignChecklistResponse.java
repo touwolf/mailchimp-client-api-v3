@@ -1,7 +1,7 @@
 package com.touwolf.mailchimp.model.campaign.data.checklist;
 
 import com.google.gson.annotations.SerializedName;
-import com.touwolf.mailchimp.model.campaign.data.CampaignLinks;
+import com.touwolf.mailchimp.model.global.Links;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ public class CampaignChecklistResponse
     private List<CampaignChecklistItem> items;
 
     @SerializedName("_links")
-    private List<CampaignLinks> links;
+    private List<Links> links;
 
     /**
      * Whether the campaign is ready to send.
@@ -43,11 +43,11 @@ public class CampaignChecklistResponse
      * A list of link types and descriptions for the API schema documents.
      *
      */
-    public List<CampaignLinks> getLinks() {
+    public List<Links> getLinks() {
         return links;
     }
 
-    public void setLinks(List<CampaignLinks> links) {
+    public void setLinks(List<Links> links) {
         this.links = links;
     }
 }

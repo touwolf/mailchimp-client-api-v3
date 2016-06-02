@@ -1,7 +1,7 @@
 package com.touwolf.mailchimp.model.campaign.data.feedback;
 
 import com.google.gson.annotations.SerializedName;
-import com.touwolf.mailchimp.model.campaign.data.CampaignLinks;
+import com.touwolf.mailchimp.model.global.Links;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ public class CampaignFeedbackReadResponse
     private Integer totalItems;
 
     @SerializedName("_links")
-    private List<CampaignLinks> links;
+    private List<Links> links;
 
     /**
      * A collection of feedback items for a campaign.
@@ -58,11 +58,11 @@ public class CampaignFeedbackReadResponse
      * A list of link types and descriptions for the API schema documents.
      *
      */
-    public List<CampaignLinks> getLinks() {
+    public List<Links> getLinks() {
         return links;
     }
 
-    public void setLinks(List<CampaignLinks> links) {
+    public void setLinks(List<Links> links) {
         this.links = links;
     }
 }

@@ -2,6 +2,7 @@ package com.touwolf.mailchimp;
 
 import com.touwolf.mailchimp.model.apiroot.ApiRoot;
 import com.touwolf.mailchimp.model.campaign.*;
+import com.touwolf.mailchimp.model.list.*;
 
 public interface MailchimpClient
 {
@@ -42,4 +43,35 @@ public interface MailchimpClient
      *
      */
     CampaignSendChecklist campaignSendChecklist();
+
+    /**
+     * A MailChimp list is a powerful and flexible tool that helps you manage your contacts. Learn how to get started with lists in MailChimp.
+     *
+     */
+    Lists lists();
+
+    /**
+     * Manage abuse complaints for a specific list. An abuse complaint occurs when your recipient reports an email as spam in their mail program.
+     *
+     */
+    ListsAbuseReports listsAbuseReports();
+
+    /**
+     * Get recent daily, aggregated activity stats for your list. For example, view unsubscribes, signups, total emails sent, opens, clicks, and more, for up to 180 days.
+     *
+     */
+    ListsActivity listsActivity();
+
+    /**
+     * View a summary of the month-by-month growth activity for a specific list.
+     *
+     */
+    ListsGrowthHistory listsGrowthHistory();
+
+    /**
+     * Manage interest categories for a specific list. Interest categories organize interests, which are used to group subscribers based on their preferences.
+     * These correspond to ‘group titles’ in the MailChimp application. Learn more about groups in MailChimp.
+     *
+     */
+    ListsInterestCategories listsInterestCategories();
 }

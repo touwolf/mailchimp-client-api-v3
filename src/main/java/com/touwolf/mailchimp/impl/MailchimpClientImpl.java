@@ -3,6 +3,7 @@ package com.touwolf.mailchimp.impl;
 import com.touwolf.mailchimp.MailchimpClient;
 import com.touwolf.mailchimp.model.apiroot.ApiRoot;
 import com.touwolf.mailchimp.model.campaign.*;
+import com.touwolf.mailchimp.model.list.*;
 import org.bridje.ioc.Ioc;
 
 public class MailchimpClientImpl implements MailchimpClient
@@ -20,6 +21,16 @@ public class MailchimpClientImpl implements MailchimpClient
     private CampaignFeedback campaignFeedback;
 
     private CampaignSendChecklist campaignSendChecklist;
+
+    private Lists lists;
+
+    private ListsAbuseReports listsAbuseReports;
+
+    private ListsActivity listsActivity;
+
+    private ListsGrowthHistory listsGrowthHistory;
+
+    private ListsInterestCategories listsInterestCategories;
 
     public MailchimpClientImpl(String username, String apiKey)
     {
@@ -59,6 +70,31 @@ public class MailchimpClientImpl implements MailchimpClient
     public CampaignSendChecklist campaignSendChecklist()
     {
         return getCampaignSendChecklist().builder(builder);
+    }
+
+    @Override
+    public Lists lists() {
+        return getLists().builder(builder);
+    }
+
+    @Override
+    public ListsAbuseReports listsAbuseReports() {
+        return getListsAbuseReports().builder(builder);
+    }
+
+    @Override
+    public ListsActivity listsActivity() {
+        return getListsActivity().builder(builder);
+    }
+
+    @Override
+    public ListsGrowthHistory listsGrowthHistory() {
+        return getListsGrowthHistory().builder(builder);
+    }
+
+    @Override
+    public ListsInterestCategories listsInterestCategories() {
+        return getListsInterestCategories().builder(builder);
     }
 
     private ApiRoot getApiRoot()
@@ -119,5 +155,55 @@ public class MailchimpClientImpl implements MailchimpClient
         }
 
         return campaignSendChecklist;
+    }
+
+    private Lists getLists()
+    {
+        if(null == lists)
+        {
+            lists = Ioc.context().find(Lists.class);
+        }
+
+        return lists;
+    }
+
+    private ListsAbuseReports getListsAbuseReports()
+    {
+        if(null == listsAbuseReports)
+        {
+            listsAbuseReports = Ioc.context().find(ListsAbuseReports.class);
+        }
+
+        return listsAbuseReports;
+    }
+
+    private ListsActivity getListsActivity()
+    {
+        if(null == listsActivity)
+        {
+            listsActivity = Ioc.context().find(ListsActivity.class);
+        }
+
+        return listsActivity;
+    }
+
+    private ListsGrowthHistory getListsGrowthHistory()
+    {
+        if(null == listsGrowthHistory)
+        {
+            listsGrowthHistory = Ioc.context().find(ListsGrowthHistory.class);
+        }
+
+        return listsGrowthHistory;
+    }
+
+    private ListsInterestCategories getListsInterestCategories()
+    {
+        if(null == listsInterestCategories)
+        {
+            listsInterestCategories = Ioc.context().find(ListsInterestCategories.class);
+        }
+
+        return listsInterestCategories;
     }
 }

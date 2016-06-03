@@ -63,6 +63,12 @@ public interface MailchimpClient
     ListsActivity listsActivity();
 
     /**
+     * Get information about the most popular email clients for subscribers in a specific MailChimp list.
+     *
+     */
+    ListsClients listsClients();
+
+    /**
      * View a summary of the month-by-month growth activity for a specific list.
      *
      */

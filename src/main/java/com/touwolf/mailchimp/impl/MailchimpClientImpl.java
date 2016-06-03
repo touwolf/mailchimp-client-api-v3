@@ -28,6 +28,8 @@ public class MailchimpClientImpl implements MailchimpClient
 
     private ListsActivity listsActivity;
 
+    private ListsClients listsClients;
+
     private ListsGrowthHistory listsGrowthHistory;
 
     private ListsInterestCategories listsInterestCategories;
@@ -85,6 +87,12 @@ public class MailchimpClientImpl implements MailchimpClient
     @Override
     public ListsActivity listsActivity() {
         return getListsActivity().builder(builder);
+    }
+
+    @Override
+    public ListsClients listsClients()
+    {
+        return getListsClients().builder(builder);
     }
 
     @Override
@@ -185,6 +193,16 @@ public class MailchimpClientImpl implements MailchimpClient
         }
 
         return listsActivity;
+    }
+
+    private ListsClients getListsClients()
+    {
+        if(null == listsClients)
+        {
+            listsClients = Ioc.context().find(ListsClients.class);
+        }
+
+        return listsClients;
     }
 
     private ListsGrowthHistory getListsGrowthHistory()

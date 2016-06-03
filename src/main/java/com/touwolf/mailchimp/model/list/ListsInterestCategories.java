@@ -13,6 +13,11 @@ import com.touwolf.mailchimp.model.list.data.interestcategories.ListsInterestCat
 import org.apache.commons.lang.StringUtils;
 import org.bridje.ioc.Component;
 
+/**
+ * Manage interest categories for a specific list. Interest categories organize interests,
+ * which are used to group subscribers based on their preferences.
+ * These correspond to ‘group titles’ in the MailChimp application. Learn more about groups in MailChimp.
+ */
 @Component
 public class ListsInterestCategories
 {
@@ -26,6 +31,14 @@ public class ListsInterestCategories
         return this;
     }
 
+    /**
+     * Create a new interest category
+     *
+     * @param listId The unique id for the list.
+     * @param request Request body parameters
+     *
+     * @throws MailchimpException
+     */
     public MailchimpResponse<ListsInterestCategoriesResponse> create(String listId, ListsInterestCategoriesRequest request) throws MailchimpException
     {
         if (StringUtils.isBlank(listId)) {
@@ -37,6 +50,14 @@ public class ListsInterestCategories
         return builder.post(url, payload, ListsInterestCategoriesResponse.class);
     }
 
+    /**
+     * Get information about a list’s interest categories
+     *
+     * @param listId The unique id for the list.
+     * @param request Query string parameters
+     *
+     * @throws MailchimpException
+     */
     public MailchimpResponse<ListsInterestCategoriesReadResponse> read(String listId, ListsInterestCategoriesReadRequest request) throws MailchimpException {
 
         if (StringUtils.isBlank(listId)) {
@@ -52,6 +73,16 @@ public class ListsInterestCategories
         return builder.get(url, ListsInterestCategoriesReadResponse.class);
     }
 
+    /**
+     * Get information about a specific interest category.
+     *
+     * @param listId The unique id for the list.
+     * @param interestCategoryId The unique id for the interest category.
+     * @param fields A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.
+     * @param excludeFields A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.
+     *
+     * @throws MailchimpException
+     */
     public MailchimpResponse<ListsInterestCategoriesResponse> read(String listId, String interestCategoryId, String fields, String excludeFields) throws MailchimpException {
 
         if (StringUtils.isBlank(listId)) {
@@ -69,6 +100,15 @@ public class ListsInterestCategories
         return builder.get(url, ListsInterestCategoriesResponse.class);
     }
 
+    /**
+     * Update a specific interest category
+     *
+     * @param listId The unique id for the list.
+     * @param interestCategoryId The unique id for the interest category.
+     * @param request Request body parameters
+     *
+     * @throws MailchimpException
+     */
     public MailchimpResponse<ListsInterestCategoriesResponse> edit(String listId, String interestCategoryId, ListsInterestCategoriesRequest request) throws MailchimpException {
 
         if (StringUtils.isBlank(listId)) {
@@ -84,6 +124,14 @@ public class ListsInterestCategories
         return builder.patch(url, payload, ListsInterestCategoriesResponse.class);
     }
 
+    /**
+     * Delete a specific interest category
+     *
+     * @param listId The unique id for the list.
+     * @param interestCategoryId The unique id for the interest category.
+     *
+     * @throws MailchimpException
+     */
     public MailchimpResponse<Void> delete(String listId, String interestCategoryId) throws MailchimpException
     {
         if(StringUtils.isBlank(listId))

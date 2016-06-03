@@ -6,10 +6,7 @@ import com.touwolf.mailchimp.MailchimpException;
 import com.touwolf.mailchimp.impl.MailchimpBuilder;
 import com.touwolf.mailchimp.impl.MailchimpUtils;
 import com.touwolf.mailchimp.model.MailchimpResponse;
-import com.touwolf.mailchimp.model.list.data.interestcategories.ListsInterestCategoriesReadRequest;
-import com.touwolf.mailchimp.model.list.data.interestcategories.ListsInterestCategoriesReadResponse;
-import com.touwolf.mailchimp.model.list.data.interestcategories.ListsInterestCategoriesRequest;
-import com.touwolf.mailchimp.model.list.data.interestcategories.ListsInterestCategoriesResponse;
+import com.touwolf.mailchimp.model.list.data.interestcategories.*;
 import org.apache.commons.lang.StringUtils;
 import org.bridje.ioc.Component;
 
@@ -144,6 +141,151 @@ public class ListsInterestCategories
         }
 
         String url = "/lists/" + listId + "/interest-categories/" + interestCategoryId;
+        return builder.delete(url, Void.class);
+    }
+
+    /**
+     * Manage interests for a specific MailChimp list. Assign subscribers to interests to group them together.
+     * Interests are referred to as ‘group names’ in the MailChimp application. Learn more about using groups in MailChimp.
+     */
+
+    /**
+     * Create a new interest in a specific category
+     *
+     * @param listId The unique id for the list.
+     * @param interestCategoryId The unique id for the interest category.
+     * @param name The name of the interest. This can be shown publicly on a subscription form.
+     *
+     * @throws MailchimpException
+     */
+    public MailchimpResponse<ListsInterestCategoriesInterestResponse> createInterest(String listId, String interestCategoryId, String name) throws MailchimpException
+    {
+        if (StringUtils.isBlank(listId)) {
+            throw new MailchimpException("The field list_id is required");
+        }
+
+        if (StringUtils.isBlank(interestCategoryId)) {
+            throw new MailchimpException("The field interest_category_id is required");
+        }
+
+        String url = "/lists/" + listId + "/interest-categories/" + interestCategoryId;
+        String payload = "{name: " + name + "}";
+        return builder.post(url, payload, ListsInterestCategoriesInterestResponse.class);
+    }
+
+    /**
+     * Get all interests in a specific category
+     *
+     * @param listId The unique id for the list.
+     * @param interestCategoryId The unique id for the interest category.
+     * @param request Query string parameters
+     *
+     * @throws MailchimpException
+     */
+    public MailchimpResponse<ListsInterestCategoriesInterestReadResponse> readInterest(String listId, String interestCategoryId, ListsInterestCategoriesReadRequest request) throws MailchimpException
+    {
+        if (StringUtils.isBlank(listId)) {
+            throw new MailchimpException("The field list_id is required");
+        }
+
+        if (StringUtils.isBlank(interestCategoryId)) {
+            throw new MailchimpException("The field interest_category_id is required");
+        }
+
+        String url = "/lists/" + listId + "/interest-categories/" + interestCategoryId + "/interests";
+        url = MailchimpUtils.formatQueryString(url, "fields", request.getFields());
+        url = MailchimpUtils.formatQueryString(url, "exclude_fields", request.getExcludeFields());
+        url = MailchimpUtils.formatQueryString(url, "count", request.getCount());
+        url = MailchimpUtils.formatQueryString(url, "offset", request.getOffset());
+        return builder.get(url, ListsInterestCategoriesInterestReadResponse.class);
+    }
+
+    /**
+     * Get interests in a specific category
+     *
+     * @param listId The unique id for the list.
+     * @param interestCategoryId The unique id for the interest category.tegoryId
+     * @param interestId The specific interest or ‘group name’.
+     * @param fields A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.
+     * @param excludeFields A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.
+     *
+     * @throws MailchimpException
+     */
+    public MailchimpResponse<ListsInterestCategoriesInterestResponse> readInterest(String listId, String interestCategoryId, String interestId, String fields, String excludeFields) throws MailchimpException
+    {
+        if (StringUtils.isBlank(listId)) {
+            throw new MailchimpException("The field list_id is required");
+        }
+
+        if (StringUtils.isBlank(interestCategoryId)) {
+            throw new MailchimpException("The field interest_category_id is required");
+        }
+
+        if (StringUtils.isBlank(interestId)) {
+            throw new MailchimpException("The field interest_id is required");
+        }
+
+        String url = "/lists/" + listId + "/interest-categories/" + interestCategoryId + "/interests/" + interestId;
+        url = MailchimpUtils.formatQueryString(url, "fields", fields);
+        url = MailchimpUtils.formatQueryString(url, "exclude_fields", excludeFields);
+
+        return builder.get(url, ListsInterestCategoriesInterestResponse.class);
+    }
+
+    /**
+     * Update interests in a specific category
+     *
+     * @param listId The unique id for the list.
+     * @param interestCategoryId The unique id for the interest category.tegoryId
+     * @param interestId The specific interest or ‘group name’.
+     * @param request Request body parameters
+     *
+     * @throws MailchimpException
+     */
+    public MailchimpResponse<ListsInterestCategoriesInterestResponse> editInterest(String listId, String interestCategoryId, String interestId, ListsInterestCategoriesInterestRequest request) throws MailchimpException {
+
+        if (StringUtils.isBlank(listId)) {
+            throw new MailchimpException("The field list_id is required");
+        }
+
+        if (StringUtils.isBlank(interestCategoryId)) {
+            throw new MailchimpException("The field interest_category_id is required");
+        }
+
+        if (StringUtils.isBlank(interestId)) {
+            throw new MailchimpException("The field interest_id is required");
+        }
+
+        String url = "/lists/" + listId + "/interest-categories/" + interestCategoryId + "/interests/" + interestId;
+        String payload = GSON.toJson(request);
+        return builder.patch(url, payload, ListsInterestCategoriesInterestResponse.class);
+    }
+
+    /**
+     * Delete interests in a specific category
+     *
+     * @param listId The unique id for the list.
+     * @param interestCategoryId The unique id for the interest category.tegoryId
+     * @param interestId The specific interest or ‘group name’.
+     *
+     * @throws MailchimpException
+     */
+    public MailchimpResponse<Void> deleteInterest(String listId, String interestCategoryId, String interestId) throws MailchimpException
+    {
+        if(StringUtils.isBlank(listId))
+        {
+            throw new MailchimpException("The field campaign_id is required");
+        }
+
+        if (StringUtils.isBlank(interestCategoryId)) {
+            throw new MailchimpException("The field interest_category_id is required");
+        }
+
+        if (StringUtils.isBlank(interestId)) {
+            throw new MailchimpException("The field interest_id is required");
+        }
+
+        String url = "/lists/" + listId + "/interest-categories/" + interestCategoryId + "/interests/" + interestId;
         return builder.delete(url, Void.class);
     }
 }

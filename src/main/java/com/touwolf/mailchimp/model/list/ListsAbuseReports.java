@@ -28,6 +28,14 @@ public class ListsAbuseReports
         return this;
     }
 
+    /**
+     * Get all abuse reports for a specific list.
+     *
+     * @param listId The unique id for the list.
+     * @param request Query string parameters
+     *
+     * @throws MailchimpException
+     */
     public MailchimpResponse<ListsAbuseReportsReadResponse> read(String listId, ListsAbuseReportsReadRequest request) throws MailchimpException {
 
         if (StringUtils.isBlank(listId)) {
@@ -43,6 +51,15 @@ public class ListsAbuseReports
         return builder.get(url, ListsAbuseReportsReadResponse.class);
     }
 
+    /**
+     * Get details about a specific abuse report.
+     *
+     * @param listId The unique id for the list.
+     * @param reportId The id for the abuse report.
+     * @param request Query string parameters
+     *
+     * @throws MailchimpException
+     */
     public MailchimpResponse<ListsAbuseReportsResponse> read(String listId, String reportId, ListsAbuseReportsReadRequest request) throws MailchimpException {
 
         if (StringUtils.isBlank(listId)) {

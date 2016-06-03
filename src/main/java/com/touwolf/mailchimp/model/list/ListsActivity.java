@@ -28,6 +28,15 @@ public class ListsActivity
         return this;
     }
 
+    /**
+     * Get up to the previous 180 days of daily detailed aggregated activity stats for a list, not including Automation activity.
+     *
+     * @param listId The unique id for the list.
+     * @param fields A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.
+     * @param excludeFields A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.
+     *
+     * @throws MailchimpException
+     */
     public MailchimpResponse<ListsActivityReadResponse> read(String listId, String fields, String excludeFields) throws MailchimpException {
 
         if (StringUtils.isBlank(listId)) {

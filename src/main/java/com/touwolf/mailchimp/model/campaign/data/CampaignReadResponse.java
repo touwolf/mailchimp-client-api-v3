@@ -1,7 +1,7 @@
 package com.touwolf.mailchimp.model.campaign.data;
 
 import com.google.gson.annotations.SerializedName;
-import com.touwolf.mailchimp.model.global.Links;
+import com.touwolf.mailchimp.model.MailchimpLinks;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ public class CampaignReadResponse
     private Integer totalItems;
 
     @SerializedName("_links")
-    private List<Links> links;
+    private List<MailchimpLinks> links;
 
     /**
      * An array of campaigns.
@@ -46,11 +46,11 @@ public class CampaignReadResponse
      *
      * @return
      */
-    public List<Links> getLinks() {
+    public List<MailchimpLinks> getLinks() {
         return links;
     }
 
-    public void setLinks(List<Links> links) {
+    public void setLinks(List<MailchimpLinks> links) {
         this.links = links;
     }
 }

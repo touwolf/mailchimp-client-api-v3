@@ -1,6 +1,6 @@
-package com.touwolf.mailchimp.model.global;
+package com.touwolf.mailchimp.model;
 
-public class Links
+public class MailchimpLinks
 {
     private String rel;
 

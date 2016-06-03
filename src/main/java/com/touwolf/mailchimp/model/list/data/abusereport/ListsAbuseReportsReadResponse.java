@@ -1,7 +1,7 @@
 package com.touwolf.mailchimp.model.list.data.abusereport;
 
 import com.google.gson.annotations.SerializedName;
-import com.touwolf.mailchimp.model.global.Links;
+import com.touwolf.mailchimp.model.MailchimpLinks;
 
 import java.util.List;
 
@@ -17,7 +17,7 @@ public class ListsAbuseReportsReadResponse
     private Integer totalItems;
 
     @SerializedName("_links")
-    private List<Links> links;
+    private List<MailchimpLinks> links;
 
     /**
      * An array of objects, each representing an abuse report resource.
@@ -59,11 +59,11 @@ public class ListsAbuseReportsReadResponse
      * A list of link types and descriptions for the API schema documents.
      *
      */
-    public List<Links> getLinks() {
+    public List<MailchimpLinks> getLinks() {
         return links;
     }
 
-    public void setLinks(List<Links> links) {
+    public void setLinks(List<MailchimpLinks> links) {
         this.links = links;
     }
 }

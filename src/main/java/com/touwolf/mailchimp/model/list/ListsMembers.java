@@ -6,8 +6,6 @@ import com.touwolf.mailchimp.MailchimpException;
 import com.touwolf.mailchimp.impl.MailchimpBuilder;
 import com.touwolf.mailchimp.impl.MailchimpUtils;
 import com.touwolf.mailchimp.model.MailchimpResponse;
-import com.touwolf.mailchimp.model.list.data.ListsRequest;
-import com.touwolf.mailchimp.model.list.data.ListsResponse;
 import com.touwolf.mailchimp.model.list.data.members.ListsMembersReadRequest;
 import com.touwolf.mailchimp.model.list.data.members.ListsMembersReadResponse;
 import com.touwolf.mailchimp.model.list.data.members.ListsMembersRequest;
@@ -31,6 +29,14 @@ public class ListsMembers
         return this;
     }
 
+    /**
+     * Add a new list member
+     *
+     * @param listId The unique id for the list.
+     * @param request Request body parameters
+     *
+     * @throws MailchimpException
+     */
     public MailchimpResponse<ListsMembersResponse> create(String listId, ListsMembersRequest request) throws MailchimpException
     {
         if(StringUtils.isBlank(listId))
@@ -43,6 +49,14 @@ public class ListsMembers
         return builder.post(url, payload, ListsMembersResponse.class);
     }
 
+    /**
+     * Get information about members in a list
+     *
+     * @param listId The unique id for the list.
+     * @param request Request body parameters
+     *
+     * @throws MailchimpException
+     */
     public MailchimpResponse<ListsMembersReadResponse> read(String listId, ListsMembersReadRequest request) throws MailchimpException
     {
         if(StringUtils.isBlank(listId))
@@ -68,6 +82,16 @@ public class ListsMembers
         return builder.get(url, ListsMembersReadResponse.class);
     }
 
+    /**
+     * Get information about a specific list member
+     *
+     * @param listId The unique id for the list.
+     * @param subscriberHash The MD5 hash of the lowercase version of the list member’s email address.
+     * @param fields A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.
+     * @param excludeFields A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.
+     *
+     * @throws MailchimpException
+     */
     public MailchimpResponse<ListsMembersResponse> read(String listId, String subscriberHash, String fields, String excludeFields) throws MailchimpException
     {
         if(StringUtils.isBlank(listId))
@@ -87,6 +111,15 @@ public class ListsMembers
         return builder.get(url, ListsMembersResponse.class);
     }
 
+    /**
+     * Update a list member
+     *
+     * @param listId The unique id for the list.
+     * @param subscriberHash The MD5 hash of the lowercase version of the list member’s email address.
+     * @param request Request body parameters
+     *
+     * @throws MailchimpException
+     */
     public MailchimpResponse<ListsMembersResponse> edit(String listId, String subscriberHash, ListsMembersRequest request) throws MailchimpException
     {
         if(StringUtils.isBlank(listId))
@@ -104,6 +137,15 @@ public class ListsMembers
         return builder.patch(url, payload, ListsMembersResponse.class);
     }
 
+    /**
+     * Add or update a list member
+     *
+     * @param listId The unique id for the list.
+     * @param subscriberHash The MD5 hash of the lowercase version of the list member’s email address.
+     * @param request Request body parameters
+     *
+     * @throws MailchimpException
+     */
     public MailchimpResponse<ListsMembersResponse> editOrAdd(String listId, String subscriberHash, ListsMembersRequest request) throws MailchimpException
     {
         if(StringUtils.isBlank(listId))
@@ -121,6 +163,14 @@ public class ListsMembers
         return builder.put(url, payload, ListsMembersResponse.class);
     }
 
+    /**
+     * Remove a list member
+     *
+     * @param listId The unique id for the list.
+     * @param subscriberHash The MD5 hash of the lowercase version of the list member’s email address.
+     *
+     * @throws MailchimpException
+     */
     public MailchimpResponse<Void> delete(String listId, String subscriberHash) throws MailchimpException
     {
         if(StringUtils.isBlank(listId))

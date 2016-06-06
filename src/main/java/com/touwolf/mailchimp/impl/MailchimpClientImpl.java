@@ -34,6 +34,8 @@ public class MailchimpClientImpl implements MailchimpClient
 
     private ListsInterestCategories listsInterestCategories;
 
+    private ListsMembers listsMembers;
+
     public MailchimpClientImpl(String username, String apiKey)
     {
         builder = new MailchimpBuilder(MailchimpUtils.getApiUrl(apiKey), username, apiKey, 30000);
@@ -103,6 +105,11 @@ public class MailchimpClientImpl implements MailchimpClient
     @Override
     public ListsInterestCategories listsInterestCategories() {
         return getListsInterestCategories().builder(builder);
+    }
+
+    @Override
+    public ListsMembers listsMembers() {
+        return getListsMembers().builder(builder);
     }
 
     private ApiRoot getApiRoot()
@@ -223,5 +230,15 @@ public class MailchimpClientImpl implements MailchimpClient
         }
 
         return listsInterestCategories;
+    }
+
+    public ListsMembers getListsMembers()
+    {
+        if(null == listsMembers)
+        {
+            listsMembers = Ioc.context().find(ListsMembers.class);
+        }
+
+        return listsMembers;
     }
 }

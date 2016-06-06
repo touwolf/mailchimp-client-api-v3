@@ -80,4 +80,10 @@ public interface MailchimpClient
      *
      */
     ListsInterestCategories listsInterestCategories();
+
+    /**
+     * Manage members of a specific MailChimp list, including currently subscribed, unsubscribed, and bounced members.
+     *
+     */
+    ListsMembers listsMembers();
 }

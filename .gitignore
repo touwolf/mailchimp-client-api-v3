@@ -10,3 +10,7 @@ buildNumber.properties
 
 .idea/*
 *.iml
+/.idea/
+.idea/
+pom.xml~
+src/main/resources/

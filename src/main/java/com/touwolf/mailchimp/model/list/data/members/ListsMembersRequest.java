@@ -35,6 +35,9 @@ public class ListsMembersRequest
     @SerializedName("email_address")
     private String emailAddress;
 
+    @SerializedName("status_if_new")
+    private String statusIfNew;
+
     /**
      * Type of email this member asked to get (‘html’ or ‘text’).
      *
@@ -183,5 +186,22 @@ public class ListsMembersRequest
 
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
+    }
+
+    /**
+     * Subscriber’s status. This value is required only if the email address is not already present on the list.
+     * Possible Values:
+
+     * subscribed
+     * unsubscribed
+     * cleaned
+     * pending
+     */
+    public String getStatusIfNew() {
+        return statusIfNew;
+    }
+
+    public void setStatusIfNew(String statusIfNew) {
+        this.statusIfNew = statusIfNew;
     }
 }

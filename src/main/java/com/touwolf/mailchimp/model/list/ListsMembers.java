@@ -6,6 +6,7 @@ import com.touwolf.mailchimp.MailchimpException;
 import com.touwolf.mailchimp.impl.MailchimpBuilder;
 import com.touwolf.mailchimp.impl.MailchimpUtils;
 import com.touwolf.mailchimp.model.MailchimpResponse;
+import com.touwolf.mailchimp.model.list.data.ListsRequest;
 import com.touwolf.mailchimp.model.list.data.ListsResponse;
 import com.touwolf.mailchimp.model.list.data.members.ListsMembersReadRequest;
 import com.touwolf.mailchimp.model.list.data.members.ListsMembersReadResponse;
@@ -84,5 +85,55 @@ public class ListsMembers
         url = MailchimpUtils.formatQueryString(url, "exclude_fields", excludeFields);
 
         return builder.get(url, ListsMembersResponse.class);
+    }
+
+    public MailchimpResponse<ListsMembersResponse> edit(String listId, String subscriberHash, ListsMembersRequest request) throws MailchimpException
+    {
+        if(StringUtils.isBlank(listId))
+        {
+            throw new MailchimpException("The field list_id is required");
+        }
+
+        if(StringUtils.isBlank(subscriberHash))
+        {
+            throw new MailchimpException("The field subscriber_hash is required");
+        }
+
+        String url = "/lists/" + listId + "/members/" + subscriberHash;
+        String payload = GSON.toJson(request);
+        return builder.patch(url, payload, ListsMembersResponse.class);
+    }
+
+    public MailchimpResponse<ListsMembersResponse> editOrAdd(String listId, String subscriberHash, ListsMembersRequest request) throws MailchimpException
+    {
+        if(StringUtils.isBlank(listId))
+        {
+            throw new MailchimpException("The field list_id is required");
+        }
+
+        if(StringUtils.isBlank(subscriberHash))
+        {
+            throw new MailchimpException("The field subscriber_hash is required");
+        }
+
+        String url = "/lists/" + listId + "/members/" + subscriberHash;
+        String payload = GSON.toJson(request);
+        return builder.put(url, payload, ListsMembersResponse.class);
+    }
+
+    public MailchimpResponse<Void> delete(String listId, String subscriberHash) throws MailchimpException
+    {
+        if(StringUtils.isBlank(listId))
+        {
+            throw new MailchimpException("The field campaign_id is required");
+        }
+
+        if(StringUtils.isBlank(subscriberHash))
+        {
+            throw new MailchimpException("The field subscriber_hash is required");
+        }
+
+        String url = "/lists/" + listId + "/members/" + subscriberHash;
+        return builder.delete(url, Void.class);
     }
 }

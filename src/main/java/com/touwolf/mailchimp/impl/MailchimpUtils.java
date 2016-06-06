@@ -31,4 +31,14 @@ public class MailchimpUtils
 
         return url.contains("?") ? "&" + field + "=" + value: "?" + field + "=" + value;
     }
+
+    public static String formatQueryString(String url, String field, Boolean value)
+    {
+        if(null == value)
+        {
+            return url;
+        }
+
+        return url.contains("?") ? "&" + field + "=" + value: "?" + field + "=" + value;
+    }
 }

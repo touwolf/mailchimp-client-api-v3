@@ -221,4 +221,66 @@ public class ListsMembers
 
         return builder.get(url, ListsMembersGoalsReadResponse.class);
     }
+
+    public MailchimpResponse<ListsMembersNotesResponse> createNote(String listId, String subscriberHash, String note) throws MailchimpException
+    {
+        if(StringUtils.isBlank(listId))
+        {
+            throw new MailchimpException("The field list_id is required");
+        }
+
+        if(StringUtils.isBlank(subscriberHash))
+        {
+            throw new MailchimpException("The field subscriber_hash is required");
+        }
+
+        String url = "/lists/" + listId + "/members/" + subscriberHash + "/notes";
+        String payload = "{note: \"" + note + "\"}";
+        return builder.post(url, payload, ListsMembersNotesResponse.class);
+    }
+
+    public MailchimpResponse<ListsMembersNotesReadResponse> readNotes(String listId, String subscriberHash, String fields, String excludeFields, Integer count, Integer offset) throws MailchimpException
+    {
+        if(StringUtils.isBlank(listId))
+        {
+            throw new MailchimpException("The field list_id is required");
+        }
+
+        if(StringUtils.isBlank(subscriberHash))
+        {
+            throw new MailchimpException("The field subscriber_hash is required");
+        }
+
+        String url = "/lists/" + listId + "/members/" + subscriberHash + "/notes";
+        url = MailchimpUtils.formatQueryString(url, "fields", fields);
+        url = MailchimpUtils.formatQueryString(url, "exclude_fields", excludeFields);
+        url = MailchimpUtils.formatQueryString(url, "count", count);
+        url = MailchimpUtils.formatQueryString(url, "offset", offset);
+
+        return builder.get(url, ListsMembersNotesReadResponse.class);
+    }
+
+    public MailchimpResponse<ListsMembersNotesResponse> readNotes(String listId, String subscriberHash, String noteId, String fields, String excludeFields) throws MailchimpException
+    {
+        if(StringUtils.isBlank(listId))
+        {
+            throw new MailchimpException("The field list_id is required");
+        }
+
+        if(StringUtils.isBlank(subscriberHash))
+        {
+            throw new MailchimpException("The field subscriber_hash is required");
+        }
+
+        if(StringUtils.isBlank(noteId))
+        {
+            throw new MailchimpException("The field note_id is required");
+        }
+
+        String url = "/lists/" + listId + "/members/" + subscriberHash + "/notes/" + noteId;
+        url = MailchimpUtils.formatQueryString(url, "fields", fields);
+        url = MailchimpUtils.formatQueryString(url, "exclude_fields", excludeFields);
+
+        return builder.get(url, ListsMembersNotesResponse.class);
+    }
 }

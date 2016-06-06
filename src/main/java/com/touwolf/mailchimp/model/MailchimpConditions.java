@@ -1,8 +1,8 @@
-package com.touwolf.mailchimp.model.campaign.data;
+package com.touwolf.mailchimp.model;
 
 import com.google.gson.annotations.SerializedName;
 
-class CampaignConditions<T>
+public class MailchimpConditions
 {
     @SerializedName("condition_type")
     private String conditionType;

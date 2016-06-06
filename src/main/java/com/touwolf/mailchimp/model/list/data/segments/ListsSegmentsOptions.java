@@ -1,28 +1,12 @@
-package com.touwolf.mailchimp.model.campaign.data;
+package com.touwolf.mailchimp.model.list.data.segments;
 
 import com.touwolf.mailchimp.model.MailchimpConditions;
-import com.google.gson.annotations.SerializedName;
 
-public class CampaignSegmentOpts
+public class ListsSegmentsOptions
 {
-    @SerializedName("saved_segment_id")
-    private Integer savedSegmentId;
-
     private String match;
 
     private MailchimpConditions[] conditions;
-
-    /**
-     * The id for an existing saved segment.
-     *
-     */
-    public Integer getSavedSegmentId() {
-        return savedSegmentId;
-    }
-
-    public void setSavedSegmentId(Integer savedSegmentId) {
-        this.savedSegmentId = savedSegmentId;
-    }
 
     /**
      * Segment match type.
@@ -36,6 +20,10 @@ public class CampaignSegmentOpts
         this.match = match;
     }
 
+    /**
+     * An array of segment conditions.
+     *
+     */
     public MailchimpConditions[] getConditions() {
         return conditions;
     }

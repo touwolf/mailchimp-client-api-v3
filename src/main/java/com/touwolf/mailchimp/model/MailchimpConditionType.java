@@ -1,6 +1,6 @@
-package com.touwolf.mailchimp.model.campaign.data;
+package com.touwolf.mailchimp.model;
 
-public class CampaignConditionType
+public class MailchimpConditionType
 {
     private String op;
 

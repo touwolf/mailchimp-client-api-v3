@@ -283,7 +283,7 @@ public class MailchimpClientImpl implements MailchimpClient
         return listsSegments;
     }
 
-    public ListsWebhooks getListsWebhooks()
+    private ListsWebhooks getListsWebhooks()
     {
         if(null == listsWebhooks)
         {

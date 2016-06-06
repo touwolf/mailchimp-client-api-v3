@@ -202,4 +202,23 @@ public class ListsMembers
 
         return builder.get(url, ListsMembersActivityReadResponse.class);
     }
+
+    public MailchimpResponse<ListsMembersGoalsReadResponse> readGoals(String listId, String subscriberHash, String fields, String excludeFields) throws MailchimpException
+    {
+        if(StringUtils.isBlank(listId))
+        {
+            throw new MailchimpException("The field list_id is required");
+        }
+
+        if(StringUtils.isBlank(subscriberHash))
+        {
+            throw new MailchimpException("The field subscriber_hash is required");
+        }
+
+        String url = "/lists/" + listId + "/members/" + subscriberHash + "/goals";
+        url = MailchimpUtils.formatQueryString(url, "fields", fields);
+        url = MailchimpUtils.formatQueryString(url, "exclude_fields", excludeFields);
+
+        return builder.get(url, ListsMembersGoalsReadResponse.class);
+    }
 }

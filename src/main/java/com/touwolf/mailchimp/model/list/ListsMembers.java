@@ -283,4 +283,47 @@ public class ListsMembers
 
         return builder.get(url, ListsMembersNotesResponse.class);
     }
+
+    public MailchimpResponse<ListsMembersNotesResponse> editNotes(String listId, String subscriberHash, String noteId, String note) throws MailchimpException
+    {
+        if(StringUtils.isBlank(listId))
+        {
+            throw new MailchimpException("The field list_id is required");
+        }
+
+        if(StringUtils.isBlank(subscriberHash))
+        {
+            throw new MailchimpException("The field subscriber_hash is required");
+        }
+
+        if(StringUtils.isBlank(noteId))
+        {
+            throw new MailchimpException("The field note_id is required");
+        }
+
+        String url = "/lists/" + listId + "/members/" + subscriberHash + "/notes/" + noteId;
+        String payload = "{note: \"" + note + "\"}";
+        return builder.patch(url, payload, ListsMembersNotesResponse.class);
+    }
+
+    public MailchimpResponse<Void> deleteNotes(String listId, String subscriberHash, String noteId) throws MailchimpException
+    {
+        if(StringUtils.isBlank(listId))
+        {
+            throw new MailchimpException("The field campaign_id is required");
+        }
+
+        if(StringUtils.isBlank(subscriberHash))
+        {
+            throw new MailchimpException("The field subscriber_hash is required");
+        }
+
+        if(StringUtils.isBlank(noteId))
+        {
+            throw new MailchimpException("The field note_id is required");
+        }
+
+        String url = "/lists/" + listId + "/members/" + subscriberHash + "/notes/" + noteId;
+        return builder.delete(url, Void.class);
+    }
 }

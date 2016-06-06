@@ -184,6 +184,16 @@ public class ListsMembers
         return builder.delete(url, Void.class);
     }
 
+    /**
+     * Get recent list member activity
+     *
+     * @param listId The unique id for the list.
+     * @param subscriberHash The MD5 hash of the lowercase version of the list member’s email address.
+     * @param fields A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.
+     * @param excludeFields A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.
+     *
+     * @throws MailchimpException
+     */
     public MailchimpResponse<ListsMembersActivityReadResponse> readActivity(String listId, String subscriberHash, String fields, String excludeFields) throws MailchimpException
     {
         if(StringUtils.isBlank(listId))
@@ -203,6 +213,16 @@ public class ListsMembers
         return builder.get(url, ListsMembersActivityReadResponse.class);
     }
 
+    /**
+     * Get the last 50 Goal events for a member on a specific list
+     *
+     * @param listId The unique id for the list.
+     * @param subscriberHash The MD5 hash of the lowercase version of the list member’s email address.
+     * @param fields A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.
+     * @param excludeFields A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.
+     *
+     * @throws MailchimpException
+     */
     public MailchimpResponse<ListsMembersGoalsReadResponse> readGoals(String listId, String subscriberHash, String fields, String excludeFields) throws MailchimpException
     {
         if(StringUtils.isBlank(listId))
@@ -222,6 +242,15 @@ public class ListsMembers
         return builder.get(url, ListsMembersGoalsReadResponse.class);
     }
 
+    /**
+     * Retrieve recent notes for a specific list member. Add a new note
+     *
+     * @param listId The unique id for the list.
+     * @param subscriberHash The MD5 hash of the lowercase version of the list member’s email address.
+     * @param note The content of the note.
+     *
+     * @throws MailchimpException
+     */
     public MailchimpResponse<ListsMembersNotesResponse> createNote(String listId, String subscriberHash, String note) throws MailchimpException
     {
         if(StringUtils.isBlank(listId))
@@ -239,6 +268,18 @@ public class ListsMembers
         return builder.post(url, payload, ListsMembersNotesResponse.class);
     }
 
+    /**
+     * Retrieve recent notes for a specific list member. Get recent notes for a specific list member
+     *
+     * @param listId The unique id for the list.
+     * @param subscriberHash The MD5 hash of the lowercase version of the list member’s email address.
+     * @param fields A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.
+     * @param excludeFields A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.
+     * @param count The number of records to return.
+     * @param offset The number of records from a collection to skip. Iterating over large collections with this parameter can be slow.
+     *
+     * @throws MailchimpException
+     */
     public MailchimpResponse<ListsMembersNotesReadResponse> readNotes(String listId, String subscriberHash, String fields, String excludeFields, Integer count, Integer offset) throws MailchimpException
     {
         if(StringUtils.isBlank(listId))
@@ -260,6 +301,17 @@ public class ListsMembers
         return builder.get(url, ListsMembersNotesReadResponse.class);
     }
 
+    /**
+     * Retrieve recent notes for a specific list member. Get a specific note for a specific list member.
+     *
+     * @param listId The unique id for the list.
+     * @param subscriberHash The MD5 hash of the lowercase version of the list member’s email address.
+     * @param noteId The id for the note.
+     * @param fields A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.
+     * @param excludeFields A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.
+     *
+     * @throws MailchimpException
+     */
     public MailchimpResponse<ListsMembersNotesResponse> readNotes(String listId, String subscriberHash, String noteId, String fields, String excludeFields) throws MailchimpException
     {
         if(StringUtils.isBlank(listId))
@@ -284,6 +336,16 @@ public class ListsMembers
         return builder.get(url, ListsMembersNotesResponse.class);
     }
 
+    /**
+     * Retrieve recent notes for a specific list member. Update a note
+     *
+     * @param listId The unique id for the list.
+     * @param subscriberHash The MD5 hash of the lowercase version of the list member’s email address.
+     * @param noteId The id for the note.
+     * @param note The content of the note.
+     *
+     * @throws MailchimpException
+     */
     public MailchimpResponse<ListsMembersNotesResponse> editNotes(String listId, String subscriberHash, String noteId, String note) throws MailchimpException
     {
         if(StringUtils.isBlank(listId))
@@ -306,6 +368,15 @@ public class ListsMembers
         return builder.patch(url, payload, ListsMembersNotesResponse.class);
     }
 
+    /**
+     * Retrieve recent notes for a specific list member. Delete a note
+     *
+     * @param listId The unique id for the list.
+     * @param subscriberHash The MD5 hash of the lowercase version of the list member’s email address.
+     * @param noteId The id for the note.
+     *
+     * @throws MailchimpException
+     */
     public MailchimpResponse<Void> deleteNotes(String listId, String subscriberHash, String noteId) throws MailchimpException
     {
         if(StringUtils.isBlank(listId))

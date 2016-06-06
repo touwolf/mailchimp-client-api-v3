@@ -40,6 +40,8 @@ public class MailchimpClientImpl implements MailchimpClient
 
     private ListsSegments listsSegments;
 
+    private ListsWebhooks listsWebhooks;
+
     public MailchimpClientImpl(String username, String apiKey)
     {
         builder = new MailchimpBuilder(MailchimpUtils.getApiUrl(apiKey), username, apiKey, 30000);
@@ -124,6 +126,11 @@ public class MailchimpClientImpl implements MailchimpClient
     @Override
     public ListsSegments listsSegments() {
         return getListsSegments().builder(builder);
+    }
+
+    @Override
+    public ListsWebhooks listsWebhooks() {
+        return getListsWebhooks().builder(builder);
     }
 
     private ApiRoot getApiRoot()
@@ -246,7 +253,7 @@ public class MailchimpClientImpl implements MailchimpClient
         return listsInterestCategories;
     }
 
-    public ListsMembers getListsMembers()
+    private ListsMembers getListsMembers()
     {
         if(null == listsMembers)
         {
@@ -256,7 +263,7 @@ public class MailchimpClientImpl implements MailchimpClient
         return listsMembers;
     }
 
-    public ListsMergeFields getListsMergeFields()
+    private ListsMergeFields getListsMergeFields()
     {
         if(null == listsMergeFields)
         {
@@ -266,7 +273,7 @@ public class MailchimpClientImpl implements MailchimpClient
         return listsMergeFields;
     }
 
-    public ListsSegments getListsSegments()
+    private ListsSegments getListsSegments()
     {
         if(null == listsSegments)
         {
@@ -274,5 +281,15 @@ public class MailchimpClientImpl implements MailchimpClient
         }
 
         return listsSegments;
+    }
+
+    public ListsWebhooks getListsWebhooks()
+    {
+        if(null == listsWebhooks)
+        {
+            listsWebhooks = Ioc.context().find(ListsWebhooks.class);
+        }
+
+        return listsWebhooks;
     }
 }

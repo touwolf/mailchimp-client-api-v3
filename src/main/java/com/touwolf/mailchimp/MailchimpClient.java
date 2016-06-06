@@ -16,7 +16,6 @@ public interface MailchimpClient
     /**
      * Organize your campaigns using folders.
      *
-     * @return
      */
     CampaignFolder campaignFolder();
 
@@ -100,4 +99,10 @@ public interface MailchimpClient
      *
      */
     ListsSegments listsSegments();
+
+    /**
+     * Manage webhooks for a specific MailChimp list.
+     *
+     */
+    ListsWebhooks listsWebhooks();
 }

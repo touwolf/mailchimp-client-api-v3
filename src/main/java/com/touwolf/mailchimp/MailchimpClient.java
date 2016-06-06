@@ -86,4 +86,18 @@ public interface MailchimpClient
      *
      */
     ListsMembers listsMembers();
+
+    /**
+     * Manage merge fields (formerly merge vars) for a specific list.
+     *
+     */
+    ListsMergeFields listsMergeFields();
+
+    /**
+     * Manage segments for a specific MailChimp list.
+     * A segment is a section of your list that includes only those subscribers who share specific common field information.
+     * Learn more about segments in MailChimp.
+     *
+     */
+    ListsSegments listsSegments();
 }

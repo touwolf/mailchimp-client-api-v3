@@ -36,6 +36,10 @@ public class MailchimpClientImpl implements MailchimpClient
 
     private ListsMembers listsMembers;
 
+    private ListsMergeFields listsMergeFields;
+
+    private ListsSegments listsSegments;
+
     public MailchimpClientImpl(String username, String apiKey)
     {
         builder = new MailchimpBuilder(MailchimpUtils.getApiUrl(apiKey), username, apiKey, 30000);
@@ -110,6 +114,16 @@ public class MailchimpClientImpl implements MailchimpClient
     @Override
     public ListsMembers listsMembers() {
         return getListsMembers().builder(builder);
+    }
+
+    @Override
+    public ListsMergeFields listsMergeFields() {
+        return getListsMergeFields().builder(builder);
+    }
+
+    @Override
+    public ListsSegments listsSegments() {
+        return getListsSegments().builder(builder);
     }
 
     private ApiRoot getApiRoot()
@@ -240,5 +254,25 @@ public class MailchimpClientImpl implements MailchimpClient
         }
 
         return listsMembers;
+    }
+
+    public ListsMergeFields getListsMergeFields()
+    {
+        if(null == listsMergeFields)
+        {
+            listsMergeFields = Ioc.context().find(ListsMergeFields.class);
+        }
+
+        return listsMergeFields;
+    }
+
+    public ListsSegments getListsSegments()
+    {
+        if(null == listsSegments)
+        {
+            listsSegments = Ioc.context().find(ListsSegments.class);
+        }
+
+        return listsSegments;
     }
 }

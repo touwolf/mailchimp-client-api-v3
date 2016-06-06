@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName;
 import com.touwolf.mailchimp.model.MailchimpLinks;
 
 import java.util.List;
+import java.util.Map;
 
 public class ListsMembersResponse
 {
@@ -21,7 +22,7 @@ public class ListsMembersResponse
     private String status;
 
     @SerializedName("merge_fields")
-    private String mergeFields;
+    private Map<String, String> mergeFields;
 
     private String interests;
 
@@ -133,11 +134,11 @@ public class ListsMembersResponse
      * An individual merge var and value for a member.
      *
      */
-    public String getMergeFields() {
+    public Map<String, String> getMergeFields() {
         return mergeFields;
     }
 
-    public void setMergeFields(String mergeFields) {
+    public void setMergeFields(Map<String, String> mergeFields) {
         this.mergeFields = mergeFields;
     }
 

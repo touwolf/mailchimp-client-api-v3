@@ -6,6 +6,9 @@ import com.touwolf.mailchimp.MailchimpException;
 import com.touwolf.mailchimp.impl.MailchimpBuilder;
 import com.touwolf.mailchimp.impl.MailchimpUtils;
 import com.touwolf.mailchimp.model.MailchimpResponse;
+import com.touwolf.mailchimp.model.list.data.members.ListsMembersReadRequest;
+import com.touwolf.mailchimp.model.list.data.members.ListsMembersReadResponse;
+import com.touwolf.mailchimp.model.list.data.members.ListsMembersResponse;
 import com.touwolf.mailchimp.model.list.data.segments.ListsSegmentsReadRequest;
 import com.touwolf.mailchimp.model.list.data.segments.ListsSegmentsReadResponse;
 import com.touwolf.mailchimp.model.list.data.segments.ListsSegmentsRequest;
@@ -157,6 +160,66 @@ public class ListsSegments
         }
 
         String url = "/lists/" + listId + "/segments/" + segmentId;
+        return builder.delete(url, Void.class);
+    }
+
+    public MailchimpResponse<ListsMembersResponse> createMembers(String listId, String segmentId, String emailAddress, String status) throws MailchimpException
+    {
+        if(StringUtils.isBlank(listId))
+        {
+            throw new MailchimpException("The field list_id is required");
+        }
+
+        if(StringUtils.isBlank(segmentId))
+        {
+            throw new MailchimpException("The field segment_id is required");
+        }
+
+        String url = "/lists/" + listId + "/segments/" + segmentId + "/members";
+        String payload = "{\"email_address\": \"" + emailAddress+ "\", \"status\": \"" + status+ "\"}";
+        return builder.post(url, payload, ListsMembersResponse.class);
+    }
+
+    public MailchimpResponse<ListsMembersReadResponse> readMembers(String listId, String segmentId, ListsMembersReadRequest request) throws MailchimpException
+    {
+        if(StringUtils.isBlank(listId))
+        {
+            throw new MailchimpException("The field list_id is required");
+        }
+
+        if(StringUtils.isBlank(segmentId))
+        {
+            throw new MailchimpException("The field segment_id is required");
+        }
+
+        String url = "/lists/" + listId + "/segments/" + segmentId + "/members";
+
+        url = MailchimpUtils.formatQueryString(url, "fields", request.getFields());
+        url = MailchimpUtils.formatQueryString(url, "exclude_fields", request.getExcludeFields());
+        url = MailchimpUtils.formatQueryString(url, "count", request.getCount());
+        url = MailchimpUtils.formatQueryString(url, "offset", request.getOffset());
+
+        return builder.get(url, ListsMembersReadResponse.class);
+    }
+
+    public MailchimpResponse<Void> deleteMembers(String listId, String segmentId, String subscriberHash) throws MailchimpException
+    {
+        if(StringUtils.isBlank(listId))
+        {
+            throw new MailchimpException("The field list_id is required");
+        }
+
+        if(StringUtils.isBlank(segmentId))
+        {
+            throw new MailchimpException("The field segment_id is required");
+        }
+
+        if(StringUtils.isBlank(subscriberHash))
+        {
+            throw new MailchimpException("The field subscriber_hash is required");
+        }
+
+        String url = "/lists/" + listId + "/segments/" + segmentId + "/members/" + subscriberHash;
         return builder.delete(url, Void.class);
     }
 }

@@ -6,10 +6,7 @@ import com.touwolf.mailchimp.MailchimpException;
 import com.touwolf.mailchimp.impl.MailchimpBuilder;
 import com.touwolf.mailchimp.impl.MailchimpUtils;
 import com.touwolf.mailchimp.model.MailchimpResponse;
-import com.touwolf.mailchimp.model.list.data.members.ListsMembersReadRequest;
-import com.touwolf.mailchimp.model.list.data.members.ListsMembersReadResponse;
-import com.touwolf.mailchimp.model.list.data.members.ListsMembersRequest;
-import com.touwolf.mailchimp.model.list.data.members.ListsMembersResponse;
+import com.touwolf.mailchimp.model.list.data.members.*;
 import org.apache.commons.lang.StringUtils;
 import org.bridje.ioc.Component;
 
@@ -185,5 +182,24 @@ public class ListsMembers
 
         String url = "/lists/" + listId + "/members/" + subscriberHash;
         return builder.delete(url, Void.class);
+    }
+
+    public MailchimpResponse<ListsMembersActivityReadResponse> readActivity(String listId, String subscriberHash, String fields, String excludeFields) throws MailchimpException
+    {
+        if(StringUtils.isBlank(listId))
+        {
+            throw new MailchimpException("The field list_id is required");
+        }
+
+        if(StringUtils.isBlank(subscriberHash))
+        {
+            throw new MailchimpException("The field subscriber_hash is required");
+        }
+
+        String url = "/lists/" + listId + "/members/" + subscriberHash + "/activity";
+        url = MailchimpUtils.formatQueryString(url, "fields", fields);
+        url = MailchimpUtils.formatQueryString(url, "exclude_fields", excludeFields);
+
+        return builder.get(url, ListsMembersActivityReadResponse.class);
     }
 }

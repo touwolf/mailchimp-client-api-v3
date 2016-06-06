@@ -2,6 +2,7 @@ package com.touwolf.mailchimp.impl;
 
 import com.touwolf.mailchimp.MailchimpClient;
 import com.touwolf.mailchimp.model.apiroot.ApiRoot;
+import com.touwolf.mailchimp.model.batch.Batch;
 import com.touwolf.mailchimp.model.campaign.*;
 import com.touwolf.mailchimp.model.list.*;
 import org.bridje.ioc.Ioc;
@@ -42,6 +43,8 @@ public class MailchimpClientImpl implements MailchimpClient
 
     private ListsWebhooks listsWebhooks;
 
+    private Batch batch;
+
     public MailchimpClientImpl(String username, String apiKey)
     {
         builder = new MailchimpBuilder(MailchimpUtils.getApiUrl(apiKey), username, apiKey, 30000);
@@ -51,6 +54,11 @@ public class MailchimpClientImpl implements MailchimpClient
     public ApiRoot apiRoot()
     {
         return getApiRoot().builder(builder);
+    }
+
+    @Override
+    public Batch batch() {
+        return getBatch().builder(builder);
     }
 
     @Override
@@ -66,7 +74,8 @@ public class MailchimpClientImpl implements MailchimpClient
     }
 
     @Override
-    public CampaignContent campaignContent() {
+    public CampaignContent campaignContent()
+    {
         return getCampaignContent().builder(builder);
     }
 
@@ -88,12 +97,14 @@ public class MailchimpClientImpl implements MailchimpClient
     }
 
     @Override
-    public ListsAbuseReports listsAbuseReports() {
+    public ListsAbuseReports listsAbuseReports()
+    {
         return getListsAbuseReports().builder(builder);
     }
 
     @Override
-    public ListsActivity listsActivity() {
+    public ListsActivity listsActivity()
+    {
         return getListsActivity().builder(builder);
     }
 
@@ -104,32 +115,38 @@ public class MailchimpClientImpl implements MailchimpClient
     }
 
     @Override
-    public ListsGrowthHistory listsGrowthHistory() {
+    public ListsGrowthHistory listsGrowthHistory()
+    {
         return getListsGrowthHistory().builder(builder);
     }
 
     @Override
-    public ListsInterestCategories listsInterestCategories() {
+    public ListsInterestCategories listsInterestCategories()
+    {
         return getListsInterestCategories().builder(builder);
     }
 
     @Override
-    public ListsMembers listsMembers() {
+    public ListsMembers listsMembers()
+    {
         return getListsMembers().builder(builder);
     }
 
     @Override
-    public ListsMergeFields listsMergeFields() {
+    public ListsMergeFields listsMergeFields()
+    {
         return getListsMergeFields().builder(builder);
     }
 
     @Override
-    public ListsSegments listsSegments() {
+    public ListsSegments listsSegments()
+    {
         return getListsSegments().builder(builder);
     }
 
     @Override
-    public ListsWebhooks listsWebhooks() {
+    public ListsWebhooks listsWebhooks()
+    {
         return getListsWebhooks().builder(builder);
     }
 
@@ -141,6 +158,16 @@ public class MailchimpClientImpl implements MailchimpClient
         }
 
         return apiRoot;
+    }
+
+    private Batch getBatch()
+    {
+        if(null == batch)
+        {
+            batch = Ioc.context().find(Batch.class);
+        }
+
+        return batch;
     }
 
     private CampaignFolder getCampaignFolder()

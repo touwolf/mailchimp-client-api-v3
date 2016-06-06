@@ -1,6 +1,7 @@
 package com.touwolf.mailchimp;
 
 import com.touwolf.mailchimp.model.apiroot.ApiRoot;
+import com.touwolf.mailchimp.model.batch.Batch;
 import com.touwolf.mailchimp.model.campaign.*;
 import com.touwolf.mailchimp.model.list.*;
 
@@ -12,6 +13,12 @@ public interface MailchimpClient
      *
      */
     ApiRoot apiRoot();
+
+    /**
+     * Use batch operations to complete multiple operations with a single call.
+     *
+     */
+    Batch batch();
 
     /**
      * Organize your campaigns using folders.

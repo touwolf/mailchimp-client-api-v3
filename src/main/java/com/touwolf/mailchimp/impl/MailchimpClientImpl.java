@@ -1,9 +1,10 @@
 package com.touwolf.mailchimp.impl;
 
 import com.touwolf.mailchimp.MailchimpClient;
-import com.touwolf.mailchimp.api.*;
-import com.touwolf.mailchimp.api.ApiRoot;
-import com.touwolf.mailchimp.api.Batch;
+import com.touwolf.mailchimp.api.apiroot.ApiRoot;
+import com.touwolf.mailchimp.api.batch.Batch;
+import com.touwolf.mailchimp.api.campaign.*;
+import com.touwolf.mailchimp.api.lists.*;
 import org.bridje.ioc.Ioc;
 
 public class MailchimpClientImpl implements MailchimpClient

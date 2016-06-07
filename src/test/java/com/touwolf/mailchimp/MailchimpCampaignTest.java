@@ -2,7 +2,7 @@
 package com.touwolf.mailchimp;
 import com.touwolf.mailchimp.impl.MailchimpClientImpl;
 import com.touwolf.mailchimp.data.MailchimpResponse;
-import com.touwolf.mailchimp.api.Campaign;
+import com.touwolf.mailchimp.api.campaign.Campaign;
 import com.touwolf.mailchimp.model.campaign.CampaignReadRequest;
 import com.touwolf.mailchimp.model.campaign.CampaignReadResponse;
 import org.junit.*;

@@ -1,8 +1,9 @@
 package com.touwolf.mailchimp;
 
-import com.touwolf.mailchimp.api.*;
-import com.touwolf.mailchimp.api.ApiRoot;
-import com.touwolf.mailchimp.api.Batch;
+import com.touwolf.mailchimp.api.apiroot.ApiRoot;
+import com.touwolf.mailchimp.api.batch.Batch;
+import com.touwolf.mailchimp.api.campaign.*;
+import com.touwolf.mailchimp.api.lists.*;
 
 public interface MailchimpClient
 {

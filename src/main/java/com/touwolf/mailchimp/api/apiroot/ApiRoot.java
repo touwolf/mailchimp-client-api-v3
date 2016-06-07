@@ -1,4 +1,4 @@
-package com.touwolf.mailchimp.api;
+package com.touwolf.mailchimp.api.apiroot;
 
 import com.touwolf.mailchimp.MailchimpException;
 import com.touwolf.mailchimp.impl.MailchimpBuilder;

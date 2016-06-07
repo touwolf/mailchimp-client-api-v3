@@ -1,4 +1,4 @@
-package com.touwolf.mailchimp.api;
+package com.touwolf.mailchimp.api.lists;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

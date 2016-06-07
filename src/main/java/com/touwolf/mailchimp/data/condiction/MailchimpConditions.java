@@ -1,4 +1,4 @@
-package com.touwolf.mailchimp.data;
+package com.touwolf.mailchimp.data.condiction;
 
 import com.google.gson.annotations.SerializedName;
 

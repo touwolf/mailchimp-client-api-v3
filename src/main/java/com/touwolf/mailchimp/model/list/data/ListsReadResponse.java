@@ -12,6 +12,7 @@ public class ListsReadResponse
     @SerializedName("total_items")
     private Integer totalItems;
 
+    @SerializedName("_links")
     private List<MailchimpLinks> links;
 
     /**

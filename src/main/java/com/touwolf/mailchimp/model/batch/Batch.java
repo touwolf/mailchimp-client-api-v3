@@ -56,4 +56,15 @@ public class Batch
 
         return builder.get(url, BatchResponse.class);
     }
+
+    public MailchimpResponse<Void> delete(String batchId) throws MailchimpException
+    {
+        if(StringUtils.isBlank(batchId))
+        {
+            throw new MailchimpException("The field batch_id is required");
+        }
+
+        String url = "/batches/" + batchId;
+        return builder.delete(url, Void.class);
+    }
 }

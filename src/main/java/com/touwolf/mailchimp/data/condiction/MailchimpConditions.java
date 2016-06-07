@@ -1,21 +1,14 @@
 package com.touwolf.mailchimp.data.condiction;
 
-import com.google.gson.annotations.SerializedName;
-
-public class MailchimpConditions
+public class MailchimpConditions<T>
 {
-    @SerializedName("condition_type")
-    private MailchimpConditionType conditionType;
+    private T condition;
 
-    /**
-     * The type of segment, for example: date, language, Mandrill, static, and more.
-     *
-     */
-    public MailchimpConditionType getConditionType() {
-        return conditionType;
+    public T getCondition() {
+        return condition;
     }
 
-    public void setConditionType(MailchimpConditionType conditionType) {
-        this.conditionType = conditionType;
+    public void setCondition(T condition) {
+        this.condition = condition;
     }
 }

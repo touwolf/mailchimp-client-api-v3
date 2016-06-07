@@ -5,6 +5,9 @@ import com.google.gson.GsonBuilder;
 import com.touwolf.mailchimp.MailchimpException;
 import com.touwolf.mailchimp.data.MailchimpErrors;
 import com.touwolf.mailchimp.data.MailchimpResponse;
+import com.touwolf.mailchimp.data.condiction.MailchimpConditions;
+import com.touwolf.mailchimp.data.condiction.adapters.ConditionDeserializer;
+import com.touwolf.mailchimp.data.condiction.adapters.ConditionSerializer;
 import okhttp3.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,11 +18,13 @@ public class MailchimpBuilder
 {
     private static final Logger logger = LoggerFactory.getLogger(MailchimpBuilder.class);
 
-    private final Gson GSON = new GsonBuilder()            
+    private final Gson GSON = new GsonBuilder()
+            .registerTypeAdapter(MailchimpConditions.class, new ConditionDeserializer())
+            .registerTypeAdapter(MailchimpConditions.class, new ConditionSerializer())
             .setPrettyPrinting()
             .setDateFormat("yyyy-MM-dd HH:mm:ss").create();
 
-    static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+    private static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
     private final Integer timeout;
 

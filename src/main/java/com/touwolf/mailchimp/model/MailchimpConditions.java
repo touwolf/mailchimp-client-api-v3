@@ -5,13 +5,17 @@ import com.google.gson.annotations.SerializedName;
 public class MailchimpConditions
 {
     @SerializedName("condition_type")
-    private String conditionType;
+    private MailchimpConditionType conditionType;
 
-    public String getConditionType() {
+    /**
+     * The type of segment, for example: date, language, Mandrill, static, and more.
+     *
+     */
+    public MailchimpConditionType getConditionType() {
         return conditionType;
     }
 
-    public void setConditionType(String conditionType) {
+    public void setConditionType(MailchimpConditionType conditionType) {
         this.conditionType = conditionType;
     }
 }

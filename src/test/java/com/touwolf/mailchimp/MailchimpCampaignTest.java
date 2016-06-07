@@ -3,16 +3,20 @@ package com.touwolf.mailchimp;
 import com.touwolf.mailchimp.impl.MailchimpClientImpl;
 import com.touwolf.mailchimp.model.MailchimpResponse;
 import com.touwolf.mailchimp.model.apiroot.data.ApiRootResponse;
+import com.touwolf.mailchimp.model.campaign.Campaign;
+import com.touwolf.mailchimp.model.campaign.data.CampaignReadRequest;
+import com.touwolf.mailchimp.model.campaign.data.CampaignReadResponse;
+import com.touwolf.mailchimp.model.campaign.data.CampaignResponse;
 import org.junit.*;
 
-public class MailchimpTest
+public class MailchimpCampaignTest
 {
     // To execute this test correctly, please fill real username and apikey
     private static final String USERNAME = "";
 
     private static final String API_KEY = "";
 
-    public MailchimpTest()
+    public MailchimpCampaignTest()
     {
     }
 
@@ -43,8 +47,10 @@ public class MailchimpTest
         try
         {
             MailchimpClient client = new MailchimpClientImpl(USERNAME, API_KEY);
-            MailchimpResponse<ApiRootResponse> apiRoot = client.apiRoot().getApiRoot();
-            Assert.assertNotNull(apiRoot);
+            Campaign campaign = client.campaign();
+
+            MailchimpResponse<CampaignReadResponse> response = campaign.read(new CampaignReadRequest());
+            Assert.assertNotNull(response);
         }
         catch (Exception ex)
         {

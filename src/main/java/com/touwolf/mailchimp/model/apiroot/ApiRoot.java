@@ -5,7 +5,6 @@ import com.touwolf.mailchimp.impl.MailchimpBuilder;
 import com.touwolf.mailchimp.impl.MailchimpUtils;
 import com.touwolf.mailchimp.model.MailchimpResponse;
 import com.touwolf.mailchimp.model.apiroot.data.ApiRootResponse;
-import org.apache.commons.lang.StringUtils;
 import org.bridje.ioc.Component;
 
 @Component
@@ -24,9 +23,9 @@ public class ApiRoot
      *
      * @return
      */
-    public MailchimpResponse<ApiRootResponse> getApiRoot() throws MailchimpException
+    public MailchimpResponse<ApiRootResponse> read() throws MailchimpException
     {
-        return getApiRoot("", "");
+        return read("", "");
     }
 
     /**
@@ -36,7 +35,7 @@ public class ApiRoot
      * @param excludeFields A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.
      * @return
      */
-    public MailchimpResponse<ApiRootResponse> getApiRoot(String fields, String excludeFields) throws MailchimpException
+    public MailchimpResponse<ApiRootResponse> read(String fields, String excludeFields) throws MailchimpException
     {
         String url = "";
         url = MailchimpUtils.formatQueryString(url, "fields", fields);

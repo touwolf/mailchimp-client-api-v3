@@ -7,7 +7,7 @@ import java.util.List;
 
 public class CampaignReadResponse
 {
-    private List<CampaignResponse> campaign;
+    private List<CampaignResponse> campaigns;
 
     @SerializedName("total_items")
     private Integer totalItems;
@@ -20,12 +20,12 @@ public class CampaignReadResponse
      *
      * @return
      */
-    public List<CampaignResponse> getCampaign() {
-        return campaign;
+    public List<CampaignResponse> getCampaigns() {
+        return campaigns;
     }
 
-    public void setCampaign(List<CampaignResponse> campaign) {
-        this.campaign = campaign;
+    public void setCampaigns(List<CampaignResponse> campaigns) {
+        this.campaigns = campaigns;
     }
 
     /**

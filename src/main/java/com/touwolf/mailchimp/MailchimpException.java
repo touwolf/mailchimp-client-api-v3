@@ -2,7 +2,7 @@
 package com.touwolf.mailchimp;
 
 
-import com.touwolf.mailchimp.model.MailchimpErrors;
+import com.touwolf.mailchimp.data.MailchimpErrors;
 
 public class MailchimpException extends Exception
 {

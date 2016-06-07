@@ -1,12 +1,10 @@
 
 package com.touwolf.mailchimp;
 import com.touwolf.mailchimp.impl.MailchimpClientImpl;
-import com.touwolf.mailchimp.model.MailchimpResponse;
-import com.touwolf.mailchimp.model.apiroot.data.ApiRootResponse;
-import com.touwolf.mailchimp.model.campaign.Campaign;
-import com.touwolf.mailchimp.model.campaign.data.CampaignReadRequest;
-import com.touwolf.mailchimp.model.campaign.data.CampaignReadResponse;
-import com.touwolf.mailchimp.model.campaign.data.CampaignResponse;
+import com.touwolf.mailchimp.data.MailchimpResponse;
+import com.touwolf.mailchimp.api.Campaign;
+import com.touwolf.mailchimp.model.campaign.CampaignReadRequest;
+import com.touwolf.mailchimp.model.campaign.CampaignReadResponse;
 import org.junit.*;
 
 public class MailchimpCampaignTest

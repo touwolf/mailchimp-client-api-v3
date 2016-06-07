@@ -3,8 +3,8 @@ package com.touwolf.mailchimp.impl;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.touwolf.mailchimp.MailchimpException;
-import com.touwolf.mailchimp.model.MailchimpErrors;
-import com.touwolf.mailchimp.model.MailchimpResponse;
+import com.touwolf.mailchimp.data.MailchimpErrors;
+import com.touwolf.mailchimp.data.MailchimpResponse;
 import okhttp3.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +19,7 @@ public class MailchimpBuilder
             .setPrettyPrinting()
             .setDateFormat("yyyy-MM-dd HH:mm:ss").create();
 
-    public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
+    static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
     private final Integer timeout;
 
@@ -186,7 +186,7 @@ public class MailchimpBuilder
             Response response = client.newCall(request).execute();
             String result = response.body().string();
 
-            if(result.contains("errors") && response.code() != 201)
+            if(response.code() != 200)
             {
                 throw new MailchimpException(GSON.fromJson(result, MailchimpErrors.class), response.code());
             }

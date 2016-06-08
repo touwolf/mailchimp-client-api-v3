@@ -2,33 +2,36 @@ package com.touwolf.mailchimp.data.condiction.types;
 
 public class McEcommPurchased extends McParent
 {
-    private String op;
+    private McEcommPurchasedOpEnum op;
 
-    private String field;
+    private McEcommPurchasedFiledEnum field;
 
-    private String value;
-
-    public String getOp() {
+    /**
+     * Members who have have (‘member’) or have not (‘notmember’) purchased.
+     * Possible Values:
+     *
+     * member
+     * notmember
+     */
+    public McEcommPurchasedOpEnum getOp() {
         return op;
     }
 
-    public void setOp(String op) {
+    public void setOp(McEcommPurchasedOpEnum op) {
         this.op = op;
     }
 
-    public String getField() {
+    /**
+     * The e-commerce purchased field to segment on.
+     * Possible Values:
+     *
+     * ecomm_purchased
+     */
+    public McEcommPurchasedFiledEnum getField() {
         return field;
     }
 
-    public void setField(String field) {
+    public void setField(McEcommPurchasedFiledEnum field) {
         this.field = field;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
     }
 }

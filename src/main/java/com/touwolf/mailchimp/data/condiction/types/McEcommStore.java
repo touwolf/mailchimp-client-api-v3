@@ -2,28 +2,45 @@ package com.touwolf.mailchimp.data.condiction.types;
 
 public class McEcommStore extends McParent
 {
-    private String op;
+    private McEcommStoreOpEmum op;
 
-    private String field;
+    private McEcommStoreFieldEmum field;
 
     private String value;
 
-    public String getOp() {
+    /**
+     * Members who have or have not purchased from a specific store.
+     * Possible Values:
+     *
+     * is
+     * not
+     */
+    public McEcommStoreOpEmum getOp() {
         return op;
     }
 
-    public void setOp(String op) {
+    public void setOp(McEcommStoreOpEmum op) {
         this.op = op;
     }
 
-    public String getField() {
+    /**
+     * The e-commerce store field to segment on.
+     * Possible Values:
+     *
+     * ecomm_store
+     */
+    public McEcommStoreFieldEmum getField() {
         return field;
     }
 
-    public void setField(String field) {
+    public void setField(McEcommStoreFieldEmum field) {
         this.field = field;
     }
 
+    /**
+     * The store id to segment on.
+     *
+     */
     public String getValue() {
         return value;
     }

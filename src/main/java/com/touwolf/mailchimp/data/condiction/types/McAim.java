@@ -2,28 +2,49 @@ package com.touwolf.mailchimp.data.condiction.types;
 
 public class McAim extends McParent
 {
-    private String op;
+    private McAimOpEnum op;
 
-    private String field;
+    private McAimFieldEnum field;
 
     private String value;
 
-    public String getOp() {
+    /**
+     * The member’s status, based on their campaign interaction.
+     * Possible Values:
+
+     * open
+     * click
+     * sent
+     * noopen
+     * noclick
+     * nosent
+     */
+    public McAimOpEnum getOp() {
         return op;
     }
 
-    public void setOp(String op) {
+    public void setOp(McAimOpEnum op) {
         this.op = op;
     }
 
-    public String getField() {
+    /**
+     * The segment field, ‘aim’.
+     * Possible Values:
+
+     * aim
+     */
+    public McAimFieldEnum getField() {
         return field;
     }
 
-    public void setField(String field) {
+    public void setField(McAimFieldEnum field) {
         this.field = field;
     }
 
+    /**
+     * Either the web id value for a specific campaign or ‘any’ to account for subscribers who have or have not interacted with any campaigns.
+     *
+     */
     public String getValue() {
         return value;
     }

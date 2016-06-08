@@ -47,7 +47,7 @@ public class MailchimpBuilder {
      * @param url
      * @param clazzResp
      * @param <T>
-     * @return
+     * @return The response
      * @throws MailchimpException
      */
     public <T> MailchimpResponse<T> get(String url, Class<T> clazzResp) throws MailchimpException {
@@ -61,7 +61,7 @@ public class MailchimpBuilder {
      * @param payload
      * @param clazzResp
      * @param <T>
-     * @return
+     * @return The response
      * @throws MailchimpException
      */
     public <T> MailchimpResponse<T> post(String url, String payload, Class<T> clazzResp) throws MailchimpException {
@@ -74,7 +74,7 @@ public class MailchimpBuilder {
      * @param url
      * @param clazzResp
      * @param <T>
-     * @return
+     * @return The response
      * @throws MailchimpException
      */
     public <T> MailchimpResponse<T> post(String url, Class<T> clazzResp) throws MailchimpException {
@@ -88,7 +88,7 @@ public class MailchimpBuilder {
      * @param payload
      * @param clazzResp
      * @param <T>
-     * @return
+     * @return The response
      * @throws MailchimpException
      */
     public <T> MailchimpResponse<T> put(String url, String payload, Class<T> clazzResp) throws MailchimpException {
@@ -102,7 +102,7 @@ public class MailchimpBuilder {
      * @param payload
      * @param clazzResp
      * @param <T>
-     * @return
+     * @return The response
      * @throws MailchimpException
      */
     public <T> MailchimpResponse<T> patch(String url, String payload, Class<T> clazzResp) throws MailchimpException {
@@ -115,7 +115,7 @@ public class MailchimpBuilder {
      * @param url
      * @param clazzResp
      * @param <T>
-     * @return
+     * @return The response
      * @throws MailchimpException
      */
     public <T> MailchimpResponse<T> delete(String url, Class<T> clazzResp) throws MailchimpException {
@@ -129,7 +129,7 @@ public class MailchimpBuilder {
      * @param payload
      * @param clazzResp
      * @param <T>
-     * @return
+     * @return The response
      * @throws MailchimpException
      */
     public <T> MailchimpResponse<T> delete(String url, String payload, Class<T> clazzResp) throws MailchimpException {

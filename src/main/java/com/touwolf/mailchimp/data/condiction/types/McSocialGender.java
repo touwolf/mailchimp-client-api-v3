@@ -2,33 +2,53 @@ package com.touwolf.mailchimp.data.condiction.types;
 
 public class McSocialGender extends McParent
 {
-    private String op;
+    private McSocialGenderOpEnum op;
 
-    private String field;
+    private McSocialGenderFieldEnum field;
 
-    private String value;
+    private McSocialGenderValueEnum value;
 
-    public String getOp() {
+    /**
+     * Members who do or don’t match the exact criteria listed.
+     * Possible Values:
+     *
+     * is
+     * not
+     */
+    public McSocialGenderOpEnum getOp() {
         return op;
     }
 
-    public void setOp(String op) {
+    public void setOp(McSocialGenderOpEnum op) {
         this.op = op;
     }
 
-    public String getField() {
+    /**
+     * The social gender field to segment on.
+     * Possible Values:
+     *
+     * social_gender
+     */
+    public McSocialGenderFieldEnum getField() {
         return field;
     }
 
-    public void setField(String field) {
+    public void setField(McSocialGenderFieldEnum field) {
         this.field = field;
     }
 
-    public String getValue() {
+    /**
+     * The Social Profiles gender to segment.
+     * Possible Values:
+     *
+     * male
+     * female
+     */
+    public McSocialGenderValueEnum getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(McSocialGenderValueEnum value) {
         this.value = value;
     }
 }

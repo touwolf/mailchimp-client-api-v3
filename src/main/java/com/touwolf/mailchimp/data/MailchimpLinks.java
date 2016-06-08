@@ -6,7 +6,7 @@ public class MailchimpLinks
 
     private String href;
 
-    private String method;
+    private MailchimpLinksMethod method;
 
     private String targetSchema;
 
@@ -50,11 +50,11 @@ public class MailchimpLinks
      * HEAD
      *
      */
-    public String getMethod() {
+    public MailchimpLinksMethod getMethod() {
         return method;
     }
 
-    public void setMethod(String method) {
+    public void setMethod(MailchimpLinksMethod method) {
         this.method = method;
     }
 

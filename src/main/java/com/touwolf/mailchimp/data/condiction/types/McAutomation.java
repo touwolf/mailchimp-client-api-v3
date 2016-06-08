@@ -2,28 +2,47 @@ package com.touwolf.mailchimp.data.condiction.types;
 
 public class McAutomation extends McParent
 {
-    private String op;
+    private McAutomationOpEnum op;
 
-    private String field;
+    private McAutomationFieldEnum field;
 
     private String value;
 
-    public String getOp() {
+    /**
+     * The member’s status, based on where they are in an Automation workflow.
+     * Possible Values:
+     *
+     * started
+     * completed
+     * not_started
+     * not_completed
+     */
+    public McAutomationOpEnum getOp() {
         return op;
     }
 
-    public void setOp(String op) {
+    public void setOp(McAutomationOpEnum op) {
         this.op = op;
     }
 
-    public String getField() {
+    /**
+     * The field to segment on.
+     * Possible Values:
+     *
+     * automation
+     */
+    public McAutomationFieldEnum getField() {
         return field;
     }
 
-    public void setField(String field) {
+    public void setField(McAutomationFieldEnum field) {
         this.field = field;
     }
 
+    /**
+     * The web id for the Automation workflow to segment on.
+     *
+     */
     public String getValue() {
         return value;
     }

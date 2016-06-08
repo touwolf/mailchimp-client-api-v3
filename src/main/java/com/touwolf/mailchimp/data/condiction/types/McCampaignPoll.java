@@ -2,33 +2,50 @@ package com.touwolf.mailchimp.data.condiction.types;
 
 public class McCampaignPoll extends McParent
 {
-    private String op;
+    private McCampaignPollOpEnum op;
 
-    private String field;
+    private McCampaignPollFieldEnum field;
 
-    private String value;
+    private Long value;
 
-    public String getOp() {
+    /**
+     * Members who have or have not interacted with a specific poll in a MailChimp email.
+     * Possible Values:
+     *
+     * member
+     * notmember
+     */
+    public McCampaignPollOpEnum getOp() {
         return op;
     }
 
-    public void setOp(String op) {
+    public void setOp(McCampaignPollOpEnum op) {
         this.op = op;
     }
 
-    public String getField() {
+    /**
+     * The field to segment on.
+     * Possible Values:
+     *
+     * poll
+     */
+    public McCampaignPollFieldEnum getField() {
         return field;
     }
 
-    public void setField(String field) {
+    public void setField(McCampaignPollFieldEnum field) {
         this.field = field;
     }
 
-    public String getValue() {
+    /**
+     * The id for the poll.
+     *
+     */
+    public Long getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(Long value) {
         this.value = value;
     }
 }

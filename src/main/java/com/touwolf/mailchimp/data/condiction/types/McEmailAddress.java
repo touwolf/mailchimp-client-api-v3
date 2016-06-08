@@ -2,28 +2,52 @@ package com.touwolf.mailchimp.data.condiction.types;
 
 public class McEmailAddress extends McParent
 {
-    private String op;
+    private McEmailAddressOpEnum op;
 
-    private String field;
+    private McEmailAddressFieldEnum field;
 
     private String value;
 
-    public String getOp() {
+    /**
+     * Whether the email address is/not exactly, contains/doesn’t contain, starts/ends with a string.
+     * Possible Values:
+     *
+     * is
+     * not
+     * contains
+     * notcontain
+     * starts
+     * ends
+     * greater
+     * less
+     */
+    public McEmailAddressOpEnum getOp() {
         return op;
     }
 
-    public void setOp(String op) {
+    public void setOp(McEmailAddressOpEnum op) {
         this.op = op;
     }
 
-    public String getField() {
+    /**
+     * The segment field, one of ‘merge0’ or ‘EMAIL’.
+     * Possible Values:
+     *
+     * merge0
+     * EMAIL
+     */
+    public McEmailAddressFieldEnum getField() {
         return field;
     }
 
-    public void setField(String field) {
+    public void setField(McEmailAddressFieldEnum field) {
         this.field = field;
     }
 
+    /**
+     * The value to compare the email against.
+     *
+     */
     public String getValue() {
         return value;
     }

@@ -2,20 +2,33 @@ package com.touwolf.mailchimp.data.condiction.types;
 
 public class McAddressMerge extends McParent
 {
-    private String op;
+    private McAddressMergeOpEnum op;
 
     private String field;
 
     private String value;
 
-    public String getOp() {
+    /**
+     * Whether the segment value contains, doesn’t contain, is blank, or isn’t blank.
+     * Possible Values:
+     *
+     * contains
+     * notcontain
+     * blank
+     * blank_not
+     */
+    public McAddressMergeOpEnum getOp() {
         return op;
     }
 
-    public void setOp(String op) {
+    public void setOp(McAddressMergeOpEnum op) {
         this.op = op;
     }
 
+    /**
+     * The address merge segment field.
+     *
+     */
     public String getField() {
         return field;
     }
@@ -24,6 +37,10 @@ public class McAddressMerge extends McParent
         this.field = field;
     }
 
+    /**
+     * The value to compare.
+     *
+     */
     public String getValue() {
         return value;
     }

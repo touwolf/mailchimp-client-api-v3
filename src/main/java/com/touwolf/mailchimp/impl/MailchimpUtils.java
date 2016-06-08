@@ -1,7 +1,6 @@
 package com.touwolf.mailchimp.impl;
 
 import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.math.NumberUtils;
 
 public class MailchimpUtils
 {

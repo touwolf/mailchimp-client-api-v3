@@ -246,7 +246,7 @@ public class Campaign
      *
      * @throws MailchimpException
      */
-    public MailchimpResponse<Void> test(String campaignId, List<String> testEmails, String sendType) throws MailchimpException
+    public MailchimpResponse<Void> test(String campaignId, List<String> testEmails, CampaignSendTypeEnum sendType) throws MailchimpException
     {
         if(StringUtils.isBlank(campaignId))
         {
@@ -255,7 +255,7 @@ public class Campaign
 
         String url = "/campaigns/" + campaignId + "/actions/test";
         String emails = GSON.toJson(testEmails.toArray());
-        String payload = "{test_emails: \"" + emails + "\", send_type: \"" + sendType + "\"}";
+        String payload = "{test_emails: \"" + emails + "\", send_type: \"" + sendType.name() + "\"}";
         return builder.post(url, payload, Void.class);
     }
 

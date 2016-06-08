@@ -2,33 +2,74 @@ package com.touwolf.mailchimp.data.condiction.types;
 
 public class McDate extends McParent
 {
-    private String op;
+    private McDateOpEnum op;
 
-    private String field;
+    private McDateFieldEnum field;
 
-    private String value;
+    private String extra;
 
-    public String getOp() {
+    private McDateValueEnum value;
+
+    /**
+     * When the event took place.
+     * Possible Values:
+     *
+     * greater
+     * less
+     * is
+     * not
+     * blank
+     * blank_not
+     */
+    public McDateOpEnum getOp() {
         return op;
     }
 
-    public void setOp(String op) {
+    public void setOp(McDateOpEnum op) {
         this.op = op;
     }
 
-    public String getField() {
+    /**
+     * The date segment field.
+     * Possible Values:
+     *
+     * timestamp_opt
+     * info_changed
+     * ecomm_date
+     */
+    public McDateFieldEnum getField() {
         return field;
     }
 
-    public void setField(String field) {
+    public void setField(McDateFieldEnum field) {
         this.field = field;
     }
 
-    public String getValue() {
+    /**
+     * When segmenting on ‘date’ or ‘campaign’, the date for the segment formatted as YYYY-MM-DD or the web id for the campaign.
+     *
+     */
+    public String getExtra() {
+        return extra;
+    }
+
+    public void setExtra(String extra) {
+        this.extra = extra;
+    }
+
+    /**
+     * What type of data to segment on: a specific date, a specific campaign, or the last campaign sent.
+     * Possible Values:
+     *
+     * date
+     * campaign
+     * last
+     */
+    public McDateValueEnum getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(McDateValueEnum value) {
         this.value = value;
     }
 }

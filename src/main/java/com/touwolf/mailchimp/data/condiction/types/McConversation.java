@@ -2,28 +2,45 @@ package com.touwolf.mailchimp.data.condiction.types;
 
 public class McConversation extends McParent
 {
-    private String op;
+    private McConversationOpEnum op;
 
-    private String field;
+    private McConversationFieldEnum field;
 
     private String value;
 
-    public String getOp() {
+    /**
+     * The status of a member’s interaction with a conversation.
+     * Possible Values:
+     *
+     * member
+     * notmember
+     */
+    public McConversationOpEnum getOp() {
         return op;
     }
 
-    public void setOp(String op) {
+    public void setOp(McConversationOpEnum op) {
         this.op = op;
     }
 
-    public String getField() {
+    /**
+     * The field to segment on.
+     * Possible Values:
+     *
+     * conversation
+     */
+    public McConversationFieldEnum getField() {
         return field;
     }
 
-    public void setField(String field) {
+    public void setField(McConversationFieldEnum field) {
         this.field = field;
     }
 
+    /**
+     * The web id value for a specific campaign, or ‘any’ to account for subscribers who have or have not interacted with any campaigns.
+     *
+     */
     public String getValue() {
         return value;
     }

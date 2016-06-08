@@ -1,7 +1,6 @@
 package com.touwolf.mailchimp.data.condiction.types;
 
-public class McEcommCategory extends McParent
-{
+public class McEcommCategory extends McParent {
     private McEcommCategoryOpEnum op;
 
     private McEcommCategoryFieldEnum field;
@@ -11,7 +10,7 @@ public class McEcommCategory extends McParent
     /**
      * A member who has purchased from a category or purchased a specific item.
      * Possible Values:
-     *
+     * <p>
      * is
      * not
      * contains
@@ -30,7 +29,7 @@ public class McEcommCategory extends McParent
     /**
      * The e-commerce category or product segment field.
      * Possible Values:
-     *
+     * <p>
      * ecomm_cat
      * ecomm_prod
      */
@@ -44,7 +43,6 @@ public class McEcommCategory extends McParent
 
     /**
      * The e-commerce category or item information.
-     *
      */
     public String getValue() {
         return value;

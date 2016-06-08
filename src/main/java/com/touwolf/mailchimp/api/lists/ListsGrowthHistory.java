@@ -3,9 +3,9 @@ package com.touwolf.mailchimp.api.lists;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.touwolf.mailchimp.MailchimpException;
+import com.touwolf.mailchimp.data.MailchimpResponse;
 import com.touwolf.mailchimp.impl.MailchimpBuilder;
 import com.touwolf.mailchimp.impl.MailchimpUtils;
-import com.touwolf.mailchimp.data.MailchimpResponse;
 import com.touwolf.mailchimp.model.list.growthhistory.ListsGrowthHistoryReadRequest;
 import com.touwolf.mailchimp.model.list.growthhistory.ListsGrowthHistoryReadResponse;
 import com.touwolf.mailchimp.model.list.growthhistory.ListsGrowthHistoryResponse;
@@ -16,14 +16,12 @@ import org.bridje.ioc.Component;
  * View a summary of the month-by-month growth activity for a specific list.
  */
 @Component
-public class ListsGrowthHistory
-{
+public class ListsGrowthHistory {
     private final Gson GSON = new GsonBuilder().setPrettyPrinting().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
 
     private MailchimpBuilder builder;
 
-    public ListsGrowthHistory builder(MailchimpBuilder builder)
-    {
+    public ListsGrowthHistory builder(MailchimpBuilder builder) {
         this.builder = builder;
         return this;
     }
@@ -31,9 +29,8 @@ public class ListsGrowthHistory
     /**
      * Get list growth history data
      *
-     * @param listId The unique id for the list.
+     * @param listId  The unique id for the list.
      * @param request Query string parameters
-     *
      * @throws MailchimpException
      */
     public MailchimpResponse<ListsGrowthHistoryReadResponse> read(String listId, ListsGrowthHistoryReadRequest request) throws MailchimpException {
@@ -54,11 +51,10 @@ public class ListsGrowthHistory
     /**
      * Get list growth history by month
      *
-     * @param listId The unique id for the list.
-     * @param month A specific month of list growth history.
-     * @param fields A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.
+     * @param listId        The unique id for the list.
+     * @param month         A specific month of list growth history.
+     * @param fields        A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.
      * @param excludeFields A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.
-     *
      * @throws MailchimpException
      */
     public MailchimpResponse<ListsGrowthHistoryResponse> read(String listId, String month, String fields, String excludeFields) throws MailchimpException {

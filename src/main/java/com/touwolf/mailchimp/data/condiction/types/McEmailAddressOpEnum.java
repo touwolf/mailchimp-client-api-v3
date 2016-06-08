@@ -2,8 +2,7 @@ package com.touwolf.mailchimp.data.condiction.types;
 
 import com.google.gson.annotations.SerializedName;
 
-public enum McEmailAddressOpEnum
-{
+public enum McEmailAddressOpEnum {
     @SerializedName("is")
     IS,
     @SerializedName("not")

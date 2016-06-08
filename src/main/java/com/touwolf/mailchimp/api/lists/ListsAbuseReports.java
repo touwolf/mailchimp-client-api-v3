@@ -3,9 +3,9 @@ package com.touwolf.mailchimp.api.lists;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.touwolf.mailchimp.MailchimpException;
+import com.touwolf.mailchimp.data.MailchimpResponse;
 import com.touwolf.mailchimp.impl.MailchimpBuilder;
 import com.touwolf.mailchimp.impl.MailchimpUtils;
-import com.touwolf.mailchimp.data.MailchimpResponse;
 import com.touwolf.mailchimp.model.list.abusereport.ListsAbuseReportsReadRequest;
 import com.touwolf.mailchimp.model.list.abusereport.ListsAbuseReportsReadResponse;
 import com.touwolf.mailchimp.model.list.abusereport.ListsAbuseReportsResponse;
@@ -16,14 +16,12 @@ import org.bridje.ioc.Component;
  * Manage abuse complaints for a specific list. An abuse complaint occurs when your recipient reports an email as spam in their mail program.
  */
 @Component
-public class ListsAbuseReports
-{
+public class ListsAbuseReports {
     private final Gson GSON = new GsonBuilder().setPrettyPrinting().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
 
     private MailchimpBuilder builder;
 
-    public ListsAbuseReports builder(MailchimpBuilder builder)
-    {
+    public ListsAbuseReports builder(MailchimpBuilder builder) {
         this.builder = builder;
         return this;
     }
@@ -31,9 +29,8 @@ public class ListsAbuseReports
     /**
      * Get all abuse reports for a specific list.
      *
-     * @param listId The unique id for the list.
+     * @param listId  The unique id for the list.
      * @param request Query string parameters
-     *
      * @throws MailchimpException
      */
     public MailchimpResponse<ListsAbuseReportsReadResponse> read(String listId, ListsAbuseReportsReadRequest request) throws MailchimpException {
@@ -54,10 +51,9 @@ public class ListsAbuseReports
     /**
      * Get details about a specific abuse report.
      *
-     * @param listId The unique id for the list.
+     * @param listId   The unique id for the list.
      * @param reportId The id for the abuse report.
-     * @param request Query string parameters
-     *
+     * @param request  Query string parameters
      * @throws MailchimpException
      */
     public MailchimpResponse<ListsAbuseReportsResponse> read(String listId, String reportId, ListsAbuseReportsReadRequest request) throws MailchimpException {

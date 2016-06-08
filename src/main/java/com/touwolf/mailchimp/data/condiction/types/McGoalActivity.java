@@ -1,7 +1,6 @@
 package com.touwolf.mailchimp.data.condiction.types;
 
-public class McGoalActivity extends McParent
-{
+public class McGoalActivity extends McParent {
     private McGoalActivityOpEnum op;
 
     private McGoalActivityFieldEnum field;
@@ -11,7 +10,7 @@ public class McGoalActivity extends McParent
     /**
      * Whether the website URL is/not exactly, contains/doesn’t contain, starts with/ends with a string.
      * Possible Values:
-     *
+     * <p>
      * is
      * goal_not
      * contains
@@ -30,7 +29,7 @@ public class McGoalActivity extends McParent
     /**
      * The goal activity field to segment on.
      * Possible Values:
-     *
+     * <p>
      * goal
      */
     public McGoalActivityFieldEnum getField() {
@@ -43,7 +42,6 @@ public class McGoalActivity extends McParent
 
     /**
      * The URL to check Goal activity against.
-     *
      */
     public String getValue() {
         return value;

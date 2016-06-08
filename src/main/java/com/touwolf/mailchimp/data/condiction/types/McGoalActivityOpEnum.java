@@ -2,8 +2,7 @@ package com.touwolf.mailchimp.data.condiction.types;
 
 import com.google.gson.annotations.SerializedName;
 
-public enum McGoalActivityOpEnum
-{
+public enum McGoalActivityOpEnum {
     @SerializedName("is")
     IS,
     @SerializedName("goal_not")

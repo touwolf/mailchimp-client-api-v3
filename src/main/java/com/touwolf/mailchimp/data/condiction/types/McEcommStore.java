@@ -1,7 +1,6 @@
 package com.touwolf.mailchimp.data.condiction.types;
 
-public class McEcommStore extends McParent
-{
+public class McEcommStore extends McParent {
     private McEcommStoreOpEmum op;
 
     private McEcommStoreFieldEmum field;
@@ -11,7 +10,7 @@ public class McEcommStore extends McParent
     /**
      * Members who have or have not purchased from a specific store.
      * Possible Values:
-     *
+     * <p>
      * is
      * not
      */
@@ -26,7 +25,7 @@ public class McEcommStore extends McParent
     /**
      * The e-commerce store field to segment on.
      * Possible Values:
-     *
+     * <p>
      * ecomm_store
      */
     public McEcommStoreFieldEmum getField() {
@@ -39,7 +38,6 @@ public class McEcommStore extends McParent
 
     /**
      * The store id to segment on.
-     *
      */
     public String getValue() {
         return value;

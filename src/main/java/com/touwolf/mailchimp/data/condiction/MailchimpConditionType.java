@@ -2,8 +2,7 @@ package com.touwolf.mailchimp.data.condiction;
 
 import com.google.gson.annotations.SerializedName;
 
-public enum MailchimpConditionType
-{
+public enum MailchimpConditionType {
     @SerializedName("Aim")
     AIM, //Automation Segment - Aim
     @SerializedName("Automation")

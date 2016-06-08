@@ -3,9 +3,9 @@ package com.touwolf.mailchimp.api.lists;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.touwolf.mailchimp.MailchimpException;
+import com.touwolf.mailchimp.data.MailchimpResponse;
 import com.touwolf.mailchimp.impl.MailchimpBuilder;
 import com.touwolf.mailchimp.impl.MailchimpUtils;
-import com.touwolf.mailchimp.data.MailchimpResponse;
 import com.touwolf.mailchimp.model.list.mergefields.ListsMergeFieldsReadRequest;
 import com.touwolf.mailchimp.model.list.mergefields.ListsMergeFieldsReadResponse;
 import com.touwolf.mailchimp.model.list.mergefields.ListsMergeFieldsRequest;
@@ -17,14 +17,12 @@ import org.bridje.ioc.Component;
  * Manage merge fields (formerly merge vars) for a specific list.
  */
 @Component
-public class ListsMergeFields
-{
+public class ListsMergeFields {
     private final Gson GSON = new GsonBuilder().setPrettyPrinting().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
 
     private MailchimpBuilder builder;
 
-    public ListsMergeFields builder(MailchimpBuilder builder)
-    {
+    public ListsMergeFields builder(MailchimpBuilder builder) {
         this.builder = builder;
         return this;
     }
@@ -32,15 +30,12 @@ public class ListsMergeFields
     /**
      * Add a new merge field
      *
-     * @param listId The unique id for the list.
+     * @param listId  The unique id for the list.
      * @param request Request body parameters
-     *
      * @throws MailchimpException
      */
-    public MailchimpResponse<ListsMergeFieldsResponse> create(String listId, ListsMergeFieldsRequest request) throws MailchimpException
-    {
-        if(StringUtils.isBlank(listId))
-        {
+    public MailchimpResponse<ListsMergeFieldsResponse> create(String listId, ListsMergeFieldsRequest request) throws MailchimpException {
+        if (StringUtils.isBlank(listId)) {
             throw new MailchimpException("The field list_id is required");
         }
 
@@ -52,15 +47,12 @@ public class ListsMergeFields
     /**
      * Get all merge fields for a list
      *
-     * @param listId The unique id for the list.
+     * @param listId  The unique id for the list.
      * @param request Query string parameters
-     *
      * @throws MailchimpException
      */
-    public MailchimpResponse<ListsMergeFieldsReadResponse> read(String listId, ListsMergeFieldsReadRequest request) throws MailchimpException
-    {
-        if(StringUtils.isBlank(listId))
-        {
+    public MailchimpResponse<ListsMergeFieldsReadResponse> read(String listId, ListsMergeFieldsReadRequest request) throws MailchimpException {
+        if (StringUtils.isBlank(listId)) {
             throw new MailchimpException("The field list_id is required");
         }
 
@@ -79,20 +71,16 @@ public class ListsMergeFields
     /**
      * Get a specific merge field
      *
-     * @param listId The unique id for the list.
+     * @param listId  The unique id for the list.
      * @param mergeId The id for the merge field.
-     *
      * @throws MailchimpException
      */
-    public MailchimpResponse<ListsMergeFieldsResponse> read(String listId, String mergeId) throws MailchimpException
-    {
-        if(StringUtils.isBlank(listId))
-        {
+    public MailchimpResponse<ListsMergeFieldsResponse> read(String listId, String mergeId) throws MailchimpException {
+        if (StringUtils.isBlank(listId)) {
             throw new MailchimpException("The field list_id is required");
         }
 
-        if(StringUtils.isBlank(mergeId))
-        {
+        if (StringUtils.isBlank(mergeId)) {
             throw new MailchimpException("The field merge_id is required");
         }
 
@@ -103,21 +91,17 @@ public class ListsMergeFields
     /**
      * Update a merge field
      *
-     * @param listId The unique id for the list.
+     * @param listId  The unique id for the list.
      * @param mergeId The id for the merge field.
      * @param request Request body parameters
-     *
      * @throws MailchimpException
      */
-    public MailchimpResponse<ListsMergeFieldsResponse> edit(String listId, String mergeId, ListsMergeFieldsRequest request) throws MailchimpException
-    {
-        if(StringUtils.isBlank(listId))
-        {
+    public MailchimpResponse<ListsMergeFieldsResponse> edit(String listId, String mergeId, ListsMergeFieldsRequest request) throws MailchimpException {
+        if (StringUtils.isBlank(listId)) {
             throw new MailchimpException("The field list_id is required");
         }
 
-        if(StringUtils.isBlank(mergeId))
-        {
+        if (StringUtils.isBlank(mergeId)) {
             throw new MailchimpException("The field merge_id is required");
         }
 
@@ -129,20 +113,16 @@ public class ListsMergeFields
     /**
      * Delete a merge field
      *
-     * @param listId The unique id for the list.
+     * @param listId  The unique id for the list.
      * @param mergeId The id for the merge field.
-     *
      * @throws MailchimpException
      */
-    public MailchimpResponse<Void> delete(String listId, String mergeId) throws MailchimpException
-    {
-        if(StringUtils.isBlank(listId))
-        {
+    public MailchimpResponse<Void> delete(String listId, String mergeId) throws MailchimpException {
+        if (StringUtils.isBlank(listId)) {
             throw new MailchimpException("The field list_id is required");
         }
 
-        if(StringUtils.isBlank(mergeId))
-        {
+        if (StringUtils.isBlank(mergeId)) {
             throw new MailchimpException("The field merge_id is required");
         }
 

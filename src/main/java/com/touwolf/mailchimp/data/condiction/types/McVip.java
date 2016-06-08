@@ -1,7 +1,6 @@
 package com.touwolf.mailchimp.data.condiction.types;
 
-public class McVip extends McParent
-{
+public class McVip extends McParent {
     private McVipOpEnum op;
 
     private McVipFieldEnum field;
@@ -9,7 +8,7 @@ public class McVip extends McParent
     /**
      * Whether the member is or isn’t a VIP.
      * Possible Values:
-     *
+     * <p>
      * member
      * notmember
      */
@@ -24,7 +23,7 @@ public class McVip extends McParent
     /**
      * The field to segment on.
      * Possible Values:
-     *
+     * <p>
      * gmonkey
      */
     public McVipFieldEnum getField() {

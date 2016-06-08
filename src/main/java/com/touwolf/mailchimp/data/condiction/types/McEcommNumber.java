@@ -1,7 +1,6 @@
 package com.touwolf.mailchimp.data.condiction.types;
 
-public class McEcommNumber extends McParent
-{
+public class McEcommNumber extends McParent {
     private McEcommNumberOpEnum op;
 
     private McEcommNumberFieldEnum field;
@@ -11,7 +10,7 @@ public class McEcommNumber extends McParent
     /**
      * Members who have spent exactly, have not spent exactly, spent more, or spent less than the segment value.
      * Possible Values:
-     *
+     * <p>
      * is
      * not
      * greater
@@ -28,7 +27,7 @@ public class McEcommNumber extends McParent
     /**
      * The e-commerce number field to segment on.
      * Possible Values:
-     *
+     * <p>
      * ecomm_spent_avg
      * ecomm_orders
      * ecomm_prod_all
@@ -44,7 +43,6 @@ public class McEcommNumber extends McParent
 
     /**
      * Members who have spent exactly, have not spent exactly, spent more, or spent less than this amount.
-     *
      */
     public Double getValue() {
         return value;

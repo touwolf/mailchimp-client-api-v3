@@ -2,8 +2,7 @@ package com.touwolf.mailchimp.model.campaign;
 
 import com.google.gson.annotations.SerializedName;
 
-public enum CampaignTypeEnum
-{
+public enum CampaignTypeEnum {
     @SerializedName("regular")
     REGULAR,
     @SerializedName("plaintext")

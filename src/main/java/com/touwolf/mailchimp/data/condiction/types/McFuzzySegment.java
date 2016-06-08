@@ -1,7 +1,6 @@
 package com.touwolf.mailchimp.data.condiction.types;
 
-public class McFuzzySegment extends McParent
-{
+public class McFuzzySegment extends McParent {
     private McFuzzySegmentOpEnum op;
 
     private McFuzzySegmentFieldEnum field;
@@ -11,7 +10,7 @@ public class McFuzzySegment extends McParent
     /**
      * Members who are/are not apart of a ‘similar subscribers’ segment.
      * Possible Values:
-     *
+     * <p>
      * fuzzy_is
      * fuzzy_not
      */
@@ -26,7 +25,7 @@ public class McFuzzySegment extends McParent
     /**
      * The fuzzy segment field.
      * Possible Values:
-     *
+     * <p>
      * fuzzy_segment
      */
     public McFuzzySegmentFieldEnum getField() {
@@ -39,7 +38,6 @@ public class McFuzzySegment extends McParent
 
     /**
      * The id for the ‘similar subscribers’ segment.
-     *
      */
     public Long getValue() {
         return value;

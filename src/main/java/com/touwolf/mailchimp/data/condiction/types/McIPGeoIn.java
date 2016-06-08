@@ -1,7 +1,6 @@
 package com.touwolf.mailchimp.data.condiction.types;
 
-public class McIPGeoIn extends McParent
-{
+public class McIPGeoIn extends McParent {
     private McIPGeoInOpEnum op;
 
     private String lng;
@@ -17,7 +16,7 @@ public class McIPGeoIn extends McParent
     /**
      * Segment members who are in a specific geographic region.
      * Possible Values:
-     *
+     * <p>
      * ipgeoin
      * ipgeonotin
      */
@@ -31,7 +30,6 @@ public class McIPGeoIn extends McParent
 
     /**
      * The longitude of the target location.
-     *
      */
     public String getLng() {
         return lng;
@@ -44,7 +42,7 @@ public class McIPGeoIn extends McParent
     /**
      * The field to segment on.
      * Possible Values:
-     *
+     * <p>
      * ipgeo
      */
     public McIPGeoInFieldEnum getField() {
@@ -57,7 +55,6 @@ public class McIPGeoIn extends McParent
 
     /**
      * The address of the target location.
-     *
      */
     public String getAddr() {
         return addr;
@@ -69,7 +66,6 @@ public class McIPGeoIn extends McParent
 
     /**
      * The radius of the target location.
-     *
      */
     public Integer getValue() {
         return value;
@@ -81,7 +77,6 @@ public class McIPGeoIn extends McParent
 
     /**
      * The latitude of the target location.
-     *
      */
     public String getLat() {
         return lat;

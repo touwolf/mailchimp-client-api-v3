@@ -2,8 +2,7 @@ package com.touwolf.mailchimp.data.condiction.types;
 
 import com.google.gson.annotations.SerializedName;
 
-public enum McAddressMergeOpEnum
-{
+public enum McAddressMergeOpEnum {
     @SerializedName("contains")
     CONTAINS,
     @SerializedName("notcontain")

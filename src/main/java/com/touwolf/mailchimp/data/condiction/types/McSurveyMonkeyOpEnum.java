@@ -2,8 +2,7 @@ package com.touwolf.mailchimp.data.condiction.types;
 
 import com.google.gson.annotations.SerializedName;
 
-public enum McSurveyMonkeyOpEnum
-{
+public enum McSurveyMonkeyOpEnum {
     @SerializedName("started")
     STARTED,
     @SerializedName("completed")

@@ -2,8 +2,7 @@ package com.touwolf.mailchimp.data.condiction.types;
 
 import com.google.gson.annotations.SerializedName;
 
-public enum McEcommNumberFieldEnum
-{
+public enum McEcommNumberFieldEnum {
     @SerializedName("ecomm_spent_avg")
     ECOMM_SPENT_AVG,
     @SerializedName("ecomm_orders")

@@ -2,8 +2,7 @@ package com.touwolf.mailchimp.model.campaign.feedback;
 
 import com.google.gson.annotations.SerializedName;
 
-public enum CampaignFeedbackSourceEnum
-{
+public enum CampaignFeedbackSourceEnum {
     @SerializedName("api")
     API,
     @SerializedName("email")

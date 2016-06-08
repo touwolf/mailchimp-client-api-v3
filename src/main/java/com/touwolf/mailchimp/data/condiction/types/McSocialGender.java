@@ -1,7 +1,6 @@
 package com.touwolf.mailchimp.data.condiction.types;
 
-public class McSocialGender extends McParent
-{
+public class McSocialGender extends McParent {
     private McSocialGenderOpEnum op;
 
     private McSocialGenderFieldEnum field;
@@ -11,7 +10,7 @@ public class McSocialGender extends McParent
     /**
      * Members who do or don’t match the exact criteria listed.
      * Possible Values:
-     *
+     * <p>
      * is
      * not
      */
@@ -26,7 +25,7 @@ public class McSocialGender extends McParent
     /**
      * The social gender field to segment on.
      * Possible Values:
-     *
+     * <p>
      * social_gender
      */
     public McSocialGenderFieldEnum getField() {
@@ -40,7 +39,7 @@ public class McSocialGender extends McParent
     /**
      * The Social Profiles gender to segment.
      * Possible Values:
-     *
+     * <p>
      * male
      * female
      */

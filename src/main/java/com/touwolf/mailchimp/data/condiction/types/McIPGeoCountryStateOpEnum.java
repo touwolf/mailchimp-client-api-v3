@@ -2,8 +2,7 @@ package com.touwolf.mailchimp.data.condiction.types;
 
 import com.google.gson.annotations.SerializedName;
 
-public enum McIPGeoCountryStateOpEnum
-{
+public enum McIPGeoCountryStateOpEnum {
     @SerializedName("ipgeocountry")
     IP_GEO_COUNTRY,
     @SerializedName("ipgeonotcountry")

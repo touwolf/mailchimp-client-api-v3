@@ -1,7 +1,6 @@
 package com.touwolf.mailchimp.data.condiction.types;
 
-public class McIPGeoCountryState extends McParent
-{
+public class McIPGeoCountryState extends McParent {
     private McIPGeoCountryStateOpEnum op;
 
     private McIPGeoCountryStateFieldEnum field;
@@ -11,7 +10,7 @@ public class McIPGeoCountryState extends McParent
     /**
      * Segment members who are in a specific country or US state.
      * Possible Values:
-     *
+     * <p>
      * ipgeocountry
      * ipgeonotcountry
      * ipgeostate
@@ -28,7 +27,7 @@ public class McIPGeoCountryState extends McParent
     /**
      * The field to segment on.
      * Possible Values:
-     *
+     * <p>
      * ipgeo
      */
     public McIPGeoCountryStateFieldEnum getField() {
@@ -41,7 +40,6 @@ public class McIPGeoCountryState extends McParent
 
     /**
      * The two-letter country code or US state abbreviation.
-     *
      */
     public String getValue() {
         return value;

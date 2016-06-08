@@ -2,8 +2,7 @@ package com.touwolf.mailchimp.data.condiction.types;
 
 import com.google.gson.annotations.SerializedName;
 
-public enum McAimOpEnum
-{
+public enum McAimOpEnum {
     @SerializedName("open")
     OPEN,
     @SerializedName("click")

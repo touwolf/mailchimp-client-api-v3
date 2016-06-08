@@ -8,175 +8,131 @@ import com.touwolf.mailchimp.data.condiction.types.*;
 import java.lang.reflect.Type;
 import java.util.Map;
 
-public class ConditionDeserializer implements JsonDeserializer<MailchimpConditions>
-{
+public class ConditionDeserializer implements JsonDeserializer<MailchimpConditions> {
     private static final Gson GSON = new GsonBuilder().create();
 
     @Override
-    public MailchimpConditions deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException
-    {
-        for (Map.Entry<String,JsonElement> entry : jsonElement.getAsJsonObject().entrySet())
-        {
+    public MailchimpConditions deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
+        for (Map.Entry<String, JsonElement> entry : jsonElement.getAsJsonObject().entrySet()) {
             String key = entry.getKey();
-            if(key.equals("condition_type"))
-            {
+            if (key.equals("condition_type")) {
                 String componentType = entry.getValue().getAsString();
-                switch (componentType)
-                {
-                    case "Aim":
-                    {
+                switch (componentType) {
+                    case "Aim": {
                         return create(jsonElement, McAim.class, MailchimpConditionType.AIM);
                     }
-                    case "Automation":
-                    {
+                    case "Automation": {
                         return create(jsonElement, McAutomation.class, MailchimpConditionType.AUTOMATION);
                     }
-                    case "CampaignPoll":
-                    {
+                    case "CampaignPoll": {
                         return create(jsonElement, McCampaignPoll.class, MailchimpConditionType.CAMPAIGN_POLL);
                     }
-                    case "Conversation":
-                    {
+                    case "Conversation": {
                         return create(jsonElement, McConversation.class, MailchimpConditionType.CONVERSATION);
                     }
-                    case "Date":
-                    {
+                    case "Date": {
                         return create(jsonElement, McDate.class, MailchimpConditionType.DATE);
                     }
-                    case "EmailClient":
-                    {
+                    case "EmailClient": {
                         return create(jsonElement, McEmailClient.class, MailchimpConditionType.EMAIL_CLIENT);
                     }
-                    case "Language":
-                    {
+                    case "Language": {
                         return create(jsonElement, McLanguage.class, MailchimpConditionType.LANGUAGE);
                     }
-                    case "Mandrill":
-                    {
+                    case "Mandrill": {
                         return create(jsonElement, McMandrill.class, MailchimpConditionType.MANDRILL);
                     }
-                    case "MemberRating":
-                    {
+                    case "MemberRating": {
                         return create(jsonElement, McMemberRating.class, MailchimpConditionType.MEMBER_RATING);
                     }
-                    case "SignupSource":
-                    {
+                    case "SignupSource": {
                         return create(jsonElement, McSignupSource.class, MailchimpConditionType.SIGNUP_SOURCE);
                     }
-                    case "SurveyMonkey":
-                    {
+                    case "SurveyMonkey": {
                         return create(jsonElement, McSurveyMonkey.class, MailchimpConditionType.SURVEY_MONKEY);
                     }
-                    case "VIP":
-                    {
+                    case "VIP": {
                         return create(jsonElement, McVip.class, MailchimpConditionType.VIP);
                     }
-                    case "Interests":
-                    {
+                    case "Interests": {
                         return create(jsonElement, McInterests.class, MailchimpConditionType.INTERESTS);
                     }
-                    case "EcommCategory":
-                    {
+                    case "EcommCategory": {
                         return create(jsonElement, McEcommCategory.class, MailchimpConditionType.ECOMM_CATEGORY);
                     }
-                    case "EcommNumber":
-                    {
+                    case "EcommNumber": {
                         return create(jsonElement, McEcommNumber.class, MailchimpConditionType.ECOMM_NUMBER);
                     }
-                    case "EcommPurchased":
-                    {
+                    case "EcommPurchased": {
                         return create(jsonElement, McEcommPurchased.class, MailchimpConditionType.ECOMM_PURCHASED);
                     }
-                    case "EcommSpent":
-                    {
+                    case "EcommSpent": {
                         return create(jsonElement, McEcommSpent.class, MailchimpConditionType.ECOMM_SPENT);
                     }
-                    case "EcommStore":
-                    {
+                    case "EcommStore": {
                         return create(jsonElement, McEcommStore.class, MailchimpConditionType.ECOMM_STORE);
                     }
-                    case "GoalActivity":
-                    {
+                    case "GoalActivity": {
                         return create(jsonElement, McGoalActivity.class, MailchimpConditionType.GOAL_ACTIVITY);
                     }
-                    case "GoalTimestamp":
-                    {
+                    case "GoalTimestamp": {
                         return create(jsonElement, McGoalTimestamp.class, MailchimpConditionType.GOAL_TIMESTAMP);
                     }
-                    case "FuzzySegment":
-                    {
+                    case "FuzzySegment": {
                         return create(jsonElement, McFuzzySegment.class, MailchimpConditionType.FUZZY_SEGMENT);
                     }
-                    case "StaticSegment":
-                    {
+                    case "StaticSegment": {
                         return create(jsonElement, McStaticSegment.class, MailchimpConditionType.STATIC_SEGMENT);
                     }
-                    case "IPGeoCountryState":
-                    {
+                    case "IPGeoCountryState": {
                         return create(jsonElement, McIPGeoCountryState.class, MailchimpConditionType.IP_GEO_COUNTRY_STATE);
                     }
-                    case "IPGeoIn":
-                    {
+                    case "IPGeoIn": {
                         return create(jsonElement, McIPGeoIn.class, MailchimpConditionType.IP_GEO_IN);
                     }
-                    case "IPGeoInZip":
-                    {
+                    case "IPGeoInZip": {
                         return create(jsonElement, McIPGeoInZip.class, MailchimpConditionType.IP_GEO_IN_ZIP);
                     }
-                    case "IPGeoUnknown":
-                    {
+                    case "IPGeoUnknown": {
                         return create(jsonElement, McIPGeoUnknown.class, MailchimpConditionType.IP_GEO_UNKNOWN);
                     }
-                    case "IPGeoZip":
-                    {
+                    case "IPGeoZip": {
                         return create(jsonElement, McIPGeoZip.class, MailchimpConditionType.IP_GEO_ZIP);
                     }
-                    case "SocialAge":
-                    {
+                    case "SocialAge": {
                         return create(jsonElement, McSocialAge.class, MailchimpConditionType.SOCIAL_AGE);
                     }
-                    case "SocialGender":
-                    {
+                    case "SocialGender": {
                         return create(jsonElement, McSocialGender.class, MailchimpConditionType.SOCIAL_GENDER);
                     }
-                    case "SocialInfluence":
-                    {
+                    case "SocialInfluence": {
                         return create(jsonElement, McSocialInfluence.class, MailchimpConditionType.SOCIAL_INFLUENCE);
                     }
-                    case "SocialNetworkMember":
-                    {
+                    case "SocialNetworkMember": {
                         return create(jsonElement, McSocialNetworkMember.class, MailchimpConditionType.SOCIAL_NETWORK_MEMBER);
                     }
-                    case "SocialNetworkFollow":
-                    {
+                    case "SocialNetworkFollow": {
                         return create(jsonElement, McSocialNetworkFollow.class, MailchimpConditionType.SOCIAL_NETWORK_FOLLOW);
                     }
-                    case "AddressMerge":
-                    {
+                    case "AddressMerge": {
                         return create(jsonElement, McAddressMerge.class, MailchimpConditionType.ADDRESS_MERGE);
                     }
-                    case "ZipMerge":
-                    {
+                    case "ZipMerge": {
                         return create(jsonElement, McZipMerge.class, MailchimpConditionType.ZIP_MERGE);
                     }
-                    case "BirthdayMerge":
-                    {
+                    case "BirthdayMerge": {
                         return create(jsonElement, McBirthdayMerge.class, MailchimpConditionType.BIRTHDAY_MERGE);
                     }
-                    case "DateMerge":
-                    {
+                    case "DateMerge": {
                         return create(jsonElement, McDateMerge.class, MailchimpConditionType.DATE_MERGE);
                     }
-                    case "TextMerge":
-                    {
+                    case "TextMerge": {
                         return create(jsonElement, McTextMerge.class, MailchimpConditionType.TEXT_MERGE);
                     }
-                    case "SelectMerge":
-                    {
+                    case "SelectMerge": {
                         return create(jsonElement, McSelectMerge.class, MailchimpConditionType.SELECT_MERGE);
                     }
-                    case "EmailAddress":
-                    {
+                    case "EmailAddress": {
                         return create(jsonElement, McEmailAddress.class, MailchimpConditionType.EMAIL_ADDRESS);
                     }
                 }
@@ -186,8 +142,7 @@ public class ConditionDeserializer implements JsonDeserializer<MailchimpConditio
         return null;
     }
 
-    private <T extends McParent> MailchimpConditions<T> create(JsonElement jsonElement, Class<T> c, MailchimpConditionType type)
-    {
+    private <T extends McParent> MailchimpConditions<T> create(JsonElement jsonElement, Class<T> c, MailchimpConditionType type) {
         MailchimpConditions<T> mailchimpConditions = new MailchimpConditions<>();
 
         T condiction = GSON.fromJson(jsonElement, c);

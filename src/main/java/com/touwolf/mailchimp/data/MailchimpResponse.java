@@ -1,7 +1,6 @@
 package com.touwolf.mailchimp.data;
 
-public class MailchimpResponse<T>
-{
+public class MailchimpResponse<T> {
     private T data;
 
     private Integer code;
@@ -12,8 +11,7 @@ public class MailchimpResponse<T>
 
     private String response;
 
-    public MailchimpResponse(String url, String payload, String response)
-    {
+    public MailchimpResponse(String url, String payload, String response) {
         this.url = url;
         this.payload = payload;
         this.response = response;

@@ -1,7 +1,6 @@
 package com.touwolf.mailchimp.data.condiction;
 
-public class MailchimpConditions<T>
-{
+public class MailchimpConditions<T> {
     private T condition;
 
     public T getCondition() {

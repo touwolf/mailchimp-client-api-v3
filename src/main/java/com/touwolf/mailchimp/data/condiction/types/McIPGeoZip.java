@@ -1,7 +1,6 @@
 package com.touwolf.mailchimp.data.condiction.types;
 
-public class McIPGeoZip extends McParent
-{
+public class McIPGeoZip extends McParent {
     private McIPGeoZipOpEnum op;
 
     private McIPGeoZipFieldEnum field;
@@ -11,7 +10,7 @@ public class McIPGeoZip extends McParent
     /**
      * Segment members who are or are not in a specific US zip code.
      * Possible Values:
-     *
+     * <p>
      * ipgeoiszip
      * ipgeonotzip
      */
@@ -26,7 +25,7 @@ public class McIPGeoZip extends McParent
     /**
      * The field to segment on.
      * Possible Values:
-     *
+     * <p>
      * ipgeo
      */
     public McIPGeoZipFieldEnum getField() {
@@ -39,7 +38,6 @@ public class McIPGeoZip extends McParent
 
     /**
      * The 5-digit zip code.
-     *
      */
     public Integer getValue() {
         return value;

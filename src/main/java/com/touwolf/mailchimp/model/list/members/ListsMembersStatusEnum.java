@@ -2,8 +2,7 @@ package com.touwolf.mailchimp.model.list.members;
 
 import com.google.gson.annotations.SerializedName;
 
-public enum ListsMembersStatusEnum
-{
+public enum ListsMembersStatusEnum {
     @SerializedName("subscribed")
     SUBSCRIBED,
     @SerializedName("unsubscribed")

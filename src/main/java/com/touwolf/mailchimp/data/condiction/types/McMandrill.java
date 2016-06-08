@@ -1,14 +1,12 @@
 package com.touwolf.mailchimp.data.condiction.types;
 
-public class McMandrill extends McParent
-{
+public class McMandrill extends McParent {
     private String op;
 
     private String field;
 
     /**
      * The segment operator.
-     *
      */
     public String getOp() {
         return op;
@@ -20,7 +18,6 @@ public class McMandrill extends McParent
 
     /**
      * The field to segment on.
-     *
      */
     public String getField() {
         return field;

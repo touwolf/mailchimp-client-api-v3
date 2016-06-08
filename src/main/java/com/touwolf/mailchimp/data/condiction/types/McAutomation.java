@@ -1,7 +1,6 @@
 package com.touwolf.mailchimp.data.condiction.types;
 
-public class McAutomation extends McParent
-{
+public class McAutomation extends McParent {
     private McAutomationOpEnum op;
 
     private McAutomationFieldEnum field;
@@ -11,7 +10,7 @@ public class McAutomation extends McParent
     /**
      * The member’s status, based on where they are in an Automation workflow.
      * Possible Values:
-     *
+     * <p>
      * started
      * completed
      * not_started
@@ -28,7 +27,7 @@ public class McAutomation extends McParent
     /**
      * The field to segment on.
      * Possible Values:
-     *
+     * <p>
      * automation
      */
     public McAutomationFieldEnum getField() {
@@ -41,7 +40,6 @@ public class McAutomation extends McParent
 
     /**
      * The web id for the Automation workflow to segment on.
-     *
      */
     public String getValue() {
         return value;

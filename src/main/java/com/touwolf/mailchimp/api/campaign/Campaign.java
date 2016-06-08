@@ -3,9 +3,9 @@ package com.touwolf.mailchimp.api.campaign;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.touwolf.mailchimp.MailchimpException;
+import com.touwolf.mailchimp.data.MailchimpResponse;
 import com.touwolf.mailchimp.impl.MailchimpBuilder;
 import com.touwolf.mailchimp.impl.MailchimpUtils;
-import com.touwolf.mailchimp.data.MailchimpResponse;
 import com.touwolf.mailchimp.model.campaign.*;
 import org.apache.commons.lang.StringUtils;
 import org.bridje.ioc.Component;
@@ -14,17 +14,14 @@ import java.util.List;
 
 /**
  * Campaigns are how you send emails to your MailChimp list. Use the Campaigns API calls to manage campaigns in your MailChimp account.
- *
  */
 @Component
-public class Campaign
-{
+public class Campaign {
     private final Gson GSON = new GsonBuilder().setPrettyPrinting().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
 
     private MailchimpBuilder builder;
 
-    public Campaign builder(MailchimpBuilder builder)
-    {
+    public Campaign builder(MailchimpBuilder builder) {
         this.builder = builder;
         return this;
     }
@@ -33,11 +30,9 @@ public class Campaign
      * Create a new campaign
      *
      * @param request Request body parameters
-     *
      * @throws MailchimpException
      */
-    public MailchimpResponse<CampaignResponse> create(CampaignRequest request) throws MailchimpException
-    {
+    public MailchimpResponse<CampaignResponse> create(CampaignRequest request) throws MailchimpException {
         String payload = GSON.toJson(request);
         return builder.post("/campaigns", payload, CampaignResponse.class);
     }
@@ -46,11 +41,9 @@ public class Campaign
      * Get all campaigns
      *
      * @param request Query string parameters
-     *
      * @throws MailchimpException
      */
-    public MailchimpResponse<CampaignReadResponse> read(CampaignReadRequest request) throws MailchimpException
-    {
+    public MailchimpResponse<CampaignReadResponse> read(CampaignReadRequest request) throws MailchimpException {
         String url = "/campaigns";
         url = MailchimpUtils.formatQueryString(url, "fields", request.getFields());
         url = MailchimpUtils.formatQueryString(url, "exclude_fields", request.getExcludeFields());
@@ -71,14 +64,11 @@ public class Campaign
      * Get information about a specific campaign
      *
      * @param campaignId The unique id for the campaign.
-     * @param request Query string parameters
-     *
+     * @param request    Query string parameters
      * @throws MailchimpException
      */
-    public MailchimpResponse<CampaignResponse> read(String campaignId, CampaignReadRequest request) throws MailchimpException
-    {
-        if(StringUtils.isBlank(campaignId))
-        {
+    public MailchimpResponse<CampaignResponse> read(String campaignId, CampaignReadRequest request) throws MailchimpException {
+        if (StringUtils.isBlank(campaignId)) {
             throw new MailchimpException("The field campaign_id is required");
         }
 
@@ -93,14 +83,11 @@ public class Campaign
      * Update the settings for a campaign
      *
      * @param campaignId The unique id for the campaign.
-     * @param request Request body parameters
-     *
+     * @param request    Request body parameters
      * @throws MailchimpException
      */
-    public MailchimpResponse<CampaignResponse> edit(String campaignId, CampaignRequest request) throws MailchimpException
-    {
-        if(StringUtils.isBlank(campaignId))
-        {
+    public MailchimpResponse<CampaignResponse> edit(String campaignId, CampaignRequest request) throws MailchimpException {
+        if (StringUtils.isBlank(campaignId)) {
             throw new MailchimpException("The field campaign_id is required");
         }
 
@@ -113,13 +100,10 @@ public class Campaign
      * Delete a campaign
      *
      * @param campaignId The unique id for the campaign.
-     *
      * @throws MailchimpException
      */
-    public MailchimpResponse<Void> delete(String campaignId) throws MailchimpException
-    {
-        if(StringUtils.isBlank(campaignId))
-        {
+    public MailchimpResponse<Void> delete(String campaignId) throws MailchimpException {
+        if (StringUtils.isBlank(campaignId)) {
             throw new MailchimpException("The field campaign_id is required");
         }
 
@@ -131,13 +115,10 @@ public class Campaign
      * Cancel a campaign
      *
      * @param campaignId The unique id for the campaign.
-     *
      * @throws MailchimpException
      */
-    public MailchimpResponse<Void> cancelSend(String campaignId) throws MailchimpException
-    {
-        if(StringUtils.isBlank(campaignId))
-        {
+    public MailchimpResponse<Void> cancelSend(String campaignId) throws MailchimpException {
+        if (StringUtils.isBlank(campaignId)) {
             throw new MailchimpException("The field campaign_id is required");
         }
 
@@ -149,13 +130,10 @@ public class Campaign
      * Pause an RSS-Driven campaign
      *
      * @param campaignId The unique id for the campaign.
-     *
      * @throws MailchimpException
      */
-    public MailchimpResponse<Void> pause(String campaignId) throws MailchimpException
-    {
-        if(StringUtils.isBlank(campaignId))
-        {
+    public MailchimpResponse<Void> pause(String campaignId) throws MailchimpException {
+        if (StringUtils.isBlank(campaignId)) {
             throw new MailchimpException("The field campaign_id is required");
         }
 
@@ -167,13 +145,10 @@ public class Campaign
      * Replicate a campaign
      *
      * @param campaignId The unique id for the campaign.
-     *
      * @throws MailchimpException
      */
-    public MailchimpResponse<CampaignResponse> replicate(String campaignId) throws MailchimpException
-    {
-        if(StringUtils.isBlank(campaignId))
-        {
+    public MailchimpResponse<CampaignResponse> replicate(String campaignId) throws MailchimpException {
+        if (StringUtils.isBlank(campaignId)) {
             throw new MailchimpException("The field campaign_id is required");
         }
 
@@ -185,17 +160,14 @@ public class Campaign
      * Resume an RSS-Driven campaign
      *
      * @param campaignId The unique id for the campaign.
-     *
      * @throws MailchimpException
      */
-    public MailchimpResponse<Void> resume(String campaignId) throws MailchimpException
-    {
-        if(StringUtils.isBlank(campaignId))
-        {
+    public MailchimpResponse<Void> resume(String campaignId) throws MailchimpException {
+        if (StringUtils.isBlank(campaignId)) {
             throw new MailchimpException("The field campaign_id is required");
         }
 
-        String url = "/campaigns/" + campaignId+ "/actions/resume";
+        String url = "/campaigns/" + campaignId + "/actions/resume";
         return builder.post(url, Void.class);
     }
 
@@ -203,14 +175,11 @@ public class Campaign
      * Schedule a campaign
      *
      * @param campaignId The unique id for the campaign.
-     * @param request Request body parameters
-     *
+     * @param request    Request body parameters
      * @throws MailchimpException
      */
-    public MailchimpResponse<Void> schedule(String campaignId, CampaignScheduleRequest request) throws MailchimpException
-    {
-        if(StringUtils.isBlank(campaignId))
-        {
+    public MailchimpResponse<Void> schedule(String campaignId, CampaignScheduleRequest request) throws MailchimpException {
+        if (StringUtils.isBlank(campaignId)) {
             throw new MailchimpException("The field campaign_id is required");
         }
 
@@ -223,13 +192,10 @@ public class Campaign
      * Send a campaign
      *
      * @param campaignId The unique id for the campaign.
-     *
      * @throws MailchimpException
      */
-    public MailchimpResponse<Void> send(String campaignId) throws MailchimpException
-    {
-        if(StringUtils.isBlank(campaignId))
-        {
+    public MailchimpResponse<Void> send(String campaignId) throws MailchimpException {
+        if (StringUtils.isBlank(campaignId)) {
             throw new MailchimpException("The field campaign_id is required");
         }
 
@@ -242,14 +208,11 @@ public class Campaign
      *
      * @param campaignId The unique id for the campaign.
      * @param testEmails An array of email addresses to send the test email to.
-     * @param sendType Choose the type of test email to send. Possible Values: html, plain_text
-     *
+     * @param sendType   Choose the type of test email to send. Possible Values: html, plain_text
      * @throws MailchimpException
      */
-    public MailchimpResponse<Void> test(String campaignId, List<String> testEmails, CampaignSendTypeEnum sendType) throws MailchimpException
-    {
-        if(StringUtils.isBlank(campaignId))
-        {
+    public MailchimpResponse<Void> test(String campaignId, List<String> testEmails, CampaignSendTypeEnum sendType) throws MailchimpException {
+        if (StringUtils.isBlank(campaignId)) {
             throw new MailchimpException("The field campaign_id is required");
         }
 
@@ -263,13 +226,10 @@ public class Campaign
      * Unschedule a campaign
      *
      * @param campaignId The unique id for the campaign.
-     *
      * @throws MailchimpException
      */
-    public MailchimpResponse<Void> unschedule(String campaignId) throws MailchimpException
-    {
-        if(StringUtils.isBlank(campaignId))
-        {
+    public MailchimpResponse<Void> unschedule(String campaignId) throws MailchimpException {
+        if (StringUtils.isBlank(campaignId)) {
             throw new MailchimpException("The field campaign_id is required");
         }
 

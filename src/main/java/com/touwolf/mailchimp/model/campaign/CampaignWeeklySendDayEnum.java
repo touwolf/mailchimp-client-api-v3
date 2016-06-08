@@ -2,8 +2,7 @@ package com.touwolf.mailchimp.model.campaign;
 
 import com.google.gson.annotations.SerializedName;
 
-public enum CampaignWeeklySendDayEnum
-{
+public enum CampaignWeeklySendDayEnum {
     @SerializedName("sunday")
     SUNDAY,
     @SerializedName("monday")

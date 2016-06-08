@@ -1,7 +1,6 @@
 package com.touwolf.mailchimp.data.condiction.types;
 
-public class McStaticSegment extends McParent
-{
+public class McStaticSegment extends McParent {
     private McStaticSegmentOpEnum op;
 
     private McStaticSegmentFieldEnum field;
@@ -11,7 +10,7 @@ public class McStaticSegment extends McParent
     /**
      * Members who are/are not apart of a static segment.
      * Possible Values:
-     *
+     * <p>
      * static_is
      * static_not
      */
@@ -26,7 +25,7 @@ public class McStaticSegment extends McParent
     /**
      * The static segment field.
      * Possible Values:
-     *
+     * <p>
      * static_segment
      */
     public McStaticSegmentFieldEnum getField() {
@@ -39,7 +38,6 @@ public class McStaticSegment extends McParent
 
     /**
      * The id for the static segment.
-     *
      */
     public Long getValue() {
         return value;

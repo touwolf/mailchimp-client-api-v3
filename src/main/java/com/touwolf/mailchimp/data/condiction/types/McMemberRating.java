@@ -1,7 +1,6 @@
 package com.touwolf.mailchimp.data.condiction.types;
 
-public class McMemberRating extends McParent
-{
+public class McMemberRating extends McParent {
     private McMemberRatingOpEnum op;
 
     private McMemberRatingFieldEnum field;
@@ -11,7 +10,7 @@ public class McMemberRating extends McParent
     /**
      * Members who have have a rating that is/not exactly a specific number or members who have a rating greater/less than a specific number.
      * Possible Values:
-     *
+     * <p>
      * is
      * not
      * greater
@@ -28,7 +27,7 @@ public class McMemberRating extends McParent
     /**
      * The field to segment on.
      * Possible Values:
-     *
+     * <p>
      * rating
      */
     public McMemberRatingFieldEnum getField() {
@@ -41,7 +40,6 @@ public class McMemberRating extends McParent
 
     /**
      * The star rating number to segment on.
-     *
      */
     public Integer getValue() {
         return value;

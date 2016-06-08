@@ -2,8 +2,7 @@ package com.touwolf.mailchimp.data.condiction.types;
 
 import java.util.List;
 
-public class McInterests extends McParent
-{
+public class McInterests extends McParent {
     private McInterestsOpEnum op;
 
     private String field;
@@ -13,7 +12,7 @@ public class McInterests extends McParent
     /**
      * Whether the member is a part of one, all, or none of the groups.
      * Possible Values:
-     *
+     * <p>
      * interestcontains
      * interestcontainsall
      * interestnotcontains
@@ -28,7 +27,6 @@ public class McInterests extends McParent
 
     /**
      * The interest group, like “interests-123”
-     *
      */
     public String getField() {
         return field;
@@ -40,7 +38,6 @@ public class McInterests extends McParent
 
     /**
      * An array containing integers, each representing a group id.
-     *
      */
     public List<Integer> getValue() {
         return value;

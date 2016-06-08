@@ -1,7 +1,6 @@
 package com.touwolf.mailchimp.data;
 
-public class MailchimpLinks
-{
+public class MailchimpLinks {
     private String rel;
 
     private String href;
@@ -14,7 +13,6 @@ public class MailchimpLinks
 
     /**
      * As with an HTML ‘rel’ attribute, this describes the type of link.
-     *
      */
     public String getRel() {
         return rel;
@@ -26,7 +24,6 @@ public class MailchimpLinks
 
     /**
      * This property contains a fully-qualified URL that can be called to retrieve the linked resource or perform the linked action.
-     *
      */
     public String getHref() {
         return href;
@@ -38,9 +35,9 @@ public class MailchimpLinks
 
     /**
      * The HTTP method that should be used when accessing the URL defined in ‘href'
-     *
+     * <p>
      * Possible Values:
-     *
+     * <p>
      * GET
      * POST
      * PUT
@@ -48,7 +45,6 @@ public class MailchimpLinks
      * DELETE
      * OPTIONS
      * HEAD
-     *
      */
     public MailchimpLinksMethod getMethod() {
         return method;
@@ -60,7 +56,6 @@ public class MailchimpLinks
 
     /**
      * For GETs, this is a URL representing the schema that the response should conform to.
-     *
      */
     public String getTargetSchema() {
         return targetSchema;
@@ -72,7 +67,6 @@ public class MailchimpLinks
 
     /**
      * For HTTP methods that can receive bodies (POST and PUT), this is a URL representing the schema that the body should conform to.
-     *
      */
     public String getSchema() {
         return schema;

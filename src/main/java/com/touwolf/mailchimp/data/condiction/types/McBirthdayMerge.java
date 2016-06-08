@@ -1,7 +1,6 @@
 package com.touwolf.mailchimp.data.condiction.types;
 
-public class McBirthdayMerge extends McParent
-{
+public class McBirthdayMerge extends McParent {
     private McBirthdayMergeOpEnum op;
 
     private String field;
@@ -11,7 +10,7 @@ public class McBirthdayMerge extends McParent
     /**
      * Whether the segment value matches exactly, doesn’t match, is blank, or isn’t blank.
      * Possible Values:
-     *
+     * <p>
      * is
      * not
      * blank
@@ -27,7 +26,6 @@ public class McBirthdayMerge extends McParent
 
     /**
      * The birthday merge segment field.
-     *
      */
     public String getField() {
         return field;
@@ -39,7 +37,6 @@ public class McBirthdayMerge extends McParent
 
     /**
      * The value to compare.
-     *
      */
     public String getValue() {
         return value;

@@ -1,7 +1,6 @@
 package com.touwolf.mailchimp.data.condiction.types;
 
-public class McDate extends McParent
-{
+public class McDate extends McParent {
     private McDateOpEnum op;
 
     private McDateFieldEnum field;
@@ -13,7 +12,7 @@ public class McDate extends McParent
     /**
      * When the event took place.
      * Possible Values:
-     *
+     * <p>
      * greater
      * less
      * is
@@ -32,7 +31,7 @@ public class McDate extends McParent
     /**
      * The date segment field.
      * Possible Values:
-     *
+     * <p>
      * timestamp_opt
      * info_changed
      * ecomm_date
@@ -47,7 +46,6 @@ public class McDate extends McParent
 
     /**
      * When segmenting on ‘date’ or ‘campaign’, the date for the segment formatted as YYYY-MM-DD or the web id for the campaign.
-     *
      */
     public String getExtra() {
         return extra;
@@ -60,7 +58,7 @@ public class McDate extends McParent
     /**
      * What type of data to segment on: a specific date, a specific campaign, or the last campaign sent.
      * Possible Values:
-     *
+     * <p>
      * date
      * campaign
      * last

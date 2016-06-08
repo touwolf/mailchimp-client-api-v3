@@ -2,8 +2,7 @@ package com.touwolf.mailchimp.model.list.interestcategories;
 
 import com.google.gson.annotations.SerializedName;
 
-public enum ListsInterestCategoriesTypeEnum
-{
+public enum ListsInterestCategoriesTypeEnum {
     @SerializedName("checkboxes")
     CHECK_BOXES,
     @SerializedName("dropdown")

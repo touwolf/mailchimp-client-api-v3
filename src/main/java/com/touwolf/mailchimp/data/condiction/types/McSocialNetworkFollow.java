@@ -1,7 +1,6 @@
 package com.touwolf.mailchimp.data.condiction.types;
 
-public class McSocialNetworkFollow extends McParent
-{
+public class McSocialNetworkFollow extends McParent {
     private McSocialNetworkFollowOpEnum op;
 
     private McSocialNetworkFollowFieldEnum field;
@@ -11,7 +10,7 @@ public class McSocialNetworkFollow extends McParent
     /**
      * Members who are or are not following a linked account on a specific social network.
      * Possible Values:
-     *
+     * <p>
      * follow
      * notfollow
      */
@@ -26,7 +25,7 @@ public class McSocialNetworkFollow extends McParent
     /**
      * The field to segment on.
      * Possible Values:
-     *
+     * <p>
      * social_network
      */
     public McSocialNetworkFollowFieldEnum getField() {
@@ -40,7 +39,7 @@ public class McSocialNetworkFollow extends McParent
     /**
      * The social network to segment on.
      * Possible Values:
-     *
+     * <p>
      * twitter_follow
      */
     public McSocialNetworkFollowValueEnum getValue() {

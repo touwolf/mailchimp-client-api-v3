@@ -1,7 +1,6 @@
 package com.touwolf.mailchimp.data.condiction.types;
 
-public class McSurveyMonkey extends McParent
-{
+public class McSurveyMonkey extends McParent {
     private McSurveyMonkeyOpEnum op;
 
     private McSurveyMonkeyFieldEnum field;
@@ -11,7 +10,7 @@ public class McSurveyMonkey extends McParent
     /**
      * A member’s status based on whether they have started, completed, not started, or not completed a specific survey.
      * Possible Values:
-     *
+     * <p>
      * started
      * completed
      * not_started
@@ -28,7 +27,7 @@ public class McSurveyMonkey extends McParent
     /**
      * The field to segment on.
      * Possible Values:
-     *
+     * <p>
      * survey_monkey
      */
     public McSurveyMonkeyFieldEnum getField() {
@@ -41,7 +40,6 @@ public class McSurveyMonkey extends McParent
 
     /**
      * The unique ID of the SurveyMonkey survey.
-     *
      */
     public String getValue() {
         return value;

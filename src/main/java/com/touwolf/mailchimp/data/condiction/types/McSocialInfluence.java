@@ -1,7 +1,6 @@
 package com.touwolf.mailchimp.data.condiction.types;
 
-public class McSocialInfluence extends McParent
-{
+public class McSocialInfluence extends McParent {
     private McSocialInfluenceOpEnum op;
 
     private McSocialInfluenceFieldEnum field;
@@ -11,7 +10,7 @@ public class McSocialInfluence extends McParent
     /**
      * Members who have a rating that is/not or greater/less than the rating provided.
      * Possible Values:
-     *
+     * <p>
      * is
      * not
      * greater
@@ -28,7 +27,7 @@ public class McSocialInfluence extends McParent
     /**
      * The social influence field to segment on.
      * Possible Values:
-     *
+     * <p>
      * social_influence
      */
     public McSocialInfluenceFieldEnum getField() {
@@ -41,7 +40,6 @@ public class McSocialInfluence extends McParent
 
     /**
      * The Social Profiles influence rating to segment on.
-     *
      */
     public String getValue() {
         return value;

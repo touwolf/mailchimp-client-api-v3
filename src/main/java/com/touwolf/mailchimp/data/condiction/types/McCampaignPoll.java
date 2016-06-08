@@ -1,7 +1,6 @@
 package com.touwolf.mailchimp.data.condiction.types;
 
-public class McCampaignPoll extends McParent
-{
+public class McCampaignPoll extends McParent {
     private McCampaignPollOpEnum op;
 
     private McCampaignPollFieldEnum field;
@@ -11,7 +10,7 @@ public class McCampaignPoll extends McParent
     /**
      * Members who have or have not interacted with a specific poll in a MailChimp email.
      * Possible Values:
-     *
+     * <p>
      * member
      * notmember
      */
@@ -26,7 +25,7 @@ public class McCampaignPoll extends McParent
     /**
      * The field to segment on.
      * Possible Values:
-     *
+     * <p>
      * poll
      */
     public McCampaignPollFieldEnum getField() {
@@ -39,7 +38,6 @@ public class McCampaignPoll extends McParent
 
     /**
      * The id for the poll.
-     *
      */
     public Long getValue() {
         return value;

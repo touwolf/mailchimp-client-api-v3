@@ -1,7 +1,6 @@
 package com.touwolf.mailchimp.data.condiction.types;
 
-public class McEmailClient extends McParent
-{
+public class McEmailClient extends McParent {
     private McEmailClientOpEnum op;
 
     private McEmailClientFieldEnum field;
@@ -11,7 +10,7 @@ public class McEmailClient extends McParent
     /**
      * A member’s status, based on their campaign interactions.
      * Possible Values:
-     *
+     * <p>
      * client_is
      * client_not
      */
@@ -26,7 +25,7 @@ public class McEmailClient extends McParent
     /**
      * The field to segment on.
      * Possible Values:
-     *
+     * <p>
      * email_client
      */
     public McEmailClientFieldEnum getField() {
@@ -39,7 +38,6 @@ public class McEmailClient extends McParent
 
     /**
      * The name of the email client.
-     *
      */
     public String getValue() {
         return value;

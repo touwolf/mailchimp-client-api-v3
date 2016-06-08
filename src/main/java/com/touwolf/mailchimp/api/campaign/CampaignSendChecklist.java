@@ -3,9 +3,9 @@ package com.touwolf.mailchimp.api.campaign;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.touwolf.mailchimp.MailchimpException;
+import com.touwolf.mailchimp.data.MailchimpResponse;
 import com.touwolf.mailchimp.impl.MailchimpBuilder;
 import com.touwolf.mailchimp.impl.MailchimpUtils;
-import com.touwolf.mailchimp.data.MailchimpResponse;
 import com.touwolf.mailchimp.model.campaign.checklist.CampaignChecklistResponse;
 import org.apache.commons.lang.StringUtils;
 import org.bridje.ioc.Component;
@@ -14,22 +14,18 @@ import org.bridje.ioc.Component;
  * Review the send checklist for your campaign, and resolve any issues before sending.
  */
 @Component
-public class CampaignSendChecklist
-{
+public class CampaignSendChecklist {
     private final Gson GSON = new GsonBuilder().setPrettyPrinting().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
 
     private MailchimpBuilder builder;
 
-    public CampaignSendChecklist builder(MailchimpBuilder builder)
-    {
+    public CampaignSendChecklist builder(MailchimpBuilder builder) {
         this.builder = builder;
         return this;
     }
 
-    public MailchimpResponse<CampaignChecklistResponse> read(String campaignId, String fields, String excludeFields) throws MailchimpException
-    {
-        if(StringUtils.isBlank(campaignId))
-        {
+    public MailchimpResponse<CampaignChecklistResponse> read(String campaignId, String fields, String excludeFields) throws MailchimpException {
+        if (StringUtils.isBlank(campaignId)) {
             throw new MailchimpException("The field campaign_id is required");
         }
 

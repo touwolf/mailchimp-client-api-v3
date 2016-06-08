@@ -2,8 +2,7 @@ package com.touwolf.mailchimp.model.campaign.content;
 
 import com.google.gson.annotations.SerializedName;
 
-public enum CampaignContentArchiveTypeEnum
-{
+public enum CampaignContentArchiveTypeEnum {
     @SerializedName("zip")
     ZIP,
     @SerializedName("tar.gz")

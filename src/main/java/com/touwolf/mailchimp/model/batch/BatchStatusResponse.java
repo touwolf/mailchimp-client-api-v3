@@ -2,8 +2,7 @@ package com.touwolf.mailchimp.model.batch;
 
 import com.google.gson.annotations.SerializedName;
 
-public enum BatchStatusResponse
-{
+public enum BatchStatusResponse {
     @SerializedName("pending")
     PENDING,
     @SerializedName("started")

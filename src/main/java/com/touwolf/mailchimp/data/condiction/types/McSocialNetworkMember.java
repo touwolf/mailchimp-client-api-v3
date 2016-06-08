@@ -1,7 +1,6 @@
 package com.touwolf.mailchimp.data.condiction.types;
 
-public class McSocialNetworkMember extends McParent
-{
+public class McSocialNetworkMember extends McParent {
     private McSocialNetworkMemberOpEnum op;
 
     private McSocialNetworkMemberFieldEnum field;
@@ -11,7 +10,7 @@ public class McSocialNetworkMember extends McParent
     /**
      * Members who are or are not on a specific social network.
      * Possible Values:
-     *
+     * <p>
      * member
      * notmember
      */
@@ -26,7 +25,7 @@ public class McSocialNetworkMember extends McParent
     /**
      * The social_network segment field.
      * Possible Values:
-     *
+     * <p>
      * social_network
      */
     public McSocialNetworkMemberFieldEnum getField() {
@@ -40,7 +39,7 @@ public class McSocialNetworkMember extends McParent
     /**
      * The social network to segment on.
      * Possible Values:
-     *
+     * <p>
      * twitter
      * facebook
      * linkedin

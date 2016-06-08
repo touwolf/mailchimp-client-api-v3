@@ -1,7 +1,6 @@
 package com.touwolf.mailchimp.data.condiction.types;
 
-public class McSocialAge extends McParent
-{
+public class McSocialAge extends McParent {
     private McSocialAgeOpEnum op;
 
     private McSocialAgeFieldEnum field;
@@ -11,7 +10,7 @@ public class McSocialAge extends McParent
     /**
      * Members who do or don’t match the exact criteria listed.
      * Possible Values:
-     *
+     * <p>
      * is
      * not
      */
@@ -26,7 +25,7 @@ public class McSocialAge extends McParent
     /**
      * The social age field to segment on.
      * Possible Values:
-     *
+     * <p>
      * social_age
      */
     public McSocialAgeFieldEnum getField() {
@@ -40,7 +39,7 @@ public class McSocialAge extends McParent
     /**
      * The age range to segment.
      * Possible Values:
-     *
+     * <p>
      * 18-24
      * 25-34
      * 35-54

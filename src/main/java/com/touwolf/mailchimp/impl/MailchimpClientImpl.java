@@ -7,8 +7,7 @@ import com.touwolf.mailchimp.api.campaign.*;
 import com.touwolf.mailchimp.api.lists.*;
 import org.bridje.ioc.Ioc;
 
-public class MailchimpClientImpl implements MailchimpClient
-{
+public class MailchimpClientImpl implements MailchimpClient {
     private MailchimpBuilder builder;
 
     private ApiRoot apiRoot;
@@ -45,14 +44,12 @@ public class MailchimpClientImpl implements MailchimpClient
 
     private Batch batch;
 
-    public MailchimpClientImpl(String username, String apiKey)
-    {
+    public MailchimpClientImpl(String username, String apiKey) {
         builder = new MailchimpBuilder(MailchimpUtils.getApiUrl(apiKey), username, apiKey, 30000);
     }
 
     @Override
-    public ApiRoot apiRoot()
-    {
+    public ApiRoot apiRoot() {
         return getApiRoot().builder(builder);
     }
 
@@ -62,32 +59,27 @@ public class MailchimpClientImpl implements MailchimpClient
     }
 
     @Override
-    public CampaignFolder campaignFolder()
-    {
+    public CampaignFolder campaignFolder() {
         return getCampaignFolder().builder(builder);
     }
 
     @Override
-    public Campaign campaign()
-    {
+    public Campaign campaign() {
         return getCampaign().builder(builder);
     }
 
     @Override
-    public CampaignContent campaignContent()
-    {
+    public CampaignContent campaignContent() {
         return getCampaignContent().builder(builder);
     }
 
     @Override
-    public CampaignFeedback campaignFeedback()
-    {
+    public CampaignFeedback campaignFeedback() {
         return getCampaignFeedback().builder(builder);
     }
 
     @Override
-    public CampaignSendChecklist campaignSendChecklist()
-    {
+    public CampaignSendChecklist campaignSendChecklist() {
         return getCampaignSendChecklist().builder(builder);
     }
 
@@ -97,223 +89,180 @@ public class MailchimpClientImpl implements MailchimpClient
     }
 
     @Override
-    public ListsAbuseReports listsAbuseReports()
-    {
+    public ListsAbuseReports listsAbuseReports() {
         return getListsAbuseReports().builder(builder);
     }
 
     @Override
-    public ListsActivity listsActivity()
-    {
+    public ListsActivity listsActivity() {
         return getListsActivity().builder(builder);
     }
 
     @Override
-    public ListsClients listsClients()
-    {
+    public ListsClients listsClients() {
         return getListsClients().builder(builder);
     }
 
     @Override
-    public ListsGrowthHistory listsGrowthHistory()
-    {
+    public ListsGrowthHistory listsGrowthHistory() {
         return getListsGrowthHistory().builder(builder);
     }
 
     @Override
-    public ListsInterestCategories listsInterestCategories()
-    {
+    public ListsInterestCategories listsInterestCategories() {
         return getListsInterestCategories().builder(builder);
     }
 
     @Override
-    public ListsMembers listsMembers()
-    {
+    public ListsMembers listsMembers() {
         return getListsMembers().builder(builder);
     }
 
     @Override
-    public ListsMergeFields listsMergeFields()
-    {
+    public ListsMergeFields listsMergeFields() {
         return getListsMergeFields().builder(builder);
     }
 
     @Override
-    public ListsSegments listsSegments()
-    {
+    public ListsSegments listsSegments() {
         return getListsSegments().builder(builder);
     }
 
     @Override
-    public ListsWebhooks listsWebhooks()
-    {
+    public ListsWebhooks listsWebhooks() {
         return getListsWebhooks().builder(builder);
     }
 
-    private ApiRoot getApiRoot()
-    {
-        if(null == apiRoot)
-        {
+    private ApiRoot getApiRoot() {
+        if (null == apiRoot) {
             apiRoot = Ioc.context().find(ApiRoot.class);
         }
 
         return apiRoot;
     }
 
-    private Batch getBatch()
-    {
-        if(null == batch)
-        {
+    private Batch getBatch() {
+        if (null == batch) {
             batch = Ioc.context().find(Batch.class);
         }
 
         return batch;
     }
 
-    private CampaignFolder getCampaignFolder()
-    {
-        if(null == campaignFolder)
-        {
+    private CampaignFolder getCampaignFolder() {
+        if (null == campaignFolder) {
             campaignFolder = Ioc.context().find(CampaignFolder.class);
         }
 
         return campaignFolder;
     }
 
-    private Campaign getCampaign()
-    {
-        if(null == campaign)
-        {
+    private Campaign getCampaign() {
+        if (null == campaign) {
             campaign = Ioc.context().find(Campaign.class);
         }
 
         return campaign;
     }
 
-    private CampaignContent getCampaignContent()
-    {
-        if(null == campaignContent)
-        {
+    private CampaignContent getCampaignContent() {
+        if (null == campaignContent) {
             campaignContent = Ioc.context().find(CampaignContent.class);
         }
 
         return campaignContent;
     }
 
-    private CampaignFeedback getCampaignFeedback()
-    {
-        if(null == campaignFeedback)
-        {
+    private CampaignFeedback getCampaignFeedback() {
+        if (null == campaignFeedback) {
             campaignFeedback = Ioc.context().find(CampaignFeedback.class);
         }
 
         return campaignFeedback;
     }
 
-    private CampaignSendChecklist getCampaignSendChecklist()
-    {
-        if(null == campaignSendChecklist)
-        {
+    private CampaignSendChecklist getCampaignSendChecklist() {
+        if (null == campaignSendChecklist) {
             campaignSendChecklist = Ioc.context().find(CampaignSendChecklist.class);
         }
 
         return campaignSendChecklist;
     }
 
-    private Lists getLists()
-    {
-        if(null == lists)
-        {
+    private Lists getLists() {
+        if (null == lists) {
             lists = Ioc.context().find(Lists.class);
         }
 
         return lists;
     }
 
-    private ListsAbuseReports getListsAbuseReports()
-    {
-        if(null == listsAbuseReports)
-        {
+    private ListsAbuseReports getListsAbuseReports() {
+        if (null == listsAbuseReports) {
             listsAbuseReports = Ioc.context().find(ListsAbuseReports.class);
         }
 
         return listsAbuseReports;
     }
 
-    private ListsActivity getListsActivity()
-    {
-        if(null == listsActivity)
-        {
+    private ListsActivity getListsActivity() {
+        if (null == listsActivity) {
             listsActivity = Ioc.context().find(ListsActivity.class);
         }
 
         return listsActivity;
     }
 
-    private ListsClients getListsClients()
-    {
-        if(null == listsClients)
-        {
+    private ListsClients getListsClients() {
+        if (null == listsClients) {
             listsClients = Ioc.context().find(ListsClients.class);
         }
 
         return listsClients;
     }
 
-    private ListsGrowthHistory getListsGrowthHistory()
-    {
-        if(null == listsGrowthHistory)
-        {
+    private ListsGrowthHistory getListsGrowthHistory() {
+        if (null == listsGrowthHistory) {
             listsGrowthHistory = Ioc.context().find(ListsGrowthHistory.class);
         }
 
         return listsGrowthHistory;
     }
 
-    private ListsInterestCategories getListsInterestCategories()
-    {
-        if(null == listsInterestCategories)
-        {
+    private ListsInterestCategories getListsInterestCategories() {
+        if (null == listsInterestCategories) {
             listsInterestCategories = Ioc.context().find(ListsInterestCategories.class);
         }
 
         return listsInterestCategories;
     }
 
-    private ListsMembers getListsMembers()
-    {
-        if(null == listsMembers)
-        {
+    private ListsMembers getListsMembers() {
+        if (null == listsMembers) {
             listsMembers = Ioc.context().find(ListsMembers.class);
         }
 
         return listsMembers;
     }
 
-    private ListsMergeFields getListsMergeFields()
-    {
-        if(null == listsMergeFields)
-        {
+    private ListsMergeFields getListsMergeFields() {
+        if (null == listsMergeFields) {
             listsMergeFields = Ioc.context().find(ListsMergeFields.class);
         }
 
         return listsMergeFields;
     }
 
-    private ListsSegments getListsSegments()
-    {
-        if(null == listsSegments)
-        {
+    private ListsSegments getListsSegments() {
+        if (null == listsSegments) {
             listsSegments = Ioc.context().find(ListsSegments.class);
         }
 
         return listsSegments;
     }
 
-    private ListsWebhooks getListsWebhooks()
-    {
-        if(null == listsWebhooks)
-        {
+    private ListsWebhooks getListsWebhooks() {
+        if (null == listsWebhooks) {
             listsWebhooks = Ioc.context().find(ListsWebhooks.class);
         }
 

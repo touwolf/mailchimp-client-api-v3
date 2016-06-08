@@ -2,8 +2,7 @@ package com.touwolf.mailchimp.data.condiction.types;
 
 import com.google.gson.annotations.SerializedName;
 
-public enum McGoalTimestampOpEnum
-{
+public enum McGoalTimestampOpEnum {
     @SerializedName("greater")
     GREATER,
     @SerializedName("less")

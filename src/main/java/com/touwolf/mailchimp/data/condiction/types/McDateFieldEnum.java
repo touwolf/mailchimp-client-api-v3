@@ -2,8 +2,7 @@ package com.touwolf.mailchimp.data.condiction.types;
 
 import com.google.gson.annotations.SerializedName;
 
-public enum McDateFieldEnum
-{
+public enum McDateFieldEnum {
     @SerializedName("timestamp_opt")
     TIMESTAMP_OPT,
     @SerializedName("info_changed")

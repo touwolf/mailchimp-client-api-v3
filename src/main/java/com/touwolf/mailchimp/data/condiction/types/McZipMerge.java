@@ -1,7 +1,6 @@
 package com.touwolf.mailchimp.data.condiction.types;
 
-public class McZipMerge extends McParent
-{
+public class McZipMerge extends McParent {
     private McZipMergeOpEnum op;
 
     private String field;
@@ -13,7 +12,7 @@ public class McZipMerge extends McParent
     /**
      * Whether the zip value is in a specific location.
      * Possible Values:
-     *
+     * <p>
      * geoin
      */
     public McZipMergeOpEnum getOp() {
@@ -26,7 +25,6 @@ public class McZipMerge extends McParent
 
     /**
      * The zip merge segment field.
-     *
      */
     public String getField() {
         return field;
@@ -38,7 +36,6 @@ public class McZipMerge extends McParent
 
     /**
      * The city or the zip being used to segment on.
-     *
      */
     public String getExtra() {
         return extra;
@@ -50,7 +47,6 @@ public class McZipMerge extends McParent
 
     /**
      * The value to compare.
-     *
      */
     public String getValue() {
         return value;

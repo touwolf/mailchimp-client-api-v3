@@ -1,7 +1,6 @@
 package com.touwolf.mailchimp.data.condiction.types;
 
-public class McEcommPurchased extends McParent
-{
+public class McEcommPurchased extends McParent {
     private McEcommPurchasedOpEnum op;
 
     private McEcommPurchasedFiledEnum field;
@@ -9,7 +8,7 @@ public class McEcommPurchased extends McParent
     /**
      * Members who have have (‘member’) or have not (‘notmember’) purchased.
      * Possible Values:
-     *
+     * <p>
      * member
      * notmember
      */
@@ -24,7 +23,7 @@ public class McEcommPurchased extends McParent
     /**
      * The e-commerce purchased field to segment on.
      * Possible Values:
-     *
+     * <p>
      * ecomm_purchased
      */
     public McEcommPurchasedFiledEnum getField() {

@@ -1,7 +1,6 @@
 package com.touwolf.mailchimp.data.condiction.types;
 
-public class McIPGeoUnknown extends McParent
-{
+public class McIPGeoUnknown extends McParent {
     private McIPGeoUnknownOpEnum op;
 
     private McIPGeoUnknownFieldEnum field;
@@ -9,7 +8,7 @@ public class McIPGeoUnknown extends McParent
     /**
      * Segment members with unknown location information.
      * Possible Values:
-     *
+     * <p>
      * ipgeounknown
      */
     public McIPGeoUnknownOpEnum getOp() {
@@ -23,7 +22,7 @@ public class McIPGeoUnknown extends McParent
     /**
      * The field to segment on.
      * Possible Values:
-     *
+     * <p>
      * ipgeo
      */
     public McIPGeoUnknownFieldEnum getField() {

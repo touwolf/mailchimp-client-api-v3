@@ -2,33 +2,36 @@ package com.touwolf.mailchimp.data.condiction.types;
 
 public class McVip extends McParent
 {
-    private String op;
+    private McVipOpEnum op;
 
-    private String field;
+    private McVipFieldEnum field;
 
-    private String value;
-
-    public String getOp() {
+    /**
+     * Whether the member is or isn’t a VIP.
+     * Possible Values:
+     *
+     * member
+     * notmember
+     */
+    public McVipOpEnum getOp() {
         return op;
     }
 
-    public void setOp(String op) {
+    public void setOp(McVipOpEnum op) {
         this.op = op;
     }
 
-    public String getField() {
+    /**
+     * The field to segment on.
+     * Possible Values:
+     *
+     * gmonkey
+     */
+    public McVipFieldEnum getField() {
         return field;
     }
 
-    public void setField(String field) {
+    public void setField(McVipFieldEnum field) {
         this.field = field;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
     }
 }

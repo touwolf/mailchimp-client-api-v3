@@ -2,33 +2,55 @@ package com.touwolf.mailchimp.data.condiction.types;
 
 public class McEcommNumber extends McParent
 {
-    private String op;
+    private McEcommNumberOpEnum op;
 
-    private String field;
+    private McEcommNumberFieldEnum field;
 
-    private String value;
+    private Double value;
 
-    public String getOp() {
+    /**
+     * Members who have spent exactly, have not spent exactly, spent more, or spent less than the segment value.
+     * Possible Values:
+     *
+     * is
+     * not
+     * greater
+     * less
+     */
+    public McEcommNumberOpEnum getOp() {
         return op;
     }
 
-    public void setOp(String op) {
+    public void setOp(McEcommNumberOpEnum op) {
         this.op = op;
     }
 
-    public String getField() {
+    /**
+     * The e-commerce number field to segment on.
+     * Possible Values:
+     *
+     * ecomm_spent_avg
+     * ecomm_orders
+     * ecomm_prod_all
+     * ecomm_avg_ord
+     */
+    public McEcommNumberFieldEnum getField() {
         return field;
     }
 
-    public void setField(String field) {
+    public void setField(McEcommNumberFieldEnum field) {
         this.field = field;
     }
 
-    public String getValue() {
+    /**
+     * Members who have spent exactly, have not spent exactly, spent more, or spent less than this amount.
+     *
+     */
+    public Double getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(Double value) {
         this.value = value;
     }
 }

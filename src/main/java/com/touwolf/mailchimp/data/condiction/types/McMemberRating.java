@@ -6,7 +6,7 @@ public class McMemberRating extends McParent
 
     private McMemberRatingFieldEnum field;
 
-    private String value;
+    private Integer value;
 
     /**
      * Members who have have a rating that is/not exactly a specific number or members who have a rating greater/less than a specific number.
@@ -43,11 +43,11 @@ public class McMemberRating extends McParent
      * The star rating number to segment on.
      *
      */
-    public String getValue() {
+    public Integer getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(Integer value) {
         this.value = value;
     }
 }

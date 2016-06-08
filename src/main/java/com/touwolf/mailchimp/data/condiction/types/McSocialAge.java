@@ -2,28 +2,50 @@ package com.touwolf.mailchimp.data.condiction.types;
 
 public class McSocialAge extends McParent
 {
-    private String op;
+    private McSocialAgeOpEnum op;
 
-    private String field;
+    private McSocialAgeFieldEnum field;
 
     private String value;
 
-    public String getOp() {
+    /**
+     * Members who do or don’t match the exact criteria listed.
+     * Possible Values:
+     *
+     * is
+     * not
+     */
+    public McSocialAgeOpEnum getOp() {
         return op;
     }
 
-    public void setOp(String op) {
+    public void setOp(McSocialAgeOpEnum op) {
         this.op = op;
     }
 
-    public String getField() {
+    /**
+     * The social age field to segment on.
+     * Possible Values:
+     *
+     * social_age
+     */
+    public McSocialAgeFieldEnum getField() {
         return field;
     }
 
-    public void setField(String field) {
+    public void setField(McSocialAgeFieldEnum field) {
         this.field = field;
     }
 
+    /**
+     * The age range to segment.
+     * Possible Values:
+     *
+     * 18-24
+     * 25-34
+     * 35-54
+     * 55+
+     */
     public String getValue() {
         return value;
     }

@@ -2,33 +2,50 @@ package com.touwolf.mailchimp.data.condiction.types;
 
 public class McIPGeoZip extends McParent
 {
-    private String op;
+    private McIPGeoZipOpEnum op;
 
-    private String field;
+    private McIPGeoZipFieldEnum field;
 
-    private String value;
+    private Integer value;
 
-    public String getOp() {
+    /**
+     * Segment members who are or are not in a specific US zip code.
+     * Possible Values:
+     *
+     * ipgeoiszip
+     * ipgeonotzip
+     */
+    public McIPGeoZipOpEnum getOp() {
         return op;
     }
 
-    public void setOp(String op) {
+    public void setOp(McIPGeoZipOpEnum op) {
         this.op = op;
     }
 
-    public String getField() {
+    /**
+     * The field to segment on.
+     * Possible Values:
+     *
+     * ipgeo
+     */
+    public McIPGeoZipFieldEnum getField() {
         return field;
     }
 
-    public void setField(String field) {
+    public void setField(McIPGeoZipFieldEnum field) {
         this.field = field;
     }
 
-    public String getValue() {
+    /**
+     * The 5-digit zip code.
+     *
+     */
+    public Integer getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(Integer value) {
         this.value = value;
     }
 }

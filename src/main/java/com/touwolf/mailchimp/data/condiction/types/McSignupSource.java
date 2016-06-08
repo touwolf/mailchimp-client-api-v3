@@ -2,28 +2,45 @@ package com.touwolf.mailchimp.data.condiction.types;
 
 public class McSignupSource extends McParent
 {
-    private String op;
+    private McSignupSourceOpEnum op;
 
-    private String field;
+    private McSignupSourceFieldEnum field;
 
     private String value;
 
-    public String getOp() {
+    /**
+     * Whether the member’s signup source was/was not a particular value.
+     * Possible Values:
+     *
+     * source_is
+     * source_not
+     */
+    public McSignupSourceOpEnum getOp() {
         return op;
     }
 
-    public void setOp(String op) {
+    public void setOp(McSignupSourceOpEnum op) {
         this.op = op;
     }
 
-    public String getField() {
+    /**
+     * The field to segment on.
+     * Possible Values:
+     *
+     * source
+     */
+    public McSignupSourceFieldEnum getField() {
         return field;
     }
 
-    public void setField(String field) {
+    public void setField(McSignupSourceFieldEnum field) {
         this.field = field;
     }
 
+    /**
+     * The signup source.
+     *
+     */
     public String getValue() {
         return value;
     }

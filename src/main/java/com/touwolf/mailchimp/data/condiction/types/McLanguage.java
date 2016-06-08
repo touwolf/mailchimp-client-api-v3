@@ -2,28 +2,45 @@ package com.touwolf.mailchimp.data.condiction.types;
 
 public class McLanguage extends McParent
 {
-    private String op;
+    private McLanguageOpEnum op;
 
-    private String field;
+    private McLanguageFieldEnum field;
 
     private String value;
 
-    public String getOp() {
+    /**
+     * Whether the member’s language is or isn’t set to a specific language.
+     * Possible Values:
+     *
+     * is
+     * not
+     */
+    public McLanguageOpEnum getOp() {
         return op;
     }
 
-    public void setOp(String op) {
+    public void setOp(McLanguageOpEnum op) {
         this.op = op;
     }
 
-    public String getField() {
+    /**
+     * The field to segment on.
+     * Possible Values:
+     *
+     * language
+     */
+    public McLanguageFieldEnum getField() {
         return field;
     }
 
-    public void setField(String field) {
+    public void setField(McLanguageFieldEnum field) {
         this.field = field;
     }
 
+    /**
+     * A two-letter language identifier.
+     *
+     */
     public String getValue() {
         return value;
     }

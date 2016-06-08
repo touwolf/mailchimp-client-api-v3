@@ -6,8 +6,10 @@ public class McMandrill extends McParent
 
     private String field;
 
-    private String value;
-
+    /**
+     * The segment operator.
+     *
+     */
     public String getOp() {
         return op;
     }
@@ -16,19 +18,15 @@ public class McMandrill extends McParent
         this.op = op;
     }
 
+    /**
+     * The field to segment on.
+     *
+     */
     public String getField() {
         return field;
     }
 
     public void setField(String field) {
         this.field = field;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
     }
 }

@@ -2,33 +2,50 @@ package com.touwolf.mailchimp.data.condiction.types;
 
 public class McStaticSegment extends McParent
 {
-    private String op;
+    private McStaticSegmentOpEnum op;
 
-    private String field;
+    private McStaticSegmentFieldEnum field;
 
-    private String value;
+    private Long value;
 
-    public String getOp() {
+    /**
+     * Members who are/are not apart of a static segment.
+     * Possible Values:
+     *
+     * static_is
+     * static_not
+     */
+    public McStaticSegmentOpEnum getOp() {
         return op;
     }
 
-    public void setOp(String op) {
+    public void setOp(McStaticSegmentOpEnum op) {
         this.op = op;
     }
 
-    public String getField() {
+    /**
+     * The static segment field.
+     * Possible Values:
+     *
+     * static_segment
+     */
+    public McStaticSegmentFieldEnum getField() {
         return field;
     }
 
-    public void setField(String field) {
+    public void setField(McStaticSegmentFieldEnum field) {
         this.field = field;
     }
 
-    public String getValue() {
+    /**
+     * The id for the static segment.
+     *
+     */
+    public Long getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(Long value) {
         this.value = value;
     }
 }

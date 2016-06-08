@@ -2,28 +2,49 @@ package com.touwolf.mailchimp.data.condiction.types;
 
 public class McGoalActivity extends McParent
 {
-    private String op;
+    private McGoalActivityOpEnum op;
 
-    private String field;
+    private McGoalActivityFieldEnum field;
 
     private String value;
 
-    public String getOp() {
+    /**
+     * Whether the website URL is/not exactly, contains/doesn’t contain, starts with/ends with a string.
+     * Possible Values:
+     *
+     * is
+     * goal_not
+     * contains
+     * goal_notcontain
+     * starts
+     * ends
+     */
+    public McGoalActivityOpEnum getOp() {
         return op;
     }
 
-    public void setOp(String op) {
+    public void setOp(McGoalActivityOpEnum op) {
         this.op = op;
     }
 
-    public String getField() {
+    /**
+     * The goal activity field to segment on.
+     * Possible Values:
+     *
+     * goal
+     */
+    public McGoalActivityFieldEnum getField() {
         return field;
     }
 
-    public void setField(String field) {
+    public void setField(McGoalActivityFieldEnum field) {
         this.field = field;
     }
 
+    /**
+     * The URL to check Goal activity against.
+     *
+     */
     public String getValue() {
         return value;
     }

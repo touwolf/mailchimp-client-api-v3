@@ -2,33 +2,50 @@ package com.touwolf.mailchimp.data.condiction.types;
 
 public class McFuzzySegment extends McParent
 {
-    private String op;
+    private McFuzzySegmentOpEnum op;
 
-    private String field;
+    private McFuzzySegmentFieldEnum field;
 
-    private String value;
+    private Long value;
 
-    public String getOp() {
+    /**
+     * Members who are/are not apart of a ‘similar subscribers’ segment.
+     * Possible Values:
+     *
+     * fuzzy_is
+     * fuzzy_not
+     */
+    public McFuzzySegmentOpEnum getOp() {
         return op;
     }
 
-    public void setOp(String op) {
+    public void setOp(McFuzzySegmentOpEnum op) {
         this.op = op;
     }
 
-    public String getField() {
+    /**
+     * The fuzzy segment field.
+     * Possible Values:
+     *
+     * fuzzy_segment
+     */
+    public McFuzzySegmentFieldEnum getField() {
         return field;
     }
 
-    public void setField(String field) {
+    public void setField(McFuzzySegmentFieldEnum field) {
         this.field = field;
     }
 
-    public String getValue() {
+    /**
+     * The id for the ‘similar subscribers’ segment.
+     *
+     */
+    public Long getValue() {
         return value;
     }
 
-    public void setValue(String value) {
+    public void setValue(Long value) {
         this.value = value;
     }
 }

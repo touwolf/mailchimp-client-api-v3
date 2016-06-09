@@ -37,10 +37,10 @@ public class MailchimpCampaignSendChecklistTest {
     public void testSendgridRequest() throws Exception {
 
         try {
-            MailchimpClient client = new MailchimpClientImpl(USERNAME, API_KEY);
+            /*MailchimpClient client = new MailchimpClientImpl(USERNAME, API_KEY);
             CampaignSendChecklist campaignSendChecklist = client.campaignSendChecklist();
 
-            //Assert.assertNotNull(response);
+            //Assert.assertNotNull(response);*/
         } catch (Exception ex) {
             Assert.assertTrue(false);
         }

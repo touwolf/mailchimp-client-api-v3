@@ -13,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 public class MailchimpBuilder {
     private static final Logger logger = LoggerFactory.getLogger(MailchimpBuilder.class);
@@ -25,8 +26,6 @@ public class MailchimpBuilder {
 
     private static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
-    private final Integer timeout;
-
     private final String basicAuth;
 
     private final String urlBase;
@@ -35,10 +34,12 @@ public class MailchimpBuilder {
 
     public MailchimpBuilder(String urlBase, String apiUser, String apiKey, Integer timeout) {
         this.urlBase = urlBase;
-        this.timeout = timeout;
 
         this.basicAuth = Credentials.basic(apiUser, apiKey);
-        this.client = new OkHttpClient();
+        this.client = new OkHttpClient()
+                .newBuilder()
+                .readTimeout(timeout, TimeUnit.SECONDS)
+                .build();
     }
 
     /**

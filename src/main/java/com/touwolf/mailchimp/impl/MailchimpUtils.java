@@ -14,7 +14,7 @@ public class MailchimpUtils {
             return url;
         }
 
-        return url.contains("?") ? "&" + field + "=" + value : "?" + field + "=" + value;
+        return url + (url.contains("?") ? "&" + field + "=" + value : "?" + field + "=" + value);
     }
 
     public static String formatQueryString(String url, String field, Integer value) {
@@ -22,7 +22,7 @@ public class MailchimpUtils {
             return url;
         }
 
-        return url.contains("?") ? "&" + field + "=" + value : "?" + field + "=" + value;
+        return url + (url.contains("?") ? "&" + field + "=" + value : "?" + field + "=" + value);
     }
 
     public static String formatQueryString(String url, String field, Boolean value) {
@@ -30,7 +30,7 @@ public class MailchimpUtils {
             return url;
         }
 
-        return url.contains("?") ? "&" + field + "=" + value : "?" + field + "=" + value;
+        return url + (url.contains("?") ? "&" + field + "=" + value : "?" + field + "=" + value);
     }
 
     public static String formatQueryString(String url, String field, Enum value) {
@@ -38,6 +38,6 @@ public class MailchimpUtils {
             return url;
         }
 
-        return url.contains("?") ? "&" + field + "=" + value : "?" + field + "=" + value;
+        return url + (url.contains("?") ? "&" + field + "=" + value : "?" + field + "=" + value);
     }
 }

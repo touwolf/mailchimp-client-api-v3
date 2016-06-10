@@ -4,9 +4,6 @@ import org.junit.*;
 
 public class MailchimpListsGrowthHistoryTest {
 
-    public MailchimpListsGrowthHistoryTest() {
-    }
-
     @BeforeClass
     public static void setUpClass() {
     }
@@ -24,7 +21,7 @@ public class MailchimpListsGrowthHistoryTest {
     }
 
     @Test
-    public void testSendgridRequest() throws Exception {
+    public void testMailchimpListsGrowthHistoryRequest() throws Exception {
 
         Assert.assertTrue(true);
     }

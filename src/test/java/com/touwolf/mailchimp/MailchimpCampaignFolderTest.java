@@ -4,9 +4,6 @@ import org.junit.*;
 
 public class MailchimpCampaignFolderTest {
 
-    public MailchimpCampaignFolderTest() {
-    }
-
     @BeforeClass
     public static void setUpClass() {
     }
@@ -24,7 +21,7 @@ public class MailchimpCampaignFolderTest {
     }
 
     @Test
-    public void testSendgridRequest() throws Exception {
+    public void testMailchimpCampaignFolderRequest() throws Exception {
 
         Assert.assertTrue(true);
     }

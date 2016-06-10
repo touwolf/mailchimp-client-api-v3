@@ -4,9 +4,6 @@ import org.junit.*;
 
 public class MailchimpListsMembersTest {
 
-    public MailchimpListsMembersTest() {
-    }
-
     @BeforeClass
     public static void setUpClass() {
     }
@@ -24,7 +21,7 @@ public class MailchimpListsMembersTest {
     }
 
     @Test
-    public void testSendgridRequest() throws Exception {
+    public void testMailchimpListsMembersRequest() throws Exception {
 
         Assert.assertTrue(true);
     }

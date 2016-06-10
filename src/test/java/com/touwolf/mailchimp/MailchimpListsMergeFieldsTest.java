@@ -4,9 +4,6 @@ import org.junit.*;
 
 public class MailchimpListsMergeFieldsTest {
 
-    public MailchimpListsMergeFieldsTest() {
-    }
-
     @BeforeClass
     public static void setUpClass() {
     }
@@ -24,7 +21,7 @@ public class MailchimpListsMergeFieldsTest {
     }
 
     @Test
-    public void testSendgridRequest() throws Exception {
+    public void testMailchimpListsMergeFieldsRequest() throws Exception {
 
         Assert.assertTrue(true);
     }

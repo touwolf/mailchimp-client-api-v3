@@ -4,9 +4,6 @@ import org.junit.*;
 
 public class MailchimpCampaignSendChecklistTest {
 
-    public MailchimpCampaignSendChecklistTest() {
-    }
-
     @BeforeClass
     public static void setUpClass() {
     }
@@ -24,7 +21,7 @@ public class MailchimpCampaignSendChecklistTest {
     }
 
     @Test
-    public void testSendgridRequest() throws Exception {
+    public void testMailchimpCampaignSendChecklistRequest() throws Exception {
 
         Assert.assertTrue(true);
     }

@@ -4,7 +4,7 @@
 
     <groupId>com.touwolf</groupId>
     <artifactId>touwolf-mailchimp-v3</artifactId>
-    <version>0.0.3</version>
+    <version>0.0.4-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Touwolf Mailchimp V3</name>
@@ -26,7 +26,7 @@
         <url>https://github.com/touwolf/mailchimp-client-api-v3</url>
         <connection>scm:git:https://github.com/touwolf/mailchimp-client-api-v3.git</connection>
         <developerConnection>scm:git:https://github.com/touwolf/mailchimp-client-api-v3.git</developerConnection>
-        <tag>v0.0.3</tag>
+        <tag>touwolf-mailchimp-v3-0.0.2</tag>
     </scm>
 
     <issueManagement>

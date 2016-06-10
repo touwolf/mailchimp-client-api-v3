@@ -1,7 +1,5 @@
 package com.touwolf.mailchimp.api.lists;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.touwolf.mailchimp.MailchimpException;
 import com.touwolf.mailchimp.data.MailchimpResponse;
 import com.touwolf.mailchimp.impl.MailchimpBuilder;
@@ -17,7 +15,6 @@ import org.bridje.ioc.Component;
  */
 @Component
 public class ListsAbuseReports {
-    private final Gson GSON = new GsonBuilder().setPrettyPrinting().setDateFormat("yyyy-MM-dd HH:mm:ss").create();
 
     private MailchimpBuilder builder;
 

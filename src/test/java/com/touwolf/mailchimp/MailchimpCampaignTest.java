@@ -3,10 +3,6 @@ package com.touwolf.mailchimp;
 import org.junit.*;
 
 public class MailchimpCampaignTest {
-    // To execute this test correctly, please fill real username and apikey
-    private static final String USERNAME = "";
-
-    private static final String API_KEY = "";
 
     public MailchimpCampaignTest() {
     }
@@ -30,15 +26,7 @@ public class MailchimpCampaignTest {
     @Test
     public void testSendgridRequest() throws Exception {
 
-        try {
-            /*MailchimpClient client = new MailchimpClientImpl(USERNAME, API_KEY);
-            Campaign campaign = client.campaign();
-
-            MailchimpResponse<CampaignReadResponse> response = campaign.read(new CampaignReadRequest());
-            Assert.assertNotNull(response);*/
-        } catch (Exception ex) {
-            Assert.assertTrue(false);
-        }
+        Assert.assertTrue(true);
     }
 
 }

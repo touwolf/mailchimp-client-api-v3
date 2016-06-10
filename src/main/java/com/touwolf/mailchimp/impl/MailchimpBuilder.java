@@ -9,14 +9,11 @@ import com.touwolf.mailchimp.data.condiction.MailchimpConditions;
 import com.touwolf.mailchimp.data.condiction.adapters.ConditionDeserializer;
 import com.touwolf.mailchimp.data.condiction.adapters.ConditionSerializer;
 import okhttp3.*;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class MailchimpBuilder {
-    private static final Logger logger = LoggerFactory.getLogger(MailchimpBuilder.class);
 
     private final Gson GSON = new GsonBuilder()
             .registerTypeAdapter(MailchimpConditions.class, new ConditionDeserializer())

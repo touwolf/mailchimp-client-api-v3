@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/touwolf/mailchimp-client-api-v3.svg?branch=master)](https://travis-ci.org/touwolf/mailchimp-client-api-v3)
+[![Build Status](https://travis-ci.org/touwolf/mailchimp-client-api-v3.svg?branch=master)](https://travis-ci.org/touwolf/mailchimp-client-api-v3)[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.touwolf/touwolf-mailchimp-v3/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.touwolf/touwolf-mailchimp-v3/bridje-parent)
 
 # Mailchimp Client API V3
 

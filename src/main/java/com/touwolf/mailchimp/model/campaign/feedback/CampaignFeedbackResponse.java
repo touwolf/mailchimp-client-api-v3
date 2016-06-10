@@ -21,7 +21,7 @@ public class CampaignFeedbackResponse {
     private Boolean isComplete;
 
     @SerializedName("created_by")
-    private String created_by;
+    private String createdBy;
 
     @SerializedName("created_at")
     private String createdAt;
@@ -95,12 +95,12 @@ public class CampaignFeedbackResponse {
     /**
      * The login name of the user who created the feedback.
      */
-    public String getCreated_by() {
-        return created_by;
+    public String getCreatedBy() {
+        return createdBy;
     }
 
-    public void setCreated_by(String created_by) {
-        this.created_by = created_by;
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
     }
 
     /**

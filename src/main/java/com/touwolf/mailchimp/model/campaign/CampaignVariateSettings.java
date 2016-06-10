@@ -25,7 +25,7 @@ class CampaignVariateSettings {
     private String sendTime;
 
     @SerializedName("from_names")
-    private String from_names;
+    private String fromNames;
 
     @SerializedName("reply_to_addresses")
     private String replyToAddresses;
@@ -126,12 +126,12 @@ class CampaignVariateSettings {
      * The possible from names. The number of from_names provided must match the number of reply_to_addresses.
      * If no from_names are provided, settings.from_name will be used.
      */
-    public String getFrom_names() {
-        return from_names;
+    public String getFromNames() {
+        return fromNames;
     }
 
-    public void setFrom_names(String from_names) {
-        this.from_names = from_names;
+    public void setFromNames(String fromNames) {
+        this.fromNames = fromNames;
     }
 
     /**

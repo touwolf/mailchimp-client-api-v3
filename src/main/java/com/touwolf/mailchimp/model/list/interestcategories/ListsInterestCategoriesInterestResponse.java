@@ -20,7 +20,7 @@ public class ListsInterestCategoriesInterestResponse {
     private String subscriberCount;
 
     @SerializedName("displayOrder")
-    private Integer display_order;
+    private Integer displayOrder;
 
     @SerializedName("_links")
     private List<MailchimpLinks> links;
@@ -83,12 +83,12 @@ public class ListsInterestCategoriesInterestResponse {
     /**
      * The display order for interests.
      */
-    public Integer getDisplay_order() {
-        return display_order;
+    public Integer getDisplayOrder() {
+        return displayOrder;
     }
 
-    public void setDisplay_order(Integer display_order) {
-        this.display_order = display_order;
+    public void setDisplayOrder(Integer displayOrder) {
+        this.displayOrder = displayOrder;
     }
 
     /**

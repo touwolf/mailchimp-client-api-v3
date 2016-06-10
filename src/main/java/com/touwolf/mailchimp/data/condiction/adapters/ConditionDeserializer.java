@@ -12,7 +12,8 @@ public class ConditionDeserializer implements JsonDeserializer<MailchimpConditio
     private static final Gson GSON = new GsonBuilder().create();
 
     @Override
-    public MailchimpConditions deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
+    public MailchimpConditions deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext)
+            throws JsonParseException {
         for (Map.Entry<String, JsonElement> entry : jsonElement.getAsJsonObject().entrySet()) {
             String key = entry.getKey();
             if ("condition_type".equals(key)) {

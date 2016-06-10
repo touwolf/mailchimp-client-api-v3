@@ -20,7 +20,7 @@ HTTP & HTTP/2 client for Android and Java applications https://github.com/square
           <dependency>
             <groupId>com.squareup.okhttp3</groupId>
             <artifactId>okhttp</artifactId>
-            <version>3.0.1</version>
+            <version>3.3.1</version>
         </dependency>
         
 

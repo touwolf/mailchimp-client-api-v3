@@ -8,6 +8,7 @@
     <packaging>jar</packaging>
 
     <name>Touwolf Mailchimp V3</name>
+    <description>Mailchimp v3 api implementation</description>
     <url>http://www.touwolf.com</url>
 
     <inceptionYear>2016</inceptionYear>

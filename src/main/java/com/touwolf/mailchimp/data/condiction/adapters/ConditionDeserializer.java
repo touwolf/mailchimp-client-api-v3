@@ -15,7 +15,7 @@ public class ConditionDeserializer implements JsonDeserializer<MailchimpConditio
     public MailchimpConditions deserialize(JsonElement jsonElement, Type type, JsonDeserializationContext jsonDeserializationContext) throws JsonParseException {
         for (Map.Entry<String, JsonElement> entry : jsonElement.getAsJsonObject().entrySet()) {
             String key = entry.getKey();
-            if (key.equals("condition_type")) {
+            if ("condition_type".equals(key)) {
                 String componentType = entry.getValue().getAsString();
                 switch (componentType) {
                     case "Aim": {
@@ -135,6 +135,8 @@ public class ConditionDeserializer implements JsonDeserializer<MailchimpConditio
                     case "EmailAddress": {
                         return create(jsonElement, McEmailAddress.class, MailchimpConditionType.EMAIL_ADDRESS);
                     }
+                    default:
+                        break;
                 }
             }
         }

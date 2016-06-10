@@ -1,8 +1,5 @@
 package com.touwolf.mailchimp;
 
-import com.touwolf.mailchimp.data.MailchimpResponse;
-import com.touwolf.mailchimp.impl.MailchimpClientImpl;
-import com.touwolf.mailchimp.model.apiroot.ApiRootResponse;
 import org.junit.*;
 
 public class MailchimpApiRootTest {

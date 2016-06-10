@@ -175,6 +175,8 @@ public class MailchimpBuilder {
                     request = builder.put(body).build();
                     break;
                 }
+                default:
+                    break;
             }
 
             Response response = client.newCall(request).execute();

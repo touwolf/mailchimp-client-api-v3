@@ -7,6 +7,36 @@
 
 Mailchimp Client API V3 wrapper for **Java**
 
+Implemented API
+==============
+
+API Root
+
+Batch Operations
+
+Campaign Folders
+
+Campaigns
+
+    Content
+    Feedback
+    Send Checklist
+
+
+
+Lists
+
+    Abuse Reports
+    Activity
+    Clients
+    Growth History
+    Interest Categories
+    Members
+    Merge Fields
+    Segments
+    Webhooks
+
+
 
 Dependencies
 ============

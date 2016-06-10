@@ -1,4 +1,7 @@
-[![Build Status](https://travis-ci.org/touwolf/mailchimp-client-api-v3.svg?branch=master)](https://travis-ci.org/touwolf/mailchimp-client-api-v3)[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.touwolf/touwolf-mailchimp-v3/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.touwolf/touwolf-mailchimp-v3/bridje-parent)
+[![Build Status](https://travis-ci.org/touwolf/mailchimp-client-api-v3.svg?branch=master)](https://travis-ci.org/touwolf/mailchimp-client-api-v3) 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.touwolf/touwolf-mailchimp-v3/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.touwolf/touwolf-mailchimp-v3/bridje-parent)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/1c03ea10342e49abba9eee59251440de)](https://www.codacy.com/app/acksecurity/mailchimp-client-api-v3?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=touwolf/mailchimp-client-api-v3&amp;utm_campaign=Badge_Grade)
+
 
 # Mailchimp Client API V3
 

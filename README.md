@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/touwolf/mailchimp-client-api-v3.svg?branch=master)](https://travis-ci.org/touwolf/mailchimp-client-api-v3)
+
 # Mailchimp Client API V3
 
 Mailchimp Client API V3 wrapper for **Java**

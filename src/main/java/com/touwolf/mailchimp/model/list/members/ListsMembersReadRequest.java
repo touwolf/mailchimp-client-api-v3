@@ -13,7 +13,7 @@ public class ListsMembersReadRequest {
     private Integer offset;
 
     @SerializedName("email_type")
-    private String emailType;
+    private ListsMembersEmailTypeEnum emailType;
 
     private String status;
 
@@ -82,11 +82,11 @@ public class ListsMembersReadRequest {
     /**
      * The email type.
      */
-    public String getEmailType() {
+    public ListsMembersEmailTypeEnum getEmailType() {
         return emailType;
     }
 
-    public void setEmailType(String emailType) {
+    public void setEmailType(ListsMembersEmailTypeEnum emailType) {
         this.emailType = emailType;
     }
 

@@ -16,7 +16,7 @@ public class ListsMembersResponse {
     private String uniqueEmailId;
 
     @SerializedName("email_type")
-    private String emailType;
+    private ListsMembersEmailTypeEnum emailType;
 
     private ListsMembersStatusEnum status;
 
@@ -99,11 +99,11 @@ public class ListsMembersResponse {
     /**
      * Type of email this member asked to get (‘html’ or ‘text’).
      */
-    public String getEmailType() {
+    public ListsMembersEmailTypeEnum getEmailType() {
         return emailType;
     }
 
-    public void setEmailType(String emailType) {
+    public void setEmailType(ListsMembersEmailTypeEnum emailType) {
         this.emailType = emailType;
     }
 

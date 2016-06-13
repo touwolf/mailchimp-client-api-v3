@@ -2,14 +2,16 @@ package com.touwolf.mailchimp.model.list.members;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Map;
+
 public class ListsMembersRequest {
     @SerializedName("email_type")
-    private String emailType;
+    private ListsMembersEmailTypeEnum emailType;
 
     private ListsMembersStatusEnum status;
 
     @SerializedName("merge_fields")
-    private String mergeFields;
+    private Map<String, String> mergeFields;
 
     private String interests;
 
@@ -40,11 +42,11 @@ public class ListsMembersRequest {
     /**
      * Type of email this member asked to get (‘html’ or ‘text’).
      */
-    public String getEmailType() {
+    public ListsMembersEmailTypeEnum getEmailType() {
         return emailType;
     }
 
-    public void setEmailType(String emailType) {
+    public void setEmailType(ListsMembersEmailTypeEnum emailType) {
         this.emailType = emailType;
     }
 
@@ -69,11 +71,11 @@ public class ListsMembersRequest {
     /**
      * An individual merge var and value for a member.
      */
-    public String getMergeFields() {
+    public Map<String, String> getMergeFields() {
         return mergeFields;
     }
 
-    public void setMergeFields(String mergeFields) {
+    public void setMergeFields(Map<String, String> mergeFields) {
         this.mergeFields = mergeFields;
     }
 

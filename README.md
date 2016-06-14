@@ -41,7 +41,7 @@ Usage
 
 * Add dependency
 
-**Maven**
+*Maven*
 ```
 <dependency>
     <groupId>com.touwolf</groupId>
@@ -50,12 +50,13 @@ Usage
 </dependency>
 ```
 
-**Gradle**
+*Gradle*
 ```
 compile 'com.touwolf:touwolf-mailchimp-v3:0.0.5'
 ```
 
-**Code**
+* Code
+
 ```java
 MailchimpClient mailchimpClient = new MailchimpClientImpl(MY_USER, MY_API_KEY);
 Lists lists = mailchimpClient.lists();

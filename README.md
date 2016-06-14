@@ -36,8 +36,34 @@ Lists
     Segments
     Webhooks
 
+Usage
+=====
 
+* Add dependency
 
+**Maven**
+```
+<dependency>
+    <groupId>com.touwolf</groupId>
+    <artifactId>touwolf-mailchimp-v3</artifactId>
+    <version>0.0.5</version>
+</dependency>
+```
+
+**Gradle**
+```
+compile 'com.touwolf:touwolf-mailchimp-v3:0.0.5'
+```
+
+**Code**
+```java
+MailchimpClient mailchimpClient = new MailchimpClientImpl(MY_USER, MY_API_KEY);
+Lists lists = mailchimpClient.lists();
+...
+// returns all the list on mailchimp
+MailchimpResponse<ListsReadResponse> response = lists.read(new ListsReadRequest());
+...
+```
 Dependencies
 ============
 

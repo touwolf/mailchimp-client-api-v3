@@ -142,7 +142,6 @@ public class MailchimpBuilder {
 
             LOGGER.info("Verb:" + verb);
             LOGGER.info("url:" + url);
-            LOGGER.info("Payload: " + payload);
 
             RequestBody body = null;
             if (null != payload) {

@@ -1,5 +1,7 @@
 package com.touwolf.mailchimp.data;
 
+import java.util.List;
+
 public class MailchimpErrors {
     private String type;
 
@@ -10,6 +12,8 @@ public class MailchimpErrors {
     private String detail;
 
     private String instance;
+
+    private List<MailchimpDetailErrors> errors;
 
     /**
      * An absolute URI that identifies the problem type.
@@ -66,5 +70,13 @@ public class MailchimpErrors {
 
     public void setInstance(String instance) {
         this.instance = instance;
+    }
+
+    public List<MailchimpDetailErrors> getErrors() {
+        return errors;
+    }
+
+    public void setErrors(List<MailchimpDetailErrors> errors) {
+        this.errors = errors;
     }
 }

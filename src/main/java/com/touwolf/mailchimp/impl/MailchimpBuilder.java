@@ -12,8 +12,11 @@ import okhttp3.*;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
 
 public class MailchimpBuilder {
+
+    private final static Logger LOGGER = Logger.getLogger(MailchimpBuilder.class.getName());
 
     private final Gson GSON = new GsonBuilder()
             .registerTypeAdapter(MailchimpConditions.class, new ConditionDeserializer())
@@ -136,6 +139,11 @@ public class MailchimpBuilder {
 
     private <T> MailchimpResponse<T> send(String url, String payload, String verb, Class<T> clazzResp) throws MailchimpException {
         try {
+
+            LOGGER.info("Verb:" + verb);
+            LOGGER.info("url:" + url);
+            LOGGER.info("Payload: " + payload);
+
             RequestBody body = null;
             if (null != payload) {
                 body = RequestBody.create(JSON, payload);
@@ -178,6 +186,8 @@ public class MailchimpBuilder {
 
             Response response = client.newCall(request).execute();
             String result = response.body().string();
+
+            LOGGER.info("Response:" + result);
 
             if (response.code() != 200) {
                 throw new MailchimpException(GSON.fromJson(result, MailchimpErrors.class), response.code());

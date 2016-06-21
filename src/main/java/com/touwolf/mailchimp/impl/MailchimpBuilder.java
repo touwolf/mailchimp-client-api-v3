@@ -18,7 +18,7 @@ public class MailchimpBuilder {
 
     private final static Logger LOGGER = Logger.getLogger(MailchimpBuilder.class.getName());
 
-    private final Gson GSON = new GsonBuilder()
+    private static final Gson GSON = new GsonBuilder()
             .registerTypeAdapter(MailchimpConditions.class, new ConditionDeserializer())
             .registerTypeAdapter(MailchimpConditions.class, new ConditionSerializer())
             .setPrettyPrinting()
@@ -185,8 +185,12 @@ public class MailchimpBuilder {
 
             Response response = client.newCall(request).execute();
             String result = response.body().string();
-
             LOGGER.info("Response:" + result);
+
+            if(!isJSONValid(result))
+            {
+                throw new MailchimpException("Invalid JSON");
+            }
 
             if (response.code() != 200) {
                 throw new MailchimpException(GSON.fromJson(result, MailchimpErrors.class), response.code());
@@ -199,6 +203,16 @@ public class MailchimpBuilder {
             return MailchimpResponse;
         } catch (IOException ex) {
             throw new MailchimpException(ex.getMessage());
+        }
+    }
+
+    public static boolean isJSONValid(String jsonInString) {
+        try
+        {
+            GSON.fromJson(jsonInString, Object.class);
+            return true;
+        } catch(com.google.gson.JsonSyntaxException ex) {
+            return false;
         }
     }
 }

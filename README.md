@@ -46,13 +46,13 @@ Usage
 <dependency>
     <groupId>com.touwolf</groupId>
     <artifactId>touwolf-mailchimp-v3</artifactId>
-    <version>0.0.5</version>
+    <version>0.0.7</version>
 </dependency>
 ```
 
 *Gradle*
 ```
-compile 'com.touwolf:touwolf-mailchimp-v3:0.0.5'
+compile 'com.touwolf:touwolf-mailchimp-v3:0.0.7'
 ```
 
 * Code
